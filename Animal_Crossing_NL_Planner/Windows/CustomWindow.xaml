@@ -1,0 +1,16 @@
+﻿<metro:Window x:Name="cWindow" x:Class="Animal_Xing_Planner.CustomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:metro="http://schemas.codeplex.com/elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        xmlns:local="clr-namespace:Animal_Xing_Planner"     
+        Title="CustomWindow" Height="357" Width="392" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" DragOver="cWindow_DragOver" Drop="cWindow_Drop" AllowDrop="True" params:Design.Theme="Light" Closing="cWindow_Closing" IsEnabled="False" WindowStyle="ToolWindow" ShowInTaskbar="False" metro:Window.IsMainWindow="True" >
+
+    <metro:Window.Resources>
+    </metro:Window.Resources>
+    
+    <Grid>
+    </Grid>
+    
+
+</metro:Window>

@@ -1,0 +1,464 @@
+﻿<metro:Window x:Class="Animal_Xing_Planner.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+        xmlns:metro="http://schemas.codeplex.com/elysium"
+        xmlns:params="http://schemas.codeplex.com/elysium/params"
+        xmlns:local="clr-namespace:Animal_Xing_Planner"        
+        Title="Settings" Height="280" Width="340" ResizeMode="NoResize" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" WindowStartupLocation="CenterOwner" Closing="Window_Closing" ShowInTaskbar="False" metro:Window.IsMainWindow="True">
+
+    <!--#region Resources-->
+    <metro:Window.Resources>
+        <Image x:Key="Visible" Source="/ACNL_Planner;component/Resources/buttons/visibleBtn.png" Height="25" Width="25" Stretch="Fill" />
+        <Image x:Key="Hidden" Source="/ACNL_Planner;component/Resources/buttons/hiddenBtn.png" Height="25" Width="25" Stretch="Fill"/>
+
+        <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+            <Setter Property="FontFamily" Value="/resources/fonts/#SecondaRoundW00-Heavy" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="HasDropShadow" Value="True" />
+            <Setter Property="Opacity" Value="0.9" />
+            <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+            <Setter Property="HorizontalOffset" Value="5" />
+            <Setter Property="VerticalOffset" Value="-65" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <ed:Callout Name="Border"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                MinWidth="100"
+                                MinHeight="30"
+                                Margin="0,0,0,50"
+                                AnchorPoint="0,1.5"
+                                Background="White"
+                                BorderBrush="#FF383838"
+                                BorderThickness="1"
+                                CalloutStyle="RoundedRectangle"
+                                Fill="#FFF4F4F5"
+                                FontSize="14.667"
+                                Stroke="#FF383838">
+                            <ContentPresenter Margin="4"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Top" />
+                        </ed:Callout>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Foreground" Value="#FF07034B"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border BorderThickness="0,0,1,0" BorderBrush="LightGray" Background="White">
+                            <TextBlock x:Name="ContentHeader" Text="{TemplateBinding Content}" Padding="5,5,5,0" HorizontalAlignment="Left" Width="{TemplateBinding Width}" FontWeight="Bold" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="Background" Value="#FFE6D27A"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <VirtualizingStackPanel IsItemsHost="True" HorizontalAlignment="Stretch" />
+        </ItemsPanelTemplate>
+
+    </metro:Window.Resources>
+    <!--#endregion-->
+
+    <Grid HorizontalAlignment="Left" Width="330">
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" ImageSource="/ACNL_Planner;component/Resources/bg/bg2.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <TabControl x:Name="settingsTabControl" Height="184" Margin="10,10,10,0" VerticalAlignment="Top" TabStripPlacement="Top" BorderBrush="Black">
+            <TabItem x:Name="generalTabItem" Header="General" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}">
+                <TabItem.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Label x:Name="root" FontSize="16.67" Height="31" Foreground="Gray">
+                                        <ContentPresenter ContentSource="Header"  RecognizesAccessKey="True" />
+                                    </Label>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="true">
+                                            <Setter TargetName="root" Property="Foreground" Value="{DynamicResource Accent}" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Resources>
+
+                <Grid>
+                    <Button x:Name="defaultSoundButton" Content="Default Sound" HorizontalAlignment="Left" Margin="189,24,0,0" VerticalAlignment="Top" Width="97" Height="28" Click="defaultSoundButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <TextBox x:Name="soundTextBox" HorizontalAlignment="Left" Height="24" Margin="68,26,0,0" TextWrapping="Wrap" Text="Default" VerticalAlignment="Top" Width="118" PreviewMouseDown="soundTextBox_PreviewMouseDown">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="ToolTip">
+                                    <Setter.Value>
+                                        <TextBlock x:Name="browseToolTip" Text="Click to browse"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <GroupBox x:Name="soundGroupBox" Header="Sound" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" Width="286" Height="64" />
+                    <Slider x:Name="soundSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Height="26" SmallChange="1" Maximum="1" ValueChanged="soundSlider_ValueChanged" Margin="16,28,0,0" RenderTransformOrigin="0.919,0.97"/>
+                    <Label x:Name="soundLabel" Content="Sound" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="11,0,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
+                    <Button x:Name="saveTPCButton" Content="Save TPC" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="saveTPCButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="villagerButton" Height="25" MinWidth="25" Margin="55,122,208,0" Click="villagerButton_Click" ToolTip="Toggle villager visibility on TPC" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" SnapsToDevicePixels="True" Width="25" >
+                        <DynamicResource ResourceKey="Visible"/>
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Opacity" Value="0.8" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <!--<Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="White"/>
+                                    </Trigger>-->
+                                    <!--<Trigger Property="IsFocused" Value="True">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                    </Trigger>-->
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="updateButton" Content="Check for Update" HorizontalAlignment="Left" Margin="167,113,0,0" VerticalAlignment="Top" Width="125" Height="30" Click="updateButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Label x:Name="saveTPCLabel" Content="*Saves your TPC as jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" FontSize="10" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="16,102,0,0" Height="26" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontStyle="Italic"/>
+                    <CheckBox x:Name="trayCheckBox" Content="" HorizontalAlignment="Left" Margin="272,74,0,0" VerticalAlignment="Top" Height="26" Width="25" Click="trayCheckBox_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="12" Foreground="{DynamicResource Accent}"/>
+                    <Label x:Name="trayLabel" Content="Minimize to tray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="168,75,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="profileTabItem" Header="Profiles" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}" IsVisibleChanged="profileTabItem_IsVisibleChanged">
+                <TabItem.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Label x:Name="root" FontSize="16.67" Height="31" Foreground="Gray">
+                                        <ContentPresenter ContentSource="Header"  RecognizesAccessKey="True" />
+                                    </Label>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="true">
+                                            <Setter TargetName="root" Property="Foreground" Value="{DynamicResource Accent}" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Resources>
+
+                <Grid>
+                    <ListView x:Name="profileListView" ScrollViewer.HorizontalScrollBarVisibility="Auto" ItemsSource="{Binding Profiles}" VirtualizingStackPanel.VirtualizationMode="Recycling" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" Foreground="#FF383838" FontSize="11" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                            <Border CornerRadius="0" SnapsToDevicePixels="True"  
+                              BorderThickness="0,-1,0,1"   
+                              BorderBrush="Transparent"   
+                              Background="{TemplateBinding Background}">
+                                                <Border Name="InnerBorder" CornerRadius="0" BorderThickness="0">
+                                                    <Grid>
+                                                        <Rectangle Name="UpperHighlight" Visibility="Collapsed" Fill="Transparent" />
+                                                        <GridViewRowPresenter Grid.RowSpan="0"   
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"   
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                                    </Grid>
+                                                </Border>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="GhostWhite" />
+                                                    <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                                                    <Setter Property="BorderBrush" Value="Black" />
+                                                    <Setter TargetName="UpperHighlight" Property="Visibility" Value="Visible" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter Property="Background" Value="{DynamicResource Accent}" />
+                                                    <Setter Property="Foreground" Value="White" />
+                                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                                    <Setter TargetName="UpperHighlight" Property="Visibility" Value="Visible" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="ToolTip">
+                                    <Setter.Value>
+                                        <TextBlock x:Name="FCToolTip" Text="{Binding FC}"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+
+                        </ListView.ItemContainerStyle>
+                        <ListView.ContextMenu>
+                            <ContextMenu Name="menu" StaysOpen="True">
+                                <MenuItem Name="deleteItem" Header="Remove" Click="deleteMenuItem_Click">
+                                </MenuItem>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="False" ColumnHeaderContainerStyle="{DynamicResource CustomHeaderStyle}">
+                                <GridViewColumn Width="80" DisplayMemberBinding="{Binding Mayor}">
+                                    <GridViewColumnHeader Content="MAYOR" Width="80" Background="White" FontSize="12" Foreground="#FF383838" Margin="-6,0,0,0"/>
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock TextAlignment="Left" Margin="-6,0,0,0"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Width="94" DisplayMemberBinding="{Binding Town}">
+                                    <GridViewColumnHeader Content="TOWN" Width="94" Background="White" FontSize="12" Foreground="#FF383838" Margin="-4,0,0,0"/>
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="Bajs" TextAlignment="Left" Margin="-400,0,0,0"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="newButton" Content="New Profile" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="172" Height="27" Click="newButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="editButton" Content="Edit Profile" HorizontalAlignment="Left" Margin="187,42,0,0" VerticalAlignment="Top" Width="99" Height="26" Click="editButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="useButton" Content="Use Profile" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="useButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="deleteButton" Content="Delete Profile" HorizontalAlignment="Left" Margin="187,83,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="deleteButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="themeTabItem" Header="Theme" FontSize="12" Margin="10,0,-10,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" GotFocus="themeTabItem_GotFocus" IsVisibleChanged="themeTabItem_IsVisibleChanged">
+                <TabItem.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Label x:Name="root" FontSize="16.67" Height="31" Foreground="Gray">
+                                        <ContentPresenter ContentSource="Header"  RecognizesAccessKey="True" />
+                                    </Label>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="true">
+                                            <Setter TargetName="root" Property="Foreground" Value="{DynamicResource Accent}" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabItem.Resources>
+                <Grid>
+                    <Label x:Name="accentLabel" Content="Accent:" HorizontalAlignment="Left" Margin="7,14,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
+                    <Button x:Name="greenButton" Content="" HorizontalAlignment="Left" Margin="7,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF008000" BorderBrush="{x:Null}" Click="greenButton_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="BorderThickness" Value="5.0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" BorderThickness="3" Background="#FF008000">
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="blueButton" Content="" HorizontalAlignment="Left" Margin="70,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF1BA1E2" BorderBrush="{x:Null}" Click="blueButton_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="BorderThickness" Value="3.0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" BorderThickness="2" Background="#FF1BA1E2">
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="pinkButton" Content="" HorizontalAlignment="Left" Margin="131,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFE671B8" BorderBrush="{x:Null}" Click="pinkButton_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="BorderThickness" Value="3.0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" BorderThickness="2" Background="#FFE671B8">
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="orangeButton" Content="" HorizontalAlignment="Left" Margin="192,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFF09609" BorderBrush="{x:Null}" Click="orangeButton_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="BorderThickness" Value="3.0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" BorderThickness="2" Background="#FFF09609">
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="redButton" Content="" HorizontalAlignment="Left" Margin="252,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFFF0000" BorderBrush="{x:Null}" Click="redButton_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="BorderThickness" Value="3.0"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" BorderThickness="2" Background="#FFFF0000">
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsDefaulted" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#202020" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="false">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF4F4F4F" />
+                                                    <Setter Property="Foreground" Value="#888888"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Label x:Name="TPCColourLabel" Content="TPC Colour:" HorizontalAlignment="Left" Margin="7,107,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
+                    <ComboBox x:Name="tpcComboBox" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Width="105" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}" SelectedIndex="1" DropDownClosed="tpcComboBox_DropDownClosed"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="13,206,0,0" VerticalAlignment="Top" Width="118" Height="32" Click="backButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+
+    </Grid>
+
+</metro:Window>

@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow x:Class="Animal_Xing_Planner.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Height="300" Width="368" ShowMinButton="False" ShowMaxRestoreButton="False" ShowIconOnTitleBar="False" ShowCloseButton="False" ShowTitleBar="False" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" Background="White">
+
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" x:Name="BlueAccent"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Red.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
+
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Animal Crossing NL Planner;component/Resources/bg.png" TileMode="Tile"/>
+        </Grid.Background>
+        <Label Margin="19,22,17,141" x:Name="titleLabel" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Animal Crossing NL &#xD;&#xA;&#x9;Planner" Foreground="Black" FontFamily="FinkHeavy">
+            <Label.BitmapEffect>
+                <OuterGlowBitmapEffect GlowSize="15" />
+            </Label.BitmapEffect>
+        </Label>
+
+        <Controls:ProgressRing HorizontalAlignment="Left" Margin="48,184,0,0" VerticalAlignment="Top" Height="61" Width="67" IsActive="True" IsLarge="False" Foreground="#CC00CB2E"/>
+    </Grid>
+
+</Controls:MetroWindow>
