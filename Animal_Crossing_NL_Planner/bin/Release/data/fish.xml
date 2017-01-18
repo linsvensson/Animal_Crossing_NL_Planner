@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfXmlFish xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <XmlFish>
+    <Name>Angelfish</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Angelfish</Info>
+    <Month>May-Oct</Month>
+	<Shadow>Small</Shadow>
+	<Value>3000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Arapaima</Name>
+	<Location>River</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Arapaima</Info>
+    <Month>Jul-Sep</Month>
+	<Shadow>Huge</Shadow>
+	<Value>10000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Arowana</Name>
+	<Location>River</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Arowana</Info>
+    <Month>Jun-Sep 15th</Month>
+	<Shadow>Large</Shadow>
+	<Value>10000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Barbel Steed</Name>
+	<Location>River</Location>
+	<SpawnChance>16</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Barbel_Steed</Info>
+    <Month>All</Month>
+	<Shadow>Medium</Shadow>
+	<Value>200</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Barred Knifejaw</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Barred_Knifejaw</Info>
+    <Month>Mar-Nov</Month>
+	<Shadow>Medium</Shadow>
+	<Value>5000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Bitterling</Name>
+	<Location>River</Location>
+	<SpawnChance>18</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Bitterling</Info>
+    <Month>Nov-Feb</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>900</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Black Bass</Name>
+	<Location>River</Location>
+	<SpawnChance>16</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Black_Bass</Info>
+    <Month>All</Month>
+	<Shadow>Large</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Blowfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Blowfish</Info>
+    <Month>Nov-Feb</Month>
+	<Shadow>Medium</Shadow>
+	<Value>125</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Blue Marlin</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Blue_Marlin</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge</Shadow>
+	<Value>10000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Bluegill</Name>
+	<Location>River</Location>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Bluegill</Info>
+    <Month>All</Month>
+	<Shadow>Small</Shadow>
+	<Value>120</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Butterflyfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Butterflyfish</Info>
+    <Month>Apr-Sep</Month>
+	<Shadow>Small</Shadow>
+	<Value>1000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Carp</Name>
+	<Location>River</Location>
+	<SpawnChance>15</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Carp</Info>
+    <Month>All</Month>
+	<Shadow>Large</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Catfish</Name>
+	<Location>Large Pond/River</Location>
+	<SpawnChance>16</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Catfish</Info>
+    <Month>May-Oct</Month>
+	<Shadow>Large</Shadow>
+	<Value>800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Char</Name>
+	<Location>Near Waterfall</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Char</Info>
+    <Month>Mar-Jun / Sep-Nov</Month>
+	<Shadow>Medium</Shadow>
+	<Value>3800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Cherry Salmon</Name>
+	<Location>River</Location>
+	<SpawnChance>11</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Cherry_Salmon</Info>
+    <Month>Mar-Jun / Sep-Nov</Month>
+	<Shadow>Medium</Shadow>
+	<Value>100</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Mitten Crab</Name>
+	<Location>River</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Mitten_Crab</Info>
+    <Month>Sep 15th-Nov</Month>
+	<Shadow>Small</Shadow>
+	<Value>2000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Clownfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Clownfish</Info>
+    <Month>Apr-Sep</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>650</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Crawfish</Name>
+	<Location>Pond</Location>
+	<SpawnChance>13</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Crawfish</Info>
+    <Month>Apr-Sep 15th</Month>
+	<Shadow>Small</Shadow>
+	<Value>200</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Coelacanth</Name>
+	<Location>Ocean during rain/snow</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Coelacanth</Info>
+    <Month>All</Month>
+	<Shadow>Huge</Shadow>
+	<Value>15000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Crucian Carp</Name>
+	<Location>River</Location>
+	<SpawnChance>22</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Crucian_Carp</Info>
+    <Month>All</Month>
+	<Shadow>Small</Shadow>
+	<Value>120</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Dab</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>14</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Dab</Info>
+    <Month>Oct-Apr</Month>
+	<Shadow>Medium</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Dace</Name>
+	<Location>River</Location>
+	<SpawnChance>16</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Dace</Info>
+    <Month>All</Month>
+	<Shadow>Medium</Shadow>
+	<Value>200</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Dorado</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Dorado</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>15000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Eel</Name>
+	<Location>River</Location>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Eel</Info>
+    <Month>Jun-Sep 15th</Month>
+	<Shadow>Thin</Shadow>
+	<Value>2000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Football Fish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Football_Fish</Info>
+    <Month>Nov-Mar</Month>
+	<Shadow>Large</Shadow>
+	<Value>2500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Freshwater Goby</Name>
+	<Location>River</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Freshwater_Goby</Info>
+    <Month>All</Month>
+	<Shadow>Small</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Frog</Name>
+	<Location>Pond</Location>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Frog</Info>
+    <Month>May-Aug</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>120</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Gar</Name>
+	<Location>Large Pond</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Gar</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge</Shadow>
+	<Value>6000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Giant Trevally</Name>
+	<Location>Island Ocean</Location>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Giant_Trevally</Info>
+    <Month>All</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>4500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Giant Snakehead</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Giant_Snakehead</Info>
+    <Month>Jun-Aug</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>5500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Goldfish</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Goldfish</Info>
+    <Month>All</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>1300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Guppy</Name>
+	<Location>River</Location>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Guppy</Info>
+    <Month>Apr-Nov</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>1300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Hammerhead Shark</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Hammerhead_Shark</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge with fin</Shadow>
+	<Value>8000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Horse Mackerel</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>30</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Horse_Mackerel</Info>
+    <Month>All</Month>
+	<Shadow>Small</Shadow>
+	<Value>150</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Killifish</Name>
+	<Location>Pond</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Killifish</Info>
+    <Month>Apr-Aug</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>King Salmon</Name>
+	<Location>Near River Mouth</Location>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/King_Salmon</Info>
+    <Month>Sep</Month>
+	<Shadow>Huge</Shadow>
+	<Value>1800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Koi</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Koi</Info>
+    <Month>All</Month>
+	<Shadow>Large</Shadow>
+	<Value>4000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Loach</Name>
+	<Location>River</Location>
+	<SpawnChance>21</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Loach</Info>
+    <Month>Mar-May</Month>
+	<Shadow>Small</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Moray Eel</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Moray_Eel</Info>
+    <Month>Aug-Oct</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>2000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Napoleonfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Napoleonfish</Info>
+    <Month>Jun-Aug</Month>
+	<Shadow>Huge</Shadow>
+	<Value>10000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Neon Tetra</Name>
+	<Location>River</Location>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Neon_Tetra</Info>
+    <Month>Apr-Nov</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Nibble Fish</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Nibble_Fish</Info>
+    <Month>May-Sep</Month>
+	<Shadow>Small</Shadow>
+	<Value>1500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Oarfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Oarfish</Info>
+    <Month>Dec-May</Month>
+	<Shadow>Huge</Shadow>
+	<Value>9000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Olive Flounder</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Olive_Flounder</Info>
+    <Month>All</Month>
+	<Shadow>Large</Shadow>
+	<Value>800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Ocean Sunfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Ocean_Sunfish</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge with fin</Shadow>
+	<Value>4000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Pale Chub</Name>
+	<Location>River</Location>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Pale_Chub</Info>
+    <Month>All</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>200</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Pike</Name>
+	<Location>River</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Pike</Info>
+    <Month>Sep-Dec</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>1800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Piranha</Name>
+	<Location>River</Location>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Piranha</Info>
+    <Month>Jun-Sep 15th</Month>
+	<Shadow>Small</Shadow>
+	<Value>2500</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Pond Smelt</Name>
+	<Location>River</Location>
+	<SpawnChance>39</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Pond_Smelt</Info>
+    <Month>Dec-Feb</Month>
+	<Shadow>Small</Shadow>
+	<Value>300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Popeyed Goldfish</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Popeyed_Goldfish</Info>
+    <Month>All</Month>
+	<Shadow>Small</Shadow>
+	<Value>1300</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Puffer Fish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Puffer_Fish</Info>
+    <Month>Aug-Sep</Month>
+	<Shadow>Medium</Shadow>
+	<Value>240</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Rainbow Trout</Name>
+	<Location>River</Location>
+	<SpawnChance>11</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Rainbow_Trout</Info>
+    <Month>March-Jun / Sep-Nov</Month>
+	<Shadow>Large</Shadow>
+	<Value>800</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Ray</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Ray</Info>
+    <Month>Jun-Nov</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>3000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Ribbon Eel</Name>
+	<Location>Island Ocean</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Ribbon_Eel</Info>
+    <Month>All</Month>
+	<Shadow>Thin</Shadow>
+	<Value>600</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Red Snapper</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Red_Snapper</Info>
+    <Month>All</Month>
+	<Shadow>Medium</Shadow>
+	<Value>3000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Saddled Bichir</Name>
+	<Location>River</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Saddled_Bichir</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Large</Shadow>
+	<Value>4000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Salmon</Name>
+	<Location>New River Mouth</Location>
+	<SpawnChance>40</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Salmon</Info>
+    <Month>Sep</Month>
+	<Shadow>Large</Shadow>
+	<Value>700</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Saw Shark</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Saw_Shark</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge with fin</Shadow>
+	<Value>12000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Sea Bass</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>25</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Sea_Bass</Info>
+    <Month>All</Month>
+	<Shadow>Very Large</Shadow>
+	<Value>200</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Sea Butterfly</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Sea_Butterfly</Info>
+    <Month>Dec-Feb</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>1000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Shark</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Shark</Info>
+    <Month>Jun-Sep</Month>
+	<Shadow>Huge with fin</Shadow>
+	<Value>15000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Seahorse</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>9</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Seahorse</Info>
+    <Month>Apr-Nov</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>1100</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Soft Shelled Turtle</Name>
+	<Location>River</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Soft_Shelled_Turtle</Info>
+    <Month>Aug-Sep</Month>
+	<Shadow>Medium</Shadow>
+	<Value>3750</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Squid</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>14</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Squid</Info>
+    <Month>Dec-Jul</Month>
+	<Shadow>Medium</Shadow>
+	<Value>400</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Stringfish</Name>
+	<Location>River</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Stringfish</Info>
+    <Month>Dec-Feb</Month>
+	<Shadow>Huge</Shadow>
+	<Value>15000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Surgeonfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Surgeonfish</Info>
+    <Month>Apr-Sep</Month>
+	<Shadow>Small</Shadow>
+	<Value>1000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Sweetfish</Name>
+	<Location>River</Location>
+	<SpawnChance>16</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Sweetfish</Info>
+    <Month>Jul-Sep 15th</Month>
+	<Shadow>Medium</Shadow>
+	<Value>900</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Tadpole</Name>
+	<Location>Pond</Location>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Tadpole</Info>
+    <Month>Mar-Jul</Month>
+	<Shadow>Tiny</Shadow>
+	<Value>100</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Tuna</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Tuna</Info>
+    <Month>Nov-Mar</Month>
+	<Shadow>Huge</Shadow>
+	<Value>7000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Whale Shark</Name>
+	<Location>Island Ocean</Location>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Whale_Shark</Info>
+    <Month>All</Month>
+	<Shadow>Huge with fin</Shadow>
+	<Value>13000</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Yellow Perch</Name>
+	<Location>River</Location>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Yellow_Perch</Info>
+    <Month>Oct-Mar</Month>
+	<Shadow>Medium</Shadow>
+	<Value>240</Value>
+  </XmlFish>
+  <XmlFish>
+    <Name>Zebra Turkeyfish</Name>
+	<Location>Ocean</Location>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Zebra_Turkeyfish</Info>
+    <Month>Apr-Nov</Month>
+	<Shadow>Medium</Shadow>
+	<Value>400</Value>
+  </XmlFish>
+</ArrayOfXmlFish>

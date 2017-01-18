@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfXmlProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XmlProfile>
+    <Mayor>Lin</Mayor>
+    <Town>Mist</Town>
+    <Fruit>apple</Fruit>
+    <FC>2208-5444-2127</FC>
+    <DC>0000-0000-0000</DC>
+    <TagLine>(=^-^=)/</TagLine>
+    <ProfileImagePath>file:///C:/Users/Lin/Desktop/tumblr_static_28l1op3zksboccccgcg8w4o00.gif</ProfileImagePath>
+    <Villagers>
+      <Villager>
+        <Name>Bob</Name>
+        <Personality>Lazy</Personality>
+        <Species>Cat</Species>
+        <Birthday>01-01</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Diana</Name>
+        <Personality>Snooty</Personality>
+        <Species>Deer</Species>
+        <Birthday>01-04</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Maple</Name>
+        <Personality>Normal</Personality>
+        <Species>Bear Cub</Species>
+        <Birthday>06-15</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Ruby</Name>
+        <Personality>Peppy</Personality>
+        <Species>Rabbit</Species>
+        <Birthday>12-25</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Marshal</Name>
+        <Personality>Smug</Personality>
+        <Species>Squirrel</Species>
+        <Birthday>09-29</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Genji</Name>
+        <Personality>Jock</Personality>
+        <Species>Rabbit</Species>
+        <Birthday>01-21</Birthday>
+      </Villager>
+      <Villager>
+        <Name>Mira</Name>
+        <Personality>Uchi</Personality>
+        <Species>Rabbit</Species>
+        <Birthday>07-06</Birthday>
+      </Villager>
+    </Villagers>
+    <Collectibles>
+      <Collectible>
+        <Checked>true</Checked>
+        <Name>Clam</Name>
+        <Month>Sep-Apr</Month>
+        <Location>Town</Location>
+        <Value>300</Value>
+        <Info />
+        <Type>Seafood</Type>
+        <Text>More Info</Text>
+      </Collectible>
+      <Collectible>
+        <Checked>true</Checked>
+        <Name>Ear Shell</Name>
+        <Month>All</Month>
+        <Location>All</Location>
+        <Value>300</Value>
+        <Info />
+        <Type>Seafood</Type>
+        <Text>More Info</Text>
+      </Collectible>
+      <Collectible>
+        <Checked>true</Checked>
+        <Name>Angelfish</Name>
+        <Month>May-Oct</Month>
+        <Location>River</Location>
+        <Value>3000</Value>
+        <Info />
+        <ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/40/Angelfish_HHD_Icon.png/revision/latest?cb=20161105192032</ImageURL>
+        <Type>Fish</Type>
+        <Text>More Info</Text>
+      </Collectible>
+      <Collectible>
+        <Checked>true</Checked>
+        <Name>Abalone</Name>
+        <Month>All</Month>
+        <Location>All</Location>
+        <Value>400</Value>
+        <Info />
+        <ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/e4/Abalone_HHD_Icon.png/revision/latest?cb=20161105191652</ImageURL>
+        <Type>Seafood</Type>
+        <Text>More Info</Text>
+      </Collectible>
+      <Collectible>
+        <Checked>true</Checked>
+        <Name>Agrias Butterfly</Name>
+        <Month>Jun-Sep</Month>
+        <Location>On Flowers</Location>
+        <Value>3000</Value>
+        <Info />
+        <ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/9/9a/Agrias_Butterfly_HHD_Icon.png/revision/latest?cb=20161105191722</ImageURL>
+        <Type>Bug</Type>
+        <Shadow>n/a</Shadow>
+        <Text>More Info</Text>
+      </Collectible>
+    </Collectibles>
+    <Notices>
+      <Notice>
+        <Name>Diana</Name>
+        <Place />
+        <Description />
+        <Date>2017-01-14</Date>
+        <Item>Perfect Apple</Item>
+        <StopTime />
+        <Type>Delivery</Type>
+        <Info>Perfect Apple</Info>
+      </Notice>
+      <Notice>
+        <Name>Valentine's Day</Name>
+        <Place />
+        <Description />
+        <Date>2017-02-14</Date>
+        <Item />
+        <StopTime>12:00:00</StopTime>
+        <Type>Event</Type>
+        <Info>2017-02-14</Info>
+      </Notice>
+    </Notices>
+  </XmlProfile>
+</ArrayOfXmlProfile>

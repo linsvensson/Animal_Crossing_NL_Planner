@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfXmlBug xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <XmlBug>
+    <Name>Agrias Butterfly</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>3</SpawnChance>
+    <Location>On Flowers</Location>
+	<Info>http://animalcrossing.wikia.com/wiki/Agrias_Butterfly</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/9/9a/Agrias_Butterfly_HHD_Icon.png/revision/latest?cb=20161105191722</ImageURL>
+	<Value>3000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Ant</Name>
+    <Month>All</Month>
+	<SpawnChance>15</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Ant</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/1/12/Ant_HHD_Icon.png/revision/latest?cb=20161105192047</ImageURL>
+    <Location>Rotten food</Location>
+	<Value>80</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Bagworm</Name>
+    <Month>Oct-Dec / Jan-Feb</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Bagworm</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/02/Bagworm_HHD_Icon.png/revision/latest?cb=20161105192557</ImageURL>
+    <Location>Shake Trees</Location>
+	<Value>300</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Banded Dragonfly</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Banded_Dragonfly</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/6e/Banded_Dragonfly_HHD_Icon.png/revision/latest?cb=20161105193443</ImageURL>
+    <Location>Near ponds/River</Location>
+	<Value>4500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Bee</Name>
+    <Month>All</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Bee</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/ae/Bee_HHD_Icon.png/revision/latest?cb=20161105193523</ImageURL>
+    <Location>Shake Trees</Location>
+	<Value>2500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Bell Cricket</Name>
+    <Month>Sep-Oct</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Bell_Cricket</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/b2/Bell_Cricket_HHD_Icon.png/revision/latest?cb=20161105193526</ImageURL>
+    <Location>Ground</Location>
+	<Value>430</Value>
+  </XmlBug><XmlBug>
+    <Name>Birdwing Butterfly</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Birdwing_Butterfly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/ba/Birdwing_HHD_Icon.png/revision/latest?cb=20161105193546</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>4000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Brown Cicada</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>15</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Brown_Cicada</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/51/Brown_Cicada_HHD_Icon.png/revision/latest?cb=20161105193811</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Common Butterfly</Name>
+    <Month>Apr-Sep</Month>
+	<SpawnChance>25</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Common_Butterfly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/5/58/Common_Butterfly_HHD_Icon.png/revision/latest?cb=20161105194447</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>90</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Centipede</Name>
+    <Month>Jun-Feb</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Centipede</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9d/Centipede_HHD_Icon.png/revision/latest?cb=20161105194330</ImageURL>
+    <Location>Hit rocks</Location>
+	<Value>300</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Cicada Shell</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>19</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Cicada_Shell</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/7/7e/Cicada_Shell_HHD_Icon.png/revision/latest?cb=20161105194347</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>100</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Cricket</Name>
+    <Month>Sep-Nov</Month>
+	<SpawnChance>15</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Cricket</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/0a/Cricket_HHD_Icon.png/revision/latest?cb=20161105194652</ImageURL>
+    <Location>Ground</Location>
+	<Value>130</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Cyclommatus Stag</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Cyclommatus_Stag</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/2/2d/Cyclommatus_HHD_Icon.png/revision/latest?cb=20161105194712</ImageURL>
+    <Location>Palm Trunks/Island</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Darner Dragonfly</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>11</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Darner_Dragonfly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/6/6e/Darner_Dragonfly_HHD_Icon.png/revision/latest?cb=20161105194729</ImageURL>
+    <Location>Flying</Location>
+	<Value>200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Diving Beetle</Name>
+    <Month>May-Sep</Month>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Diving_Beetle</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/64/Diving_Beetle_HHD_Icon.png/revision/latest?cb=20161105194810</ImageURL>
+    <Location>River/Ponds</Location>
+	<Value>800</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Dung Beetle</Name>
+    <Month>Dec-Feb</Month>
+	<SpawnChance>9</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Dung_Beetle</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/6/60/Dung_Beetle_HHD_Icon.png/revision/latest?cb=20161105194840</ImageURL>
+    <Location>Snowballs</Location>
+	<Value>800</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Emperor Butterfly</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>11</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Emperor_Butterfly</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/8/8d/Emperor_Butterfly_HHD_Icon.png/revision/latest?cb=20161105195220</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>2500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Evening Cicada</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>17</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Evening_Cicada</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/f/f8/Evening_Cicada_HHD_Icon.png/revision/latest?cb=20161105195225</ImageURL>
+    <Location>Trees</Location>
+	<Value>550</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Firefly</Name>
+    <Month>Jun</Month>
+	<SpawnChance>23</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Firefly</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/c/cd/Firefly_HHD_Icon.png/revision/latest?cb=20161105195328</ImageURL>
+    <Location>Fresh Water</Location>
+	<Value>300</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Flea</Name>
+    <Month>Mar-Nov</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Flea</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/1f/Flea_HHD_Icon.png/revision/latest?cb=20161105195347</ImageURL>
+    <Location>On Villager</Location>
+	<Value>70</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Fly</Name>
+    <Month>All</Month>
+	<SpawnChance>33</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Fly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/8/85/Fly_HHD_Icon.png/revision/latest?cb=20161105195402</ImageURL>
+    <Location>Rotten turnips/Garbage</Location>
+	<Value>60</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Fruit Beetle</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>23</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Fruit_Beetle</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d6/Fruit_Beetle_HHD_Icon.png/revision/latest?cb=20161105195437</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>100</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Giant Cicada</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Giant_Cicada</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d4/Giant_Cicada_HHD_Icon.png/revision/latest?cb=20161105195622</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Giant Stag</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Giant_Stag</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/49/Giant_Stag_HHD_Icon.png/revision/latest?cb=20161105195628</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>10000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Golden Stag</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Golden_Stag</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/1/1b/Golden_Stag_HHD_Icon.png/revision/latest?cb=20161105195713</ImageURL>
+    <Location>Palm Trunks</Location>
+	<Value>12000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Grasshopper</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>9</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Grasshopper</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/4/47/Grasshopper_HHD_Icon.png/revision/latest?cb=20161105195832</ImageURL>
+    <Location>Ground</Location>
+	<Value>160</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Goliath Beetle</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Goliath_Beetle</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/0e/Goliath_Beetle_HHD_Icon.png/revision/latest?cb=20161105195727</ImageURL>
+    <Location>Palm Trunks</Location>
+	<Value>6000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Horned Atlas</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Horned_Atlas</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/8/86/Horned_Atlas_HHD_Icon.png/revision/latest?cb=20161105200820</ImageURL>
+    <Location>Palm Trunks</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Horned Dynastid</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Horned_Dynastid</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/7/7c/Horned_Dynastid_HHD_Icon.png/revision/latest?cb=20161105200822</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>1350</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Horned Elephant</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Horned_Elephant</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5c/Horned_Elephant_HHD_Icon.png/revision/latest?cb=20161105200824</ImageURL>
+    <Location>Palm Trunks</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Horned Hercules</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Horned_Hercules</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/07/Horned_Hercules_HHD_Icon.png/revision/latest?cb=20161105200826</ImageURL>
+    <Location>Palm Trunks</Location>
+	<Value>12000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Hermit Crab</Name>
+    <Month>All</Month>
+	<SpawnChance>14</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Hermit_Crab</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/1/11/Hermit_Crab_HHD_Icon.png/revision/latest?cb=20161105200739</ImageURL>
+    <Location>Island Beach</Location>
+	<Value>1000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Honeybee</Name>
+    <Month>Mar-Jul</Month>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Honeybee</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/dc/Honeybee_HHD_Icon.png/revision/latest?cb=20161105200818</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>100</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>House Centipede</Name>
+    <Month>Aug-Oct</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/House_Centipede</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/b1/House_Centipede_HHD_Icon.png/revision/latest?cb=20161105200842</ImageURL>
+    <Location>Hit Rocks</Location>
+	<Value>250</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Jewel Beetle</Name>
+    <Month>Aug-Oct</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Jewel_Beetle</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/eb/Jewel_Beetle_HHD_Icon.png/revision/latest?cb=20161105201036</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>2400</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Ladybug</Name>
+    <Month>Mar-Jun / Oct</Month>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Ladybug</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/7/72/Ladybug_HHD_Icon.png/revision/latest?cb=20161105201243</ImageURL>
+    <Location>On Flowers</Location>
+	<Value>200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Lantern Fly</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Lantern_Fly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/2/2a/Lantern_Fly_HHD_Icon.png/revision/latest?cb=20161105201245</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>1800</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Longhorn Beetle</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>7</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Longhorn_Beetle</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/8/8e/Longhorn_Beetle_HHD_Icon.png/revision/latest?cb=20161105201537</ImageURL>
+    <Location>Tree Stumps</Location>
+	<Value>260</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Long Locust</Name>
+    <Month>May-Nov</Month>
+	<SpawnChance>9</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Long_Locust</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/05/Long_Locust_HHD_Icon.png/revision/latest?cb=20161105201533</ImageURL>
+    <Location>Ground</Location>
+	<Value>200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Mantis</Name>
+    <Month>Apr-Nov</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Mantis</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/1e/Mantis_HHD_Icon.png/revision/latest?cb=20161105201758</ImageURL>
+    <Location>On Flowers</Location>
+	<Value>430</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Migratory Locust</Name>
+    <Month>Apr-Nov</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Migratory_Locust</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/c/c0/Migratory_Locust_HHD_Icon.png/revision/latest?cb=20161105201959</ImageURL>
+    <Location>Ground</Location>
+	<Value>600</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Miyama Stag</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Miyama_Stag</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/0f/Miyama_Stag_HHD_Icon.png/revision/latest?cb=20161105202124</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>1000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Mole Cricket</Name>
+    <Month>Nov-May</Month>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Mole_Cricket</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/4/4a/Mole_Cricket_HHD_Icon.png/revision/latest?cb=20161105202337</ImageURL>
+    <Location>Underground(listen for sound and dig)</Location>
+	<Value>280</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Monarch Butterfly</Name>
+    <Month>Jul-Nov</Month>
+	<SpawnChance>12</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Monarch_Butterfly</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d4/Monarch_Butterfly_HHD_Icon.png/revision/latest?cb=20161105202341</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>140</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Mosquito</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Mosquito</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/63/Mosquito_HHD_Icon.png/revision/latest?cb=20161105202403</ImageURL>
+    <Location>Flying</Location>
+	<Value>130</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Moth</Name>
+    <Month>May-Sep</Month>
+	<SpawnChance>17</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Moth</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/f/f9/Moth_HHD_Icon.png/revision/latest?cb=20161105202407</ImageURL>
+    <Location>Outdoor Lights</Location>
+	<Value>60</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Oak Silk Moth</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Oak_Silk_Moth</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/0/01/Oak_Silk_Moth_HHD_Icon.png/revision/latest?cb=20161105202656</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>1200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Orchid Mantis</Name>
+    <Month>Apr-Jul</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Orchid_Mantis</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/6/64/Orchid_Mantis_HHD_Icon.png/revision/latest?cb=20161105202812</ImageURL>
+    <Location>White Flowers</Location>
+	<Value>2400</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Peacock Butterfly</Name>
+    <Month>Mar-Sep</Month>
+	<SpawnChance>10</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Peacock_Butterfly</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/0/03/Peacock_Butterfly_HHD_Icon.png/revision/latest?cb=20161105203001</ImageURL>
+    <Location>Above blue, purple or black Flowers</Location>
+	<Value>220</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Petaltail Dragonfly</Name>
+    <Month>Aug-Oct</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Petaltail_Dragonfly</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/bb/Petaltail_Dragonfly_HHD_Icon.png/revision/latest?cb=20161105203032</ImageURL>
+    <Location>Flying</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Pill Bug</Name>
+    <Month>All</Month>
+	<SpawnChance>13</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Pill_Bug</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/8/89/Pill_Bug_HHD_Icon.png/revision/latest?cb=20161105203103</ImageURL>
+    <Location>Hit Rocks</Location>
+	<Value>250</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Pondskater</Name>
+    <Month>May-Sep</Month>
+	<SpawnChance>6</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Pondskater</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/f/f3/Pondskater_HHD_Icon.png/revision/latest?cb=20161105203305</ImageURL>
+    <Location>River/Ponds</Location>
+	<Value>130</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Rainbow Stag</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Rainbow_Stag</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/6/60/Rainbow_Stag_HHD_Icon.png/revision/latest?cb=20161105203517</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>10000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Raja Brooke Butterfly</Name>
+    <Month>May-Sep</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Raja_Brooke_Butterfly</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/8/8a/Raja_Brooke_HHD_Icon.png/revision/latest?cb=20161105203524</ImageURL>
+    <Location>Flying by River/Ponds</Location>
+	<Value>2500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Red Dragonfly</Name>
+    <Month>Sep-Oct</Month>
+	<SpawnChance>19</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Red_Dragonfly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/5/5f/Red_Dragonfly_HHD_Icon.png/revision/latest?cb=20161105203635</ImageURL>
+    <Location>Flying</Location>
+	<Value>80</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Rice Grasshopper</Name>
+    <Month>Aug-Oct</Month>
+	<SpawnChance>N/A</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Rice_Grasshopper</Info>
+	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/3c/Rice_Grasshopper_HHD_Icon.png/revision/latest?cb=20161105203817</ImageURL>
+    <Location>Ground</Location>
+	<Value>400</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Robust Cicada</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>13</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Robust_Cicada</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5f/Robust_Cicada_HHD_Icon.png/revision/latest?cb=20161105203909</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>300</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Saw Stag</Name>
+    <Month>Jul-Aug</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Saw_Stag</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9a/Saw_Stag_HHD_Icon.png/revision/latest?cb=20161105204122</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>2000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Scarab Beetle</Name>
+    <Month>Jun-Sep</Month>
+	<SpawnChance>2</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Scarab_Beetle</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/2/20/Scarab_Beetle_HHD_Icon.png/revision/latest?cb=20161105204133</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>6000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Scorpion</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Scorpion</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/9/98/Scorpion_HHD_Icon.png/revision/latest?cb=20161105204213</ImageURL>
+    <Location>Ground</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Snail</Name>
+    <Month>Apr-Sep</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Snail</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/2/27/Snail_HHD_Icon.png/revision/latest?cb=20161105204610</ImageURL>
+    <Location>On Bushes(during rain)</Location>
+	<Value>250</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Stinkbug</Name>
+    <Month>Apr-Oct</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Stinkbug</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/a8/Stink_Bug_HHD_Icon.png/revision/latest?cb=20161105204937</ImageURL>
+    <Location>Tree Trunks</Location>
+	<Value>120</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Spider</Name>
+    <Month>Mar-Oct</Month>
+	<SpawnChance>3</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Spider</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9e/Spider_HHD_Icon.png/revision/latest?cb=20161105204758</ImageURL>
+    <Location>Shake Trees</Location>
+	<Value>300</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Tarantula</Name>
+    <Month>Jun-Aug</Month>
+	<SpawnChance>1</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Tarantula</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/e/eb/Tarantula_HHD_Icon.png/revision/latest?cb=20161105205206</ImageURL>
+    <Location>Ground</Location>
+	<Value>8000</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Tiger Beetle</Name>
+    <Month>Mar-Oct</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Tiger_Beetle</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/7/73/Tiger_Beetle_HHD_Icon.png/revision/latest?cb=20161105205246</ImageURL>
+    <Location>Ground</Location>
+	<Value>1500</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Tiger Butterfly</Name>
+    <Month>Mar-Sep</Month>
+	<SpawnChance>8</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Tiger_Butterfly</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9b/Tiger_Butterfly_HHD_Icon.png/revision/latest?cb=20161105205248</ImageURL>
+    <Location>Above red and pink Flowers</Location>
+	<Value>160</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Violin Beetle</Name>
+    <Month>Jun / Sep-Nov</Month>
+	<SpawnChance>5</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Violin_Beetle</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/f/f9/Violin_Beetle_HHD_Icon.png/revision/latest?cb=20161105205501</ImageURL>
+    <Location>Tree Stumps</Location>
+	<Value>260</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Walker Cicada</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>9</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Walker_Cicada</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d7/Walker_Cicada_HHD_Icon.png/revision/latest?cb=20161105205518</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>400</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Walking Leaf</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>4</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Walking_Leaf</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/a/ab/Walking_Leaf_HHD_Icon.png/revision/latest?cb=20161105205520</ImageURL>
+    <Location>Ground(appears as furniture sprite)</Location>
+	<Value>600</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Walking Stick</Name>
+    <Month>Jul-Sep</Month>
+	<SpawnChance>7</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Walking_Stick</Info>
+	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/1/13/Walkingstick_HHD_Icon.png/revision/latest?cb=20161105205522</ImageURL>
+    <Location>Tree Trunk</Location>
+	<Value>600</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Wharf Roach</Name>
+    <Month>All</Month>
+	<SpawnChance>21</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Wharf_Roach</Info>
+	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/7/7d/Wharf_Roach_HHD_Icon.png/revision/latest?cb=20161105205618</ImageURL>
+    <Location>Beach</Location>
+	<Value>200</Value>
+  </XmlBug>
+  <XmlBug>
+    <Name>Yellow Butterfly</Name>
+    <Month>Mar-Jun / Sep</Month>
+	<SpawnChance>21</SpawnChance>
+	<Info>http://animalcrossing.wikia.com/wiki/Yellow_Butterfly</Info>
+	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/d/de/Yellow_Butterfly_HHD_Icon.png/revision/latest?cb=20161105205712</ImageURL>
+    <Location>Above Flowers</Location>
+	<Value>90</Value>
+  </XmlBug>
+</ArrayOfXmlBug>

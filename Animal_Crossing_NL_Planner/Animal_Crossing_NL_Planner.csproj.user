@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\Users\Carolin\Documents\Release\|https://dl.dropboxusercontent.com/u/41918503/ACNL/|https://www.dropbox.com/sh/bo4ziy3znqkq1gu/BTeyjU2cM_/|https://www.dropbox.com/s/mj4cry4r8cyomh7/DSC_5711.jpg/|https://www.dropbox.com/sh/1gj0no89lky9coq/nWJhhThECz/</PublishUrlHistory>
+    <InstallUrlHistory>https://dl.dropboxusercontent.com/u/41918503/ACNL/|https://www.dropbox.com/sh/bo4ziy3znqkq1gu/BTeyjU2cM_/|https://www.dropbox.com/sh/1gj0no89lky9coq/nWJhhThECz/|https://dl.dropboxusercontent.com/u/41918503/|https://dl.dropboxusercontent.com/u/41918503/Release/</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>https://dl.dropboxusercontent.com/u/41918503/ACNL/|http://localhost/Animal Crossing NL Planner/|https://dl.dropboxusercontent.com/u/41918503/Release/|https://dl.dropboxusercontent.com/u/41918503/Release/Animal%2520Crossing%2520NL%2520Planner.exe/</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>
+    </ReferencePath>
+  </PropertyGroup>
+</Project>
