@@ -1,4 +1,3 @@
 # Animal_Crossing_NL_Planner
-A planner app for the N3DS Game Animal Crossing: New Leaf
-Helps the user remember meetings and various events in the game.
-Checklist for caught bugs/fish/seafood.
+This is the PC version of the Animal Crossing: NL Planner app.  
+It can be used with the Nintendo 3DS game Animal Crossing: New Leaf, mainly to keep track of meetings with villagers, what fish you caught, creating a TPC, etc.
