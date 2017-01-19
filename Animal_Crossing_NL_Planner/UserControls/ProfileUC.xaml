@@ -183,7 +183,7 @@
         <Label x:Name="townLabel" Content="Town Name:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="15,41,0,0" VerticalAlignment="Top" Width="90" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
         <Label x:Name="fcLabel" Content="Friend Code:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="15,72,0,0" VerticalAlignment="Top" Width="90" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
         <Label x:Name="dcLabel" Content="Dream Code:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="15,103,0,0" VerticalAlignment="Top" Width="90" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
-        <Label x:Name="messageLabel" Content="Tagline:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="15,135,0,0" VerticalAlignment="Top" Width="90" ToolTip="&gt;Optional&lt; Will appear on your TPC" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
+        <Label x:Name="messageLabel" Content="Tagline:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="15,135,0,0" VerticalAlignment="Top" Width="90" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
         <Label x:Name="fruitLabel" Content="Fruit:" Foreground="{DynamicResource Accent}" HorizontalAlignment="Left" Margin="255,167,0,0" VerticalAlignment="Top" Width="43" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
         <ComboBox x:Name="fruitComboBox" HorizontalAlignment="Left" Margin="303,161,0,0" VerticalAlignment="Top" Width="52" Height="36" TabIndex="8">
             <ComboBoxItem x:Name="appleCBI" >
@@ -214,15 +214,6 @@
             </TextBox.Style>
         </TextBox>
         <ListView x:Name="villagerListView" SelectedItem="{Binding SelectedVillager}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" VirtualizingStackPanel.VirtualizationMode="Recycling" Height="134" Margin="156,211,0,0" VerticalAlignment="Top" Width="219" Foreground="#FF383838" FontSize="11" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" BorderThickness="0">
-            <ListView.Style>
-                <Style TargetType="ListView">
-                    <Setter Property="ToolTip">
-                        <Setter.Value>
-                            <TextBlock x:Name="taglineToolTip" Text="A town always has at least 5 villagers"/>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListView.Style>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Template">

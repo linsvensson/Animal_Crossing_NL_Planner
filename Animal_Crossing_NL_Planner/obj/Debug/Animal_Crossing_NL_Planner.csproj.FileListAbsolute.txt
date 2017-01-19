@@ -95,4 +95,3 @@ C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\D
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Crossing_NL_Planner.csproj.GenerateResource.Cache
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.exe
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.pdb
-C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Crossing_NL_Planner.csprojResolveAssemblyReference.cache

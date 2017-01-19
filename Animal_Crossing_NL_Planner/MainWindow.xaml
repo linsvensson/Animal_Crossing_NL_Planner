@@ -10,7 +10,18 @@
 
     <!--#region Resources-->
     <metro:Window.Resources>
+        
+        <Style TargetType="{x:Type Hyperlink}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Foreground" Value="#FF07034B" />
+            <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
 
+        </Style>
+        
         <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
             <Setter Property="FontFamily" Value="/resources/fonts/#SecondaRoundW00-Heavy" />
             <Setter Property="OverridesDefaultStyle" Value="true" />

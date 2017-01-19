@@ -121,8 +121,10 @@
                     <GroupBox x:Name="soundGroupBox" Header="Sound" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" Width="286" Height="64" />
                     <Slider x:Name="soundSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Height="26" SmallChange="1" Maximum="1" ValueChanged="soundSlider_ValueChanged" Margin="16,28,0,0" RenderTransformOrigin="0.919,0.97"/>
                     <Label x:Name="soundLabel" Content="Sound" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="11,0,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
-                    <Button x:Name="saveTPCButton" Content="Save TPC" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="saveTPCButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <Button x:Name="villagerButton" Height="25" MinWidth="25" Margin="55,122,208,0" Click="villagerButton_Click" ToolTip="Toggle villager visibility on TPC" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" SnapsToDevicePixels="True" Width="25" >
+                    <Button x:Name="saveTPCButton" Content="Save TPC" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="saveTPCButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12">
+                    
+                    </Button>
+                    <Button x:Name="villagerButton" Height="25" MinWidth="25" Margin="58,123,215,1" Click="villagerButton_Click" ToolTip="Toggle villager visibility on TPC" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" SnapsToDevicePixels="True" Width="25" >
                         <DynamicResource ResourceKey="Visible"/>
                         <Button.Style>
                             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -134,21 +136,12 @@
                                             </Border>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Opacity" Value="0.8" />
+                                                    <Setter Property="Opacity" Value="0.6" />
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
-
                                     </Setter.Value>
                                 </Setter>
-                                <Style.Triggers>
-                                    <!--<Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="White"/>
-                                    </Trigger>-->
-                                    <!--<Trigger Property="IsFocused" Value="True">
-                                        <Setter Property="Background" Value="Transparent"/>
-                                    </Trigger>-->
-                                </Style.Triggers>
                             </Style>
                         </Button.Style>
                     </Button>
