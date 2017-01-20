@@ -1,4 +1,4 @@
-﻿<UserControl x:Name="helpUC" x:Class="Animal_Xing_Planner.HelpUC"
+﻿<UserControl x:Name="helpUC" x:Class="Animal_Xing_Planner.HelpUc"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

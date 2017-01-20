@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Animal_Xing_Planner
@@ -17,24 +16,25 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for MessageBox.xaml
     /// </summary>
-    public partial class MessageBox : Elysium.Controls.Window
+    public partial class MessageBox
     {
+        private MessageBoxButton _buttons = MessageBoxButton.OK;
+        private MessageBoxIconType _msgIcon = MessageBoxIconType.None;
+
+        public bool IsShowing;
+
         public MessageBox()
         {
             InitializeComponent();
         }
 
-        private MessageBoxButton _Buttons = MessageBoxButton.OK;
-        private MessageBoxResult _Result = MessageBoxResult.None;
-        private MessageBoxIconType _MsgIcon = MessageBoxIconType.None;
-
-        #region internal Properties
+        #region Internal Properties
         internal MessageBoxButton Buttons
         {
-            get { return _Buttons; }
+            get { return _buttons; }
             set
             {
-                _Buttons = value;
+                _buttons = value;
                 // Set all Buttons Visibility Properties
                 SetButtonsVisibility();
             }
@@ -42,26 +42,22 @@ namespace Animal_Xing_Planner
 
         internal MessageBoxIconType MsgIcon
         {
-            get { return _MsgIcon; }
+            get { return _msgIcon; }
             set
             {
-                _MsgIcon = value;
+                _msgIcon = value;
                 // Set all Buttons Visibility Properties
                 SetIconVisibility();
             }
         }
 
-        internal MessageBoxResult Result
-        {
-            get { return _Result; }
-            set { _Result = value; }
-        }
+        internal MessageBoxResult Result { get; set; } = MessageBoxResult.None;
         #endregion
 
         #region SetIcon Method
         internal void SetIconVisibility()
         {
-            switch (_MsgIcon)
+            switch (_msgIcon)
             {
                 case MessageBoxIconType.None:
                     iconImage = null;
@@ -78,6 +74,8 @@ namespace Animal_Xing_Planner
                 case MessageBoxIconType.Warning:
                     iconImage.Source = Globals.GetBitmapImage("warning", "messagebox/");
                     break;
+                default:
+                    return;
             }
         }
         #endregion
@@ -85,7 +83,7 @@ namespace Animal_Xing_Planner
         #region SetButtonsVisibility Method
         internal void SetButtonsVisibility()
         {
-            switch (_Buttons)
+            switch (_buttons)
             {
                 case MessageBoxButton.OK:
                     btnOk.Visibility = Visibility.Visible;
@@ -111,6 +109,8 @@ namespace Animal_Xing_Planner
                     btnYes.Visibility = Visibility.Visible;
                     btnNo.Visibility = Visibility.Visible;
                     break;
+                default:
+                    return;
             }
         }
         #endregion
@@ -119,33 +119,25 @@ namespace Animal_Xing_Planner
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
             Result = MessageBoxResult.Yes;
-            this.Hide();
+            Hide();
         }
 
         private void btnNo_Click(object sender, RoutedEventArgs e)
         {
             Result = MessageBoxResult.No;
-            this.Hide();
+            Hide();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Result = MessageBoxResult.Cancel;
-            this.Hide();
+            Hide();
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             Result = MessageBoxResult.OK;
-            this.Hide();
-        }
-        #endregion
-
-        #region Windows Drag Event
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            // if (e.ButtonState == MouseButtonState.Pressed)
-            // this.DragMove();
+            Hide();
         }
         #endregion
 
@@ -155,11 +147,9 @@ namespace Animal_Xing_Planner
             // If only an OK button is displayed, 
             // allow the user to just move away from this dialog box
             if (Buttons == MessageBoxButton.OK)
-                this.Hide();
+                Hide();
         }
         #endregion
-
-        public bool IsShowing;
 
         public MessageBoxResult Show(string message)
         {
@@ -175,13 +165,11 @@ namespace Animal_Xing_Planner
         {
             try
             {
-                MessageBoxResult result = MessageBoxResult.None;
-
                 if (owner != null || Owner == null)
                     Owner = owner;
 
                 if (Globals.CurrentAccent != null)
-                    title.Foreground = Globals.CurrentAccent as SolidColorBrush;
+                    title.Foreground = Globals.CurrentAccent;
                 title.Text = caption;
                 tbMessage.Text = message;
                 Buttons = buttons;
@@ -190,11 +178,14 @@ namespace Animal_Xing_Planner
                 IsShowing = true;
 
                 ShowDialog();
-                result = Result;
+                var result = Result;
 
                 return result;
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
             return MessageBoxResult.Cancel;
         }
 
@@ -205,7 +196,5 @@ namespace Animal_Xing_Planner
 
             IsShowing = false;
         }
-
-
     }
 }

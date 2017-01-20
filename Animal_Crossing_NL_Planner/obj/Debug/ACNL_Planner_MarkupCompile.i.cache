@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\
 Animal_Xing_Planner
 none
 false
 DEBUG;TRACE
-C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\App.xaml
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\App.xaml
 7-475248778
 1-976912696
 26-1775650399
-21-1220236437
+21-674873965
 UserControls\HelpUC.xaml;UserControls\ProfileUC.xaml;UserControls\NoticeUC.xaml;Windows\CustomWindow.xaml;MainWindow.xaml;Windows\MessageBox.xaml;Windows\SettingsWindow.xaml;
 resources\splash.png
-True
+False
 

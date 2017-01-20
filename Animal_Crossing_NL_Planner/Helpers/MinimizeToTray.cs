@@ -12,7 +12,7 @@ namespace Animal_Xing_Planner
     /// </summary>
     public static class MinimizeToTray
     {
-        private static MinimizeToTrayInstance trayInstance = new MinimizeToTrayInstance();
+        private static readonly MinimizeToTrayInstance TrayInstance = new MinimizeToTrayInstance();
 
         /// <summary>
         /// Enables "minimize to tray" behavior for the specified Window.
@@ -20,7 +20,7 @@ namespace Animal_Xing_Planner
         /// <param name="window">Window to enable the behavior for.</param>
         public static void Enable(Elysium.Controls.Window window)
         {
-            trayInstance.Enable(window);
+            TrayInstance.Enable(window);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Animal_Xing_Planner
         /// <param name="window">Window to enable the behavior for.</param>
         public static void Disable(Elysium.Controls.Window window)
         {
-                trayInstance.Disable();
+                TrayInstance.Disable();
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Animal_Xing_Planner
             {
                 Debug.Assert(window != null, "window parameter is null.");
                 _window = window;
-                _window.StateChanged += new EventHandler(HandleStateChanged);
+                _window.StateChanged += HandleStateChanged;
             }
 
             /// <summary>
@@ -73,13 +73,6 @@ namespace Animal_Xing_Planner
             }
 
             /// <summary>
-            /// Initializes a new instance of the MinimizeToTrayInstance class.
-            /// </summary>
-            public MinimizeToTrayInstance()
-            {
-            }
-
-            /// <summary>
             /// Handles the Window's StateChanged event.
             /// </summary>
             /// <param name="sender">Event source.</param>
@@ -89,10 +82,12 @@ namespace Animal_Xing_Planner
                 if (_notifyIcon == null)
                 {
                     // Initialize NotifyIcon instance "on demand"
-                    _notifyIcon = new NotifyIcon();
-                    _notifyIcon.Icon = Icon.ExtractAssociatedIcon(Assembly.GetEntryAssembly().Location);
-                    _notifyIcon.MouseClick += new MouseEventHandler(HandleNotifyIconOrBalloonClicked);
-                    _notifyIcon.BalloonTipClicked += new EventHandler(HandleNotifyIconOrBalloonClicked);
+                    _notifyIcon = new NotifyIcon
+                    {
+                        Icon = Icon.ExtractAssociatedIcon(Assembly.GetEntryAssembly().Location)
+                    };
+                    _notifyIcon.MouseClick += HandleNotifyIconOrBalloonClicked;
+                    _notifyIcon.BalloonTipClicked += HandleNotifyIconOrBalloonClicked;
                 }
                 // Update copy of Window Title in case it has changed
                 _notifyIcon.Text = _window.Title;
@@ -101,12 +96,11 @@ namespace Animal_Xing_Planner
                 var minimized = (_window.WindowState == WindowState.Minimized);
                 _window.ShowInTaskbar = !minimized;
                 _notifyIcon.Visible = minimized;
-                if (minimized && !_balloonShown)
-                {
-                    // If this is the first time minimizing to the tray, show the user what happened
-                    _notifyIcon.ShowBalloonTip(1000, null, _window.Title, ToolTipIcon.None);
-                    _balloonShown = true;
-                }
+                if (!minimized || _balloonShown) return;
+
+                // If this is the first time minimizing to the tray, show the user what happened
+                _notifyIcon.ShowBalloonTip(1000, null, _window.Title, ToolTipIcon.None);
+                _balloonShown = true;
             }
 
             /// <summary>

@@ -12,11 +12,11 @@ namespace Animal_Xing_Planner
     /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
-        private ProfileUC owner;
+        private readonly ProfileUc _owner;
 
-        public ViewModel(ProfileUC owner)
+        public ViewModel(ProfileUc owner)
         {
-            this.owner = owner;
+            _owner = owner;
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -43,52 +43,44 @@ namespace Animal_Xing_Planner
 
         public IList<Villager> Villagers
         {
-            get;
-            private set;
-        }
+            get; }
 
         public CustomObservableCollection<string> Names
         {
-            get;
-            private set;
-        }
+            get; }
 
         public CustomObservableCollection<string> Species
         {
-            get;
-            private set;
-        }
+            get; }
 
         public CustomObservableCollection<string> Personalities
         {
-            get;
-            private set;
-        }
+            get; }
 
-        private string selectedName;
+        private string _selectedName;
         public string SelectedName
         {
             get
             {
-                return selectedName;
+                return _selectedName;
             }
             set
             {
-                selectedName = value;
+                _selectedName = value;
                 OnPropertyChanged("Names");
             }
         }
 
-        private string selectedSpecies;
+        private string _selectedSpecies;
         public string SelectedSpecies
         {
             get
             {
-                return selectedSpecies;
+                return _selectedSpecies;
             }
             set
             {
-                selectedSpecies = value;
+                _selectedSpecies = value;
 
                 // Loop through all villagers
                 for (int i = 0; i < Villagers.Count; i++)
@@ -100,21 +92,21 @@ namespace Animal_Xing_Planner
                 }
 
                 Sort(Names);
-                owner.nameComboBox.IsEnabled = true;
+                _owner.nameComboBox.IsEnabled = true;
                 OnPropertyChanged("Species");
             }
         }
 
-        private string selectedPersonality;
+        private string _selectedPersonality;
         public string SelectedPersonality
         {
             get
             {
-                return selectedPersonality;
+                return _selectedPersonality;
             }
             set
             {
-                selectedPersonality = value;
+                _selectedPersonality = value;
 
                 Names.Clear();
                 Species.Clear();
@@ -130,9 +122,9 @@ namespace Animal_Xing_Planner
 
                 Sort(Species);
 
-                owner.speciesComboBox.IsEnabled = true;
-                owner.nameComboBox.IsEnabled = false;
-                owner.nameComboBox.Text = string.Empty;
+                _owner.speciesComboBox.IsEnabled = true;
+                _owner.nameComboBox.IsEnabled = false;
+                _owner.nameComboBox.Text = string.Empty;
                 SelectedName = string.Empty;
 
                 OnPropertyChanged("Personality");
@@ -144,18 +136,18 @@ namespace Animal_Xing_Planner
         /// </summary>
         public void Reset()
         {
-            if (owner == null)
+            if (_owner == null)
                 return;
 
-            owner.typeComboBox.Text = string.Empty;
+            _owner.typeComboBox.Text = string.Empty;
             SelectedPersonality = string.Empty;
 
-            owner.speciesComboBox.IsEnabled = false;
-            owner.speciesComboBox.Text = string.Empty;
+            _owner.speciesComboBox.IsEnabled = false;
+            _owner.speciesComboBox.Text = string.Empty;
             SelectedSpecies = string.Empty;
 
-            owner.nameComboBox.IsEnabled = false;
-            owner.nameComboBox.Text = string.Empty;
+            _owner.nameComboBox.IsEnabled = false;
+            _owner.nameComboBox.Text = string.Empty;
             SelectedName = string.Empty;
         }
 
@@ -163,7 +155,7 @@ namespace Animal_Xing_Planner
         /// Sort a CustomObservableCollection
         /// </summary>
         /// <param name="list">List to sort</param>
-        private void Sort(CustomObservableCollection<string> list)
+        private static void Sort(CustomObservableCollection<string> list)
         {
             ICollectionView dataView = CollectionViewSource.GetDefaultView(list);
             dataView.SortDescriptions.Clear();
@@ -186,7 +178,6 @@ namespace Animal_Xing_Planner
     public class CustomObservableCollection<T> : ObservableCollection<T>
     {
         public CustomObservableCollection()
-          : base()
         {
         }
 

@@ -18,7 +18,7 @@ namespace Animal_Xing_Planner
         public string Location { get; set; }
         public string Value { get; set; }
         public XmlUri Info { get; set; }
-        public string ImageURL { get; set; }
+        public string ImageUrl { get; set; }
         public string Type { get; set; }
         public string Shadow { get; set; }
 
@@ -29,7 +29,7 @@ namespace Animal_Xing_Planner
         {
         }
 
-        public Collectible(string name, string month, string location, string value, string shadow, XmlUri info, string imgURL, bool hasGot, string type)
+        public Collectible(string name, string month, string location, string value, string shadow, XmlUri info, string imgUrl, bool hasGot, string type)
         {
             Name = name;
             Month = month;
@@ -37,7 +37,7 @@ namespace Animal_Xing_Planner
             Value = value;
             Shadow = shadow;
             Info = info;
-            ImageURL = imgURL;
+            ImageUrl = imgUrl;
             Checked = hasGot;
             Type = type;
 

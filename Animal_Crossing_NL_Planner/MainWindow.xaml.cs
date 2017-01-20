@@ -17,40 +17,18 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Elysium.Controls.Window
+    public partial class MainWindow
     {
         #region Variables
-        System.Windows.Forms.Timer fDeltaTime = new System.Windows.Forms.Timer();
-        public bool bDoneLoading;
+        private SortAdorner _curAdorner;
+        readonly System.Windows.Forms.Timer _fDeltaTime = new System.Windows.Forms.Timer();
+
+        public bool BDoneLoading;
         public SoundPlayer SoundPlayer;
         public Dictionary<string, FrameworkElement> Controls;
-
-        private List<Collectible> collectibles;
-        public List<Collectible> Collectibles
-        {
-            get
-            {
-                return collectibles;
-            }
-
-            set
-            {
-                collectibles = value;
-            }
-        }
-        private List<Profile> profiles;
-        public List<Profile> Profiles
-        {
-            get
-            {
-                return profiles;
-            }
-
-            set
-            {
-                profiles = value;
-            }
-        }
+        public List<Collectible> Collectibles { get; set; }
+        public List<Profile> Profiles { get; set; }
+        public GridViewColumnHeader CurSortCol { get; set; }
         #endregion
 
         #region MainWindow
@@ -66,37 +44,27 @@ namespace Animal_Xing_Planner
 
             // Very quick and dirty - but it does the job
             if (Properties.Settings.Default.Maximised)
-            {
                 WindowState = WindowState.Maximized;
-            }
         }
 
         private void Main_Loaded(object sender, RoutedEventArgs e)
         {
             Globals.Initialize(this);
+            DataContext = this;
 
+            // Villager TPC setup
             Controls = new Dictionary<string, FrameworkElement>();
-            Controls.Add("v0Image", v0Image);
-            Controls.Add("v1Image", v1Image);
-            Controls.Add("v2Image", v2Image);
-            Controls.Add("v3Image", v3Image);
-            Controls.Add("v4Image", v4Image);
-            Controls.Add("v5Image", v5Image);
-            Controls.Add("v6Image", v6Image);
-            Controls.Add("v7Image", v7Image);
-            Controls.Add("v8Image", v8Image);
-            Controls.Add("v9Image", v9Image);
+            for (int i = 0; i < 10; i++)
+                Controls.Add("v" + i + "Image", FindName("v" + i + "Image") as Image);
 
             if (!Properties.Settings.Default.VillagerToggle)
                 for (int j = 0; j < Main.Controls.Count; j++)
                     Main.Controls["v" + j + "Image"].Visibility = Visibility.Hidden;
 
-            DataContext = this;
-
             // Every 10 seconds
-            fDeltaTime.Interval = (1000 * 10);
-            fDeltaTime.Tick += new EventHandler(Update);
-            fDeltaTime.Start();
+            _fDeltaTime.Interval = (1000 * 10);
+            _fDeltaTime.Tick += Update;
+            _fDeltaTime.Start();
 
             // Get username
             if (!string.IsNullOrEmpty(UserPrincipal.Current.DisplayName))
@@ -108,10 +76,10 @@ namespace Animal_Xing_Planner
             string day = DateTime.Now.DayOfWeek.ToString();
             char[] dayArr = day.ToCharArray();
             dateTextLabel.Content = DateTime.Now.ToString("dd / MM");
-            dayTextLabel.Content = dayArr[0].ToString() + dayArr[1].ToString();
+            dayTextLabel.Content = dayArr[0] + dayArr[1].ToString();
 
             // Timer for clock
-            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 timeTextLabel.Content = DateTime.Now.ToString("HH:mm");
             }, Dispatcher);
@@ -122,12 +90,11 @@ namespace Animal_Xing_Planner
             Collectibles = new List<Collectible>();
             Collectibles = XmlHandler.LoadCollectibles();
             var dpd = DependencyPropertyDescriptor.FromProperty(ItemsControl.ItemsSourceProperty, typeof(DataGrid));
-            if (dpd != null)
-                dpd.AddValueChanged(checklistDataGrid, ChecklistItemSourceChanged);
+            dpd?.AddValueChanged(checklistDataGrid, ChecklistItemSourceChanged);
             Globals.LoadChecklist();
 
             // We're done loading, set the current profile
-            bDoneLoading = true;
+            BDoneLoading = true;
             if (Globals.UserSettings.CurrentProfile != null)
                 Globals.SetProfile(Globals.UserSettings.CurrentProfile);
 
@@ -136,23 +103,23 @@ namespace Animal_Xing_Planner
 
         private void ChecklistItemSourceChanged(object sender, EventArgs e)
         {
-            if (Main.checklistDataGrid.ItemsSource != null)
-            {
-                ICollectionView collection = CollectionViewSource.GetDefaultView(Main.checklistDataGrid.ItemsSource);
-                if (collection.GroupDescriptions.Count == 0)
-                    collection.GroupDescriptions.Add(new PropertyGroupDescription("Type"));
-            }
+            if (Main.checklistDataGrid.ItemsSource == null) return;
 
+            ICollectionView collection = CollectionViewSource.GetDefaultView(Main.checklistDataGrid.ItemsSource);
+            if (collection.GroupDescriptions.Count == 0)
+                collection.GroupDescriptions.Add(new PropertyGroupDescription("Type"));
         }
 
         private void Main_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            // If noticeListView loses focus, reset its selected item
             if (noticeListView.SelectedItem != null)
                 noticeListView.SelectedItem = null;
         }
 
         private void Main_DragEnter(object sender, DragEventArgs e)
         {
+            // Used for drag/dropping image
             e.Effects = DragDropEffects.Copy;
             e.Handled = true;
         }
@@ -161,13 +128,13 @@ namespace Animal_Xing_Planner
         {
             //Globals.Logger.Init("Shutting down...");
             Globals.ShutDown = true;
-
-            Globals.SaveProfiles();
-            
+            Globals.SaveProfiles();          
             Globals.UnsubscribeNotices();
 
             SoundPlayer.Dispose();
-            Properties.Settings.Default.SoundOn = Globals.bSound;
+
+            // Save settings
+            Properties.Settings.Default.SoundOn = Globals.BSound;
             Properties.Settings.Default.Accent = Globals.CurrentAccent.Color.ToString();
             Properties.Settings.Default.MinimizeToTray = Globals.MinToTray;
 
@@ -193,6 +160,7 @@ namespace Animal_Xing_Planner
 
             Globals.TakeOutGarbage();
 
+            // Close all windows
             Globals.MsgBox.Close();
             Globals.CWindow.Close();
             Globals.SettingsWindow.Close();
@@ -204,12 +172,10 @@ namespace Animal_Xing_Planner
         #region Update
         public void Update(object sender, EventArgs e)
         {
-            if (noticeListView.Items.Count != 0)
-                for (int i = 0; i < noticeListView.Items.Count; i++)
-                {
-                    Notice reminder = noticeListView.Items[i] as Notice;
-                    reminder.Update();
-                }
+            if (noticeListView.Items.Count == 0) return;
+
+            foreach (Notice t in noticeListView.Items)
+                t.Update();
         }
         #endregion
 
@@ -217,13 +183,19 @@ namespace Animal_Xing_Planner
         private void newprofileButton_Click(object sender, RoutedEventArgs e)
         {
             try { Globals.CWindow.Show(); }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void settingsButton_Click(object sender, RoutedEventArgs e)
         {
             try { Globals.SettingsWindow.Show(this); }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -235,7 +207,10 @@ namespace Animal_Xing_Planner
                 else
                     Globals.MsgBox.Show(this, "No profile set, create one in settings", "Info", MessageBoxButton.OK, MessageBoxIconType.Info);
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void removeButton_Click(object sender, RoutedEventArgs e)
@@ -261,7 +236,10 @@ namespace Animal_Xing_Planner
         private void helpButton_Click(object sender, RoutedEventArgs e)
         {
             try { Globals.CWindow.ShowHelp(this); }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void itemExp_Expanded(object sender, RoutedEventArgs e)
@@ -269,18 +247,17 @@ namespace Animal_Xing_Planner
             try
             {
                 // Get the Selected Row Expander Object
-                Expander ExpandCollapseObj = (Expander)sender;
+                Expander expandCollapseObj = (Expander)sender;
 
-                // Check the Expander Object is null or Not
-                if (ExpandCollapseObj != null)
-                {
-                    // Return the Contains which specified element
-                    DataGridRow DgrSelectedRowObj = DataGridRow.GetRowContainingElement(ExpandCollapseObj);
+                // Check the Expander Object is null or not
+                if (expandCollapseObj == null) return;
 
-                    // Check the DataGridRow Object is Null or Not
-                    if (DgrSelectedRowObj != null)
-                        DgrSelectedRowObj.DetailsVisibility = Visibility.Visible;
-                }
+                // Return the Contains which specified element
+                DataGridRow dgrSelectedRowObj = DataGridRow.GetRowContainingElement(expandCollapseObj);
+
+                // Check the DataGridRow Object is Null or Not
+                if (dgrSelectedRowObj != null)
+                    dgrSelectedRowObj.DetailsVisibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
@@ -294,17 +271,17 @@ namespace Animal_Xing_Planner
             try
             {
                 // Get the Selected Row Expander Object
-                Expander ExpandCollapseObj = (Expander)sender;
+                Expander expandCollapseObj = (Expander)sender;
 
-                // Check the Expander Object is null or Not
-                if (ExpandCollapseObj != null)
+                // Check the Expander Object is null or not
+                if (expandCollapseObj != null)
                 {
                     // Return the Contains which specified element
-                    DataGridRow DgrSelectedRowObj = DataGridRow.GetRowContainingElement(ExpandCollapseObj);
+                    DataGridRow dgrSelectedRowObj = DataGridRow.GetRowContainingElement(expandCollapseObj);
 
-                    // Check the DataGridRow Object is Null or Not
-                    if (DgrSelectedRowObj != null)
-                        DgrSelectedRowObj.DetailsVisibility = Visibility.Collapsed;
+                    // Check the DataGridRow Object is Null or not
+                    if (dgrSelectedRowObj != null)
+                        dgrSelectedRowObj.DetailsVisibility = Visibility.Collapsed;
                 }
             }
             catch (Exception ex)
@@ -316,44 +293,26 @@ namespace Animal_Xing_Planner
     #endregion
 
         #region Custom Functions
-    void OnItemToolTipOpening(object sender, ToolTipEventArgs e)
-        {
-            TextBlock item = sender as TextBlock;
-            if (item != null)
-            {
-                // Determine right edge of text with respect to the TreeView.
-                // If it is within TreeView bounds, then suppress the tooltip.
-                Point itemScreenPosition = item.PointToScreen(new Point(0, 0));
-                Point itemTreePosition = noticeListView.PointFromScreen(itemScreenPosition);
-                double itemExtent = itemTreePosition.X + item.ActualWidth;
-                if (itemExtent < 20)
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private GridViewColumnHeader _CurSortCol = null;
-        private SortAdorner _CurAdorner = null;
-
         private void SortClick(object sender, RoutedEventArgs e)
         {
             GridViewColumnHeader column = sender as GridViewColumnHeader;
+            if (column == null) return;
+
             string field = column.Tag as string;
 
-            if (_CurSortCol != null)
+            if (CurSortCol != null)
             {
-                AdornerLayer.GetAdornerLayer(_CurSortCol).Remove(_CurAdorner);
+                AdornerLayer.GetAdornerLayer(CurSortCol).Remove(_curAdorner);
                 noticeListView.Items.SortDescriptions.Clear();
             }
 
             ListSortDirection newDir = ListSortDirection.Ascending;
-            if (_CurSortCol == column && _CurAdorner.Direction == newDir)
+            if (Equals(CurSortCol, column) && Equals(_curAdorner.Direction, newDir))
                 newDir = ListSortDirection.Descending;
 
-            _CurSortCol = column;
-            _CurAdorner = new SortAdorner(_CurSortCol, newDir);
-            AdornerLayer.GetAdornerLayer(_CurSortCol).Add(_CurAdorner);
+            CurSortCol = column;
+            _curAdorner = new SortAdorner(CurSortCol, newDir);
+            AdornerLayer.GetAdornerLayer(CurSortCol).Add(_curAdorner);
             noticeListView.Items.SortDescriptions.Add(new SortDescription(field, newDir));
         }
 
@@ -361,7 +320,7 @@ namespace Animal_Xing_Planner
         {
             Notice notice = sender as Notice;
 
-            if (Globals.bSound)
+            if (Globals.BSound)
                 SoundPlayer.Play();
 
             if (WindowState == WindowState.Minimized)
@@ -372,46 +331,49 @@ namespace Animal_Xing_Planner
 
             Globals.RemoveNotice(notice);
 
+            if (notice == null) return;
+
             string timeString = notice.StopTime;
 
-            if (notice.Type == NoticeType.Event)
+            switch (notice.Type)
             {
-                if (Globals.MsgBox.Show(this, notice.Description, notice.Type.ToString() + " - " + notice.Name, MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
-                    if (Globals.bSound)
-                        SoundPlayer.Stop();
-            }
-
-            else if (notice.Type == NoticeType.Delivery)
-            {
-                if (!string.IsNullOrEmpty(notice.StopTime))
-                {
-                    if (Globals.MsgBox.Show(this, "You've got a delivery of " + notice.Item + " to " + notice.Name + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
-                        if (Globals.bSound)
+                case NoticeType.Event:
+                    if (Globals.MsgBox.Show(this, notice.Description, notice.Type.ToString() + " - " + notice.Name, MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                        if (Globals.BSound)
                             SoundPlayer.Stop();
-                }
+                    break;
+                case NoticeType.Delivery:
+                    if (!string.IsNullOrEmpty(notice.StopTime))
+                    {
+                        if (Globals.MsgBox.Show(this, "You've got a delivery of " + notice.Item + " to " + notice.Name + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                            if (Globals.BSound)
+                                SoundPlayer.Stop();
+                    }
 
-                else
+                    else
                     if (Globals.MsgBox.Show(this, "You've got a delivery of " + notice.Item + " to " + notice.Name + " for " + timeString + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
-                    if (Globals.bSound)
-                        SoundPlayer.Stop();
+                        if (Globals.BSound)
+                            SoundPlayer.Stop();
+                    break;
+                case NoticeType.Meeting:
+                    if (Globals.MsgBox.Show(this, "You've got a meeting with " + notice.Name + " right now at " + notice.Place.ToLower() + "!", notice.Type.ToString(), MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                        if (Globals.BSound)
+                            SoundPlayer.Stop();
+                    break;
+                case NoticeType.Birthday:
+                    break;
+                default:
+                    return;
             }
-
-            else if (notice.Type == NoticeType.Meeting)
-            {
-                if (Globals.MsgBox.Show(this, "You've got a meeting with " + notice.Name + " right now at " + notice.Place.ToLower() + "!", notice.Type.ToString(), MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
-                    if (Globals.bSound)
-                        SoundPlayer.Stop();
-            }
-
-
         }
 
         private void DeleteNotice()
         {
-            if (noticeListView.Items.Count != 0)
-                if (Globals.MsgBox.Show(this, "Are you sure you want to delete this notice?", "Confirmation", MessageBoxButton.YesNo, MessageBoxIconType.Info) == MessageBoxResult.Yes)
-                    if (noticeListView.SelectedItem != null)
-                        Globals.RemoveNotice(noticeListView.SelectedItem as Notice);
+            if (noticeListView.Items.Count == 0) return;
+
+            if (Globals.MsgBox.Show(this, "Are you sure you want to delete this notice?", "Confirmation", MessageBoxButton.YesNo, MessageBoxIconType.Info) == MessageBoxResult.Yes)
+                if (noticeListView.SelectedItem != null)
+                    Globals.RemoveNotice(noticeListView.SelectedItem as Notice);
         }
 
         private void DG_Hyperlink_Click(object sender, RoutedEventArgs e)
@@ -420,7 +382,9 @@ namespace Animal_Xing_Planner
             {
                 Collectible item = checklistDataGrid.SelectedItem as Collectible;
                 Hyperlink link = e.OriginalSource as Hyperlink;
-                link.NavigateUri = item.Info;
+                if (link == null) return;
+
+                if (item != null) link.NavigateUri = item.Info;
                 Process.Start(link.NavigateUri.AbsoluteUri);
             }
 
@@ -446,35 +410,34 @@ namespace Animal_Xing_Planner
         private void DataGridCell_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DataGridCell cell = sender as DataGridCell;
-            if (cell != null && !cell.IsEditing && !cell.IsReadOnly)
+
+            if (cell == null || cell.IsEditing || cell.IsReadOnly) return;
+            if (!cell.IsFocused)
             {
-                if (!cell.IsFocused)
+                cell.Focus();
+            }
+
+            DataGrid dataGrid = FindVisualParent<DataGrid>(cell);
+            if (dataGrid == null) return;
+
+            if (dataGrid.SelectionUnit != DataGridSelectionUnit.FullRow)
+            {
+                if (!cell.IsSelected)
                 {
-                    cell.Focus();
+                    cell.IsSelected = true;
                 }
-                DataGrid dataGrid = FindVisualParent<DataGrid>(cell);
-                if (dataGrid != null)
+            }
+            else
+            {
+                DataGridRow row = FindVisualParent<DataGridRow>(cell);
+                if (row != null && !row.IsSelected)
                 {
-                    if (dataGrid.SelectionUnit != DataGridSelectionUnit.FullRow)
-                    {
-                        if (!cell.IsSelected)
-                        {
-                            cell.IsSelected = true;
-                        }
-                    }
-                    else
-                    {
-                        DataGridRow row = FindVisualParent<DataGridRow>(cell);
-                        if (row != null && !row.IsSelected)
-                        {
-                            row.IsSelected = true;
-                        }
-                    }
+                    row.IsSelected = true;
                 }
             }
         }
 
-        static T FindVisualParent<T>(UIElement element) where T : UIElement
+        private static T FindVisualParent<T>(UIElement element) where T : UIElement
         {
             UIElement parent = element;
             while (parent != null)

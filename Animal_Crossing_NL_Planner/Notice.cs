@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Animal_Xing_Planner
@@ -73,24 +72,18 @@ namespace Animal_Xing_Planner
         {
             try
             {
-                if (!string.IsNullOrEmpty(StopTime))
-                {
-                    if (Globals.Main.noticeListView.Items.Count != 0)
-                    {
-                        string timeNow = DateTime.Now.ToString("HH:mm:00");
-                        TimeSpan stop = TimeSpan.Parse(StopTime);
-                        TimeSpan now = TimeSpan.Parse(timeNow);
+                if (string.IsNullOrEmpty(StopTime)) return;
+                if (Globals.Main.noticeListView.Items.Count == 0) return;
 
-                        if (Date == DateTime.Now.ToShortDateString())
-                        {
-                            if (stop.CompareTo(now) <= 0)
-                            {
-                                NoticeEventArgs popUp = new NoticeEventArgs(Description);
-                                NoticeUpdate(this, popUp);
-                            }
-                        }
-                    }
-                }
+                string timeNow = DateTime.Now.ToString("HH:mm:00");
+                TimeSpan stop = TimeSpan.Parse(StopTime);
+                TimeSpan now = TimeSpan.Parse(timeNow);
+
+                if (Date != DateTime.Now.ToShortDateString()) return;
+                if (stop.CompareTo(now) > 0) return;
+
+                NoticeEventArgs popUp = new NoticeEventArgs(Description);
+                NoticeUpdate(this, popUp);
             }
             catch (Exception ex) { Globals.Logger.Error("Error updating notice: " + ex.Message); }
         }
@@ -120,6 +113,8 @@ namespace Animal_Xing_Planner
                         break;
                     case NoticeType.Birthday:
                         Icon = Globals.GetBitmapImage("cake", "notice/");
+                        break;
+                    case NoticeType.Meeting:
                         break;
                     default:
                         Icon = Globals.GetBitmapImage("coffee", "notice/");

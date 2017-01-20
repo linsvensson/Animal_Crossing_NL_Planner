@@ -8,7 +8,7 @@ namespace Animal_Xing_Planner
 {
     public class Log : ILogger
     {
-        private Logger _logger;
+        private readonly Logger _logger;
 
         public Log()
         {
@@ -64,7 +64,7 @@ namespace Animal_Xing_Planner
             FileTarget fileTarget = new FileTarget();
             config.AddTarget("file", fileTarget);
 
-            string dir = @"log";
+            const string dir = @"log";
 
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);

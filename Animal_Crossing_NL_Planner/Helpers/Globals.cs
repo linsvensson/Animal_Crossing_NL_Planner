@@ -20,7 +20,7 @@ namespace Animal_Xing_Planner
         public static CustomWindow CWindow;
         public static SettingsWindow SettingsWindow;
 
-        public static bool bSound;
+        public static bool BSound;
         public static string TimeSetup;
 
         public static Log Logger;
@@ -31,9 +31,8 @@ namespace Animal_Xing_Planner
         public static bool ShutDown = false;
 
         public static ImageSourceConverter ImgConvert = new ImageSourceConverter();
-        public static UserSettings UserSettings = null;
+        public static UserSettings UserSettings;
 
-        private static ResourceDictionary resource = new ResourceDictionary();
         public static void Initialize(MainWindow main)
         {
             Main = main;
@@ -65,7 +64,7 @@ namespace Animal_Xing_Planner
             else
                 ChangeTheme("Green", Theme.Light);
 
-            SetTPCColour(Properties.Settings.Default.TPC);
+            SetTpcColour(Properties.Settings.Default.TPC);
 
             MinToTray = Properties.Settings.Default.MinimizeToTray;
             if (MinToTray)
@@ -77,11 +76,8 @@ namespace Animal_Xing_Planner
                 SettingsWindow.trayCheckBox.IsChecked = false;
 
             // Sound related stuff
-            bSound = Properties.Settings.Default.SoundOn;
-            if (bSound)
-                SettingsWindow.soundSlider.Value = 1;
-            else
-                SettingsWindow.soundSlider.Value = 0;
+            BSound = Properties.Settings.Default.SoundOn;
+            SettingsWindow.soundSlider.Value = BSound ? 1 : 0;
 
             Main.SoundPlayer = new SoundPlayer();
             SetCustomSound(Properties.Settings.Default.CustomSound);
@@ -98,7 +94,10 @@ namespace Animal_Xing_Planner
                 GC.WaitForPendingFinalizers();
             }
 
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         public static void ToggleVillagers()
@@ -138,11 +137,20 @@ namespace Animal_Xing_Planner
                         for (int j = 0; j < Main.Profiles[i].Notices.Count; j++)
                             Main.Profiles[i].Notices[j].Unsubscribe();
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
+        /// <summary>
+        /// Sets a custom sound to be played when the notice goes off
+        /// </summary>
+        /// <param name="path">Path to the sound</param>
+        /// <returns>Returns true if set paths exists</returns>
         public static bool SetCustomSound(string path)
         {
+            // Set the custom sound if it exists
             if (!string.IsNullOrEmpty(path))
             {
                 if (File.Exists(path))
@@ -156,6 +164,7 @@ namespace Animal_Xing_Planner
                     return true;
                 }
             }
+            // If not, set it back to default
             Properties.Settings.Default.CustomSound = string.Empty;
             Properties.Settings.Default.Save();
             Main.SoundPlayer.Stream = Properties.Resources.reminder;
@@ -168,18 +177,15 @@ namespace Animal_Xing_Planner
         {
             Main.noticeListView.Items.Clear();
 
-            if (UserSettings.CurrentProfile == null)
-                return;
-            if (UserSettings.CurrentProfile.Notices == null)
+            if (UserSettings.CurrentProfile?.Notices == null)
                 return;
             if (UserSettings.CurrentProfile.Notices.Count == 0)
                 return;
 
             List<Notice> noticesToRemove = new List<Notice>();
 
-            for (int i = 0; i < UserSettings.CurrentProfile.Notices.Count; i++)
+            foreach (Notice notice in UserSettings.CurrentProfile.Notices)
             {
-                Notice notice = UserSettings.CurrentProfile.Notices[i];
                 try
                 {
                     if (!string.IsNullOrEmpty(notice.StopTime))
@@ -200,33 +206,45 @@ namespace Animal_Xing_Planner
                             {
                                 noticesToRemove.Add(notice);
 
-                                if (notice.Type == NoticeType.Meeting)
-                                    MsgBox.Show(null, "You've missed a meeting with " + notice.Name + " at " + notice.Place + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
-
-                                else if (notice.Type == NoticeType.Delivery)
-                                    MsgBox.Show(null, "You've missed a delivery of " + notice.Item + " to " + notice.Name + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
-
-                                else if (notice.Type == NoticeType.Event)
-                                    MsgBox.Show(null, "You've missed the event " + notice.Name + ", " + notice.Description + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                switch (notice.Type)
+                                {
+                                    case NoticeType.Meeting:
+                                        MsgBox.Show(null, "You've missed a meeting with " + notice.Name + " at " + notice.Place + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                        break;
+                                    case NoticeType.Delivery:
+                                        MsgBox.Show(null, "You've missed a delivery of " + notice.Item + " to " + notice.Name + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                        break;
+                                    case NoticeType.Event:
+                                        MsgBox.Show(null, "You've missed the event " + notice.Name + ", " + notice.Description + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                        break;
+                                    case NoticeType.Birthday:
+                                        break;
+                                }
                             }
 
                             else
                             {
                                 Main.noticeListView.Items.Add(notice);
-                                notice.Updated += new Notice.NoticeHandler(Main.notice_Updated);
+                                notice.Updated += Main.notice_Updated;
                             }
                         }
 
                         else if (DateTime.Parse(noticeDateNow) < DateTime.Parse(dateNow))
                         {
-                            if (notice.Type == NoticeType.Meeting)
-                                MsgBox.Show(null, "You've missed a meeting with " + notice.Name + " at " + notice.Place + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
-
-                            else if (notice.Type == NoticeType.Delivery)
-                                MsgBox.Show(null, "You've missed a delivery of " + notice.Item + " to " + notice.Name + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
-
-                            else if (notice.Type == NoticeType.Event)
-                                MsgBox.Show(null, "You've missed the event " + notice.Name + ", " + notice.Description + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                            switch (notice.Type)
+                            {
+                                case NoticeType.Meeting:
+                                    MsgBox.Show(null, "You've missed a meeting with " + notice.Name + " at " + notice.Place + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                    break;
+                                case NoticeType.Delivery:
+                                    MsgBox.Show(null, "You've missed a delivery of " + notice.Item + " to " + notice.Name + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                    break;
+                                case NoticeType.Event:
+                                    MsgBox.Show(null, "You've missed the event " + notice.Name + ", " + notice.Description + " for " + notice.StopTime + "!", "Missed notice", MessageBoxButton.OK, MessageBoxIconType.Info);
+                                    break;
+                                case NoticeType.Birthday:
+                                    break;
+                            }
 
                             noticesToRemove.Add(notice);
                         }
@@ -234,7 +252,7 @@ namespace Animal_Xing_Planner
                         else
                         {
                             Main.noticeListView.Items.Add(notice);
-                            notice.Updated += new Notice.NoticeHandler(Main.notice_Updated);
+                            notice.Updated += Main.notice_Updated;
                         }
                     }
 
@@ -249,11 +267,9 @@ namespace Animal_Xing_Planner
                 }
             }
 
-            if (noticesToRemove.Count != 0)
-            {
-                for (int i = 0; i < noticesToRemove.Count; i++)
-                    RemoveNotice(noticesToRemove[i]);
-            }
+            if (noticesToRemove.Count == 0) return;
+            for (int i = 0; i < noticesToRemove.Count; i++)
+                RemoveNotice(noticesToRemove[i]);
         }
 
         /// <summary>
@@ -261,9 +277,7 @@ namespace Animal_Xing_Planner
         /// </summary>
         public static void BirthdayCheck()
         {
-            if (UserSettings.CurrentProfile == null)
-                return;
-            if (UserSettings.CurrentProfile.Villagers == null)
+            if (UserSettings.CurrentProfile?.Villagers == null)
                 return;
 
             string dateNow = DateTime.Now.ToShortDateString();
@@ -272,22 +286,22 @@ namespace Animal_Xing_Planner
             {
                 string bday = DateTime.Now.Year + "-" + UserSettings.CurrentProfile.Villagers[i].Birthday;
 
-                if (bday == dateNow)
+                if (bday != dateNow) continue;
+                if (MsgBox.Show(null, "" + UserSettings.CurrentProfile.Villagers[i].Name + " has a birthday today!\nDo you want to add this to your notice board for later?", "Birthday!", MessageBoxButton.YesNo, MessageBoxIconType.Info) == MessageBoxResult.Yes)
                 {
-                    if (MsgBox.Show(null, "" + UserSettings.CurrentProfile.Villagers[i].Name + " has a birthday today!\nDo you want to add this to your notice board for later?", "Birthday!", MessageBoxButton.YesNo, MessageBoxIconType.Info) == MessageBoxResult.Yes)
+                    Notice notice = new Notice
                     {
-                        Notice notice = new Notice();
-                        notice.Type = NoticeType.Birthday;
-                        notice.Name = UserSettings.CurrentProfile.Villagers[i].Name;
-                        notice.Date = dateNow;
-                        notice.StopTime = "18:00";
+                        Type = NoticeType.Birthday,
+                        Name = UserSettings.CurrentProfile.Villagers[i].Name,
+                        Date = dateNow,
+                        StopTime = "18:00"
+                    };
 
-                        AddNotice(notice);
-                    }
-
-                    else
-                        MsgBox.Hide();
+                    AddNotice(notice);
                 }
+
+                else
+                    MsgBox.Hide();
             }
         }
 
@@ -302,13 +316,13 @@ namespace Animal_Xing_Planner
             UserSettings.CurrentProfile.Notices.Add(notice);
             UserSettings.Save();
 
-            int index = Main.Profiles.FindIndex(x => x.FC == UserSettings.CurrentProfile.FC);
+            int index = Main.Profiles.FindIndex(x => x.Fc == UserSettings.CurrentProfile.Fc);
             if (!Main.Profiles[index].Notices.Contains(notice))
                 Main.Profiles[index].Notices.Add(notice);
             SaveProfiles();
 
             if (!string.IsNullOrEmpty(notice.StopTime))
-                notice.Updated += new Notice.NoticeHandler(Main.notice_Updated);
+                notice.Updated += Main.notice_Updated;
 
             Main.noticeListView.Items.Add(notice);
         }
@@ -322,7 +336,7 @@ namespace Animal_Xing_Planner
             UserSettings.CurrentProfile.Notices.Remove(notice);
             UserSettings.Save();
 
-            int index = Main.Profiles.FindIndex(x => x.FC == UserSettings.CurrentProfile.FC);
+            int index = Main.Profiles.FindIndex(x => x.Fc == UserSettings.CurrentProfile.Fc);
             Main.Profiles[index].Notices.Remove(notice);
             SaveProfiles();
 
@@ -341,19 +355,18 @@ namespace Animal_Xing_Planner
             string dir = @"saveData";
             if (File.Exists(dir + "/profiles.xml"))
             {
-                List<Profile> profiles = new List<Profile>();
+                List<Profile> profiles;
 
                 profiles = XmlHandler.LoadProfiles();
 
                 // Make sure the xml hasn't been tampered with, can't have more than one profile with the same FC
                 foreach (Profile i in profiles)
                 {
-                    int index = profiles.FindIndex(x => x.FC == i.FC);
                     foreach (Profile j in profiles)
                     {
-                        if (i != j && i.FC.Equals(j.FC))
+                        if (i != j && i.Fc.Equals(j.Fc))
                         {
-                            j.FC = "0000-0000-0000";
+                            j.Fc = "0000-0000-0000";
                             Logger.Info("Found multiple profiles with the same FC, fixing...");
                         }
                     }
@@ -368,15 +381,10 @@ namespace Animal_Xing_Planner
             if (Main.Profiles == null)
                 Main.Profiles = new List<Profile>();
 
-            if (UserSettings.CurrentProfile != null)
-            {
-                // Make sure we're getting notices from the xml and not currentprofile
-                int index = Main.Profiles.FindIndex(x => x.FC == UserSettings.CurrentProfile.FC);
-                if (index != -1)
-                    UserSettings.CurrentProfile = Main.Profiles[index];
-                else
-                    UserSettings.CurrentProfile = null;
-            }
+            if (UserSettings.CurrentProfile == null) return;
+            // Make sure we're getting notices from the xml and not currentprofile
+            int index = Main.Profiles.FindIndex(x => x.Fc == UserSettings.CurrentProfile.Fc);
+            UserSettings.CurrentProfile = index != -1 ? Main.Profiles[index] : null;
         }
 
         /// <summary>
@@ -389,7 +397,7 @@ namespace Animal_Xing_Planner
             //    if (profile.FC.Equals(UserSettings.CurrentProfile.FC))
             //        return;
 
-            if (profile == null || string.IsNullOrEmpty(profile.Town))
+            if (string.IsNullOrEmpty(profile?.Town))
             {
                 Main.messageLabel.Content = "No profile set, create one in settings!";
                 Main.townLabel.Content = string.Empty;
@@ -409,8 +417,8 @@ namespace Animal_Xing_Planner
                 Main.messageLabel.Content = profile.TagLine;
                 Main.townLabel.Content = profile.Town;
                 Main.mayorLabel.Content = "Mayor " + profile.Mayor;
-                Main.fcLabel.Content = profile.FC;
-                Main.dcLabel.Content = profile.DC;
+                Main.fcLabel.Content = profile.Fc;
+                Main.dcLabel.Content = profile.Dc;
                 Main.checklistDataGrid.IsEnabled = true;
 
                 Main.profileImage.Source = null;
@@ -422,6 +430,7 @@ namespace Animal_Xing_Planner
                 for (int j = 0; j < Main.Controls.Count; j++)
                 {
                     Image img = Main.Controls["v" + j + "Image"] as Image;
+                    if (img == null) continue;
                     img.Source = null;
                     img.UpdateLayout();
                 }
@@ -431,6 +440,7 @@ namespace Animal_Xing_Planner
                     for (int i = 0; i < profile.Villagers.Count; i++)
                     {
                         Image img = Main.Controls["v" + i + "Image"] as Image;
+                        if (img == null) continue;
                         img.Source = profile.Villagers[i].Icon;
                         img.UpdateLayout();
                     }
@@ -443,24 +453,30 @@ namespace Animal_Xing_Planner
                         Main.profileImage.Source = ImgConvert.ConvertFromString(profile.ProfileImagePath) as ImageSource;
                         Main.profileImage.UpdateLayout();
                     }
-                    catch { }
+                    catch
+                    {
+                        // ignored
+                    }
                 }
 
                 if (profile.Fruit != null)
                 {
                     try
                     {
-                        Main.fruitImage.Source = GetBitmapImage(profile.Fruit, "fruit/") as ImageSource;
+                        Main.fruitImage.Source = GetBitmapImage(profile.Fruit, "fruit/");
                         Main.fruitImage.UpdateLayout();
                     }
-                    catch { }
+                    catch
+                    {
+                        // ignored
+                    }
                 }
             }
 
             UserSettings.CurrentProfile = profile;
             UserSettings.Save();
 
-            if (Main.bDoneLoading)
+            if (Main.BDoneLoading)
             {
                 NoticeCheck();
                 BirthdayCheck();
@@ -490,28 +506,27 @@ namespace Animal_Xing_Planner
         public static void LoadChecklist()
         {
             ResetChecklist();
-            if (UserSettings.CurrentProfile != null)
+            if (UserSettings.CurrentProfile == null) return;
+
+            // If the current profile has no list of collectibles, create one and break out
+            if (UserSettings.CurrentProfile.Collectibles == null)
             {
-                // If the current profile has no list of collectibles, create one and break out
-                if (UserSettings.CurrentProfile.Collectibles == null)
-                {
-                    UserSettings.CurrentProfile.Collectibles = new List<Collectible>();
-                    return;
-                }
-
-                if (Main.Collectibles == null || Main.Collectibles.Count == 0)
-                {
-                    //Logger.Warn("Unable to load checklist, Main.Collectibles is null or contains no items.");
-                    return;
-                }
-
-                // Find each collectible from the profile and check them in the datagrid
-                if (UserSettings.CurrentProfile.Collectibles.Count != 0)
-                    for (int i = 0; i < UserSettings.CurrentProfile.Collectibles.Count; i++)
-                        for (int j = 0; j < Main.Collectibles.Count; j++)
-                            if (UserSettings.CurrentProfile.Collectibles[i].Name == Main.Collectibles[j].Name)
-                                Main.Collectibles[j].Checked = true;
+                UserSettings.CurrentProfile.Collectibles = new List<Collectible>();
+                return;
             }
+
+            if (Main.Collectibles == null || Main.Collectibles.Count == 0)
+            {
+                //Logger.Warn("Unable to load checklist, Main.Collectibles is null or contains no items.");
+                return;
+            }
+
+            // Find each collectible from the profile and check them in the datagrid
+            if (UserSettings.CurrentProfile.Collectibles.Count == 0) return;
+            for (int i = 0; i < UserSettings.CurrentProfile.Collectibles.Count; i++)
+                for (int j = 0; j < Main.Collectibles.Count; j++)
+                    if (UserSettings.CurrentProfile.Collectibles[i].Name == Main.Collectibles[j].Name)
+                        Main.Collectibles[j].Checked = true;
         }
 
         /// <summary>
@@ -579,7 +594,7 @@ namespace Animal_Xing_Planner
                 UserSettings.CurrentProfile.Collectibles.Add(selectedItem);
                 UserSettings.Save();
 
-                int index = Main.Profiles.FindIndex(x => x.FC == UserSettings.CurrentProfile.FC);
+                int index = Main.Profiles.FindIndex(x => x.Fc == UserSettings.CurrentProfile.Fc);
                 if (!Main.Profiles[index].Collectibles.Contains(selectedItem))
                     Main.Profiles[index].Collectibles.Add(selectedItem);
 
@@ -598,20 +613,19 @@ namespace Animal_Xing_Planner
         {
             if (name == "Red" || name == AccentBrushes.Red.Color.ToString())
                 return AccentBrushes.Red;
-            else if (name == "Green" || name == AccentBrushes.Green.Color.ToString())
+            if (name == "Green" || name == AccentBrushes.Green.Color.ToString())
                 return AccentBrushes.Green;
-            else if (name == "Sky" || name == AccentBrushes.Sky.Color.ToString())
+            if (name == "Sky" || name == AccentBrushes.Sky.Color.ToString())
                 return AccentBrushes.Sky;
-            else if (name == "Pink" || name == AccentBrushes.Pink.Color.ToString())
+            if (name == "Pink" || name == AccentBrushes.Pink.Color.ToString())
                 return AccentBrushes.Pink;
-            else
-                return AccentBrushes.Mango;
+            return AccentBrushes.Mango;
         }
 
-        static SolidColorBrush brush = new SolidColorBrush();
+        private static readonly SolidColorBrush Brush = new SolidColorBrush();
         public static void ChangeTheme(string accent, Theme theme)
         {
-            brush.Color = Colors.White;
+            Brush.Color = Colors.White;
             if (accent != null)
                 CurrentAccent = GetAccent(accent);
 
@@ -632,14 +646,14 @@ namespace Animal_Xing_Planner
             CWindow.Resources["Accent"] = CurrentAccent;
             Main.Resources["CurrentAccentOpacity"] = CurrentAccentOpacity;
 
-            Manager.Apply(Application.Current, Theme.Light, CurrentAccent, brush);
+            Application.Current.Apply(Theme.Light, CurrentAccent, Brush);
         }
 
-        public static void SetTPCColour(string colour)
+        public static void SetTpcColour(string colour)
         {
-            string resource = string.Empty;
-            string mayorColour = string.Empty;
-            string townColour = string.Empty;
+            string resource = null;
+            string mayorColour;
+            string townColour;
 
             if (colour.Equals("Pink"))
             {
@@ -677,17 +691,28 @@ namespace Animal_Xing_Planner
 
             try
             {
-                Main.tpcImage.Source = GetBitmapImage(resource, "tpc/") as ImageSource;
-                var newColour = (Color)ColorConverter.ConvertFromString(mayorColour);
-                var brush = new SolidColorBrush(newColour);
-                Main.mayorLabel.Foreground = brush;
-                var newColour2 = (Color)ColorConverter.ConvertFromString(townColour);
-                var townBrush = new SolidColorBrush(newColour2);
-                Main.townLabel.Foreground = townBrush;
+                Main.tpcImage.Source = GetBitmapImage(resource, "tpc/");
+                var convertFromString = ColorConverter.ConvertFromString(mayorColour);
+                if (convertFromString != null)
+                {
+                    var newColour = (Color)convertFromString;
+                    var brush = new SolidColorBrush(newColour);
+                    Main.mayorLabel.Foreground = brush;
+                }
+                var fromString = ColorConverter.ConvertFromString(townColour);
+                if (fromString != null)
+                {
+                    var newColour2 = (Color)fromString;
+                    var townBrush = new SolidColorBrush(newColour2);
+                    Main.townLabel.Foreground = townBrush;
+                }
                 Main.tpcImage.UpdateLayout();
             }
 
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
         #endregion
 
@@ -714,7 +739,7 @@ namespace Animal_Xing_Planner
         {
             var extension = Path.GetExtension(filename);
             var extensions = new[] { ".png", ".jpg", ".jpeg", ".gif" };
-            return extensions.Any(e => extension.Equals(e, StringComparison.OrdinalIgnoreCase));
+            return extensions.Any(e => extension != null && extension.Equals(e, StringComparison.OrdinalIgnoreCase));
         }
 
         public static bool CheckControls(DependencyObject obj)
@@ -723,26 +748,25 @@ namespace Animal_Xing_Planner
 
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
             {
-                if (obj is TextBox)
-                    if (string.IsNullOrEmpty(((TextBox)obj).Text))
+                var box = obj as TextBox;
+                if (box != null)
+                    if (string.IsNullOrEmpty(box.Text))
                         somethingWrong = true;
 
-                if (obj is ComboBox)
-                    if (string.IsNullOrEmpty(((ComboBox)obj).Text))
+                var comboBox = obj as ComboBox;
+                if (comboBox != null)
+                    if (string.IsNullOrEmpty(comboBox.Text))
                         somethingWrong = true;
 
-                if (obj is DatePicker)
-                    if (string.IsNullOrEmpty(((DatePicker)obj).Text))
+                var picker = obj as DatePicker;
+                if (picker != null)
+                    if (string.IsNullOrEmpty(picker.Text))
                         somethingWrong = true;
 
                 CheckControls(VisualTreeHelper.GetChild(obj, i));
             }
 
-            if (somethingWrong)
-                return false;
-
-            else
-                return true;
+            return !somethingWrong;
         }
         #endregion
 
@@ -750,14 +774,17 @@ namespace Animal_Xing_Planner
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
             {
-                if (obj is TextBox)
-                    ((TextBox)obj).Text = null;
+                var box = obj as TextBox;
+                if (box != null)
+                    box.Text = null;
 
-                if (obj is ComboBox)
-                    ((ComboBox)obj).Text = null;
+                var comboBox = obj as ComboBox;
+                if (comboBox != null)
+                    comboBox.Text = null;
 
-                if (obj is RadioButton)
-                    ((RadioButton)obj).IsChecked = false;
+                var button = obj as RadioButton;
+                if (button != null)
+                    button.IsChecked = false;
 
                 ClearControls(VisualTreeHelper.GetChild(obj, i));
             }
@@ -791,36 +818,32 @@ namespace Animal_Xing_Planner
             }
             renderTarget.Render(drawingVisual);
 
-            JpegBitmapEncoder jpgEncoder = new JpegBitmapEncoder();
-            jpgEncoder.QualityLevel = quality;
+            JpegBitmapEncoder jpgEncoder = new JpegBitmapEncoder {QualityLevel = quality};
             jpgEncoder.Frames.Add(BitmapFrame.Create(renderTarget));
 
-            byte[] _imageArray;
+            byte[] imageArray;
 
             using (MemoryStream outputStream = new MemoryStream())
             {
                 jpgEncoder.Save(outputStream);
-                _imageArray = outputStream.ToArray();
+                imageArray = outputStream.ToArray();
             }
 
-            return _imageArray;
+            return imageArray;
         }
     }
 
     #region Converters
     public class TextConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null && value.ToString().Length > 0)
-            {
-                string comicVine = "More Info";
-                return comicVine;
-            }
-            return string.Empty;
+            if (value == null || value.ToString().Length <= 0) return string.Empty;
+            const string comicVine = "More Info";
+            return comicVine;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Uri comicVine = new Uri((string)value);
             return comicVine;
@@ -831,12 +854,12 @@ namespace Animal_Xing_Planner
     {
         public static UrlToImageSourceConverter Instance = new UrlToImageSourceConverter();
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return new BitmapImage(new Uri(value.ToString()));
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
@@ -849,14 +872,11 @@ namespace Animal_Xing_Planner
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             var str = value as string;
-            if (string.IsNullOrEmpty(str))
-                return new ValidationResult(false, "This cannot be left empty");
-
-            return new ValidationResult(true, null);
+            return string.IsNullOrEmpty(str) ? new ValidationResult(false, "This cannot be left empty") : new ValidationResult(true, null);
         }
     }
 
-    public class FCValidationRule : ValidationRule
+    public class FcValidationRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
@@ -887,7 +907,7 @@ namespace Animal_Xing_Planner
         }
     }
 
-    public class DCValidationRule : ValidationRule
+    public class DcValidationRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {

@@ -8,12 +8,12 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for ReminderUC.xaml
     /// </summary>
-    public partial class NoticeUC : UserControl
+    public partial class NoticeUC
     {
         public CustomWindow ParentWindow;
-        private List<string> names = new List<string>();
-        private bool somethingWrong = false;
-        private bool noTT = false;
+        private readonly List<string> _names = new List<string>();
+        private bool _bSomethingWrong;
+        private bool _bTimeTravel = false;
 
         public NoticeUC()
         {
@@ -63,15 +63,15 @@ namespace Animal_Xing_Planner
             villagerNameComboBox1.Items.Clear();
 
             for (int i = 0; i < Globals.UserSettings.CurrentProfile.Villagers.Count; i++)
-                names.Add(Globals.UserSettings.CurrentProfile.Villagers[i].Name);
+                _names.Add(Globals.UserSettings.CurrentProfile.Villagers[i].Name);
 
-            names.Sort();
-            for (int i = 0; i < names.Count; i++)
+            _names.Sort();
+            for (int i = 0; i < _names.Count; i++)
             {
-                villagerNameComboBox.Items.Add(names[i]);
-                villagerNameComboBox1.Items.Add(names[i]);
+                villagerNameComboBox.Items.Add(_names[i]);
+                villagerNameComboBox1.Items.Add(_names[i]);
             }
-            names.Clear();
+            _names.Clear();
 
             typeTabControl.SelectedIndex = 0;
         }
@@ -80,35 +80,34 @@ namespace Animal_Xing_Planner
         {
             try
             {
-                somethingWrong = false;
-                noTT = false;
+                _bSomethingWrong = false;
+                _bTimeTravel = false;
 
                 string setTime = string.Empty;
                 string timeNow = DateTime.Now.ToString("HH:mm:ss");
                 TimeSpan now = TimeSpan.Parse(timeNow);
-                DateTime date = DateTime.Now;
 
-                if (typeTabControl.SelectedItem == meetingTabItem)
+                if (Equals(typeTabControl.SelectedItem, meetingTabItem))
                 {
                     if (string.IsNullOrEmpty(villagerNameComboBox.Text) || string.IsNullOrEmpty(hourComboBox.Text) || string.IsNullOrEmpty(minuteComboBox.Text))
-                        somethingWrong = true;
+                        _bSomethingWrong = true;
                     else
                     {
                         setTime = hourComboBox.Text + ":" + minuteComboBox.Text + ":00";
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
                         if (stop.CompareTo(now) <= 0)
-                            noTT = true;
+                            _bTimeTravel = true;
                     }
 
                     if (homeRadioButton.IsChecked == false && awayRadioButton.IsChecked == false)
-                        somethingWrong = true;
+                        _bSomethingWrong = true;
                 }
 
-                else if (typeTabControl.SelectedItem == deliveryTabItem)
+                else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
                 {
                     if (string.IsNullOrEmpty(villagerNameComboBox1.Text) || string.IsNullOrEmpty(itemTextBox.Text))
-                        somethingWrong = true;
+                        _bSomethingWrong = true;
 
                     if (!string.IsNullOrEmpty(hourComboBox2.Text) && !string.IsNullOrEmpty(minuteComboBox2.Text))
                     {
@@ -116,14 +115,14 @@ namespace Animal_Xing_Planner
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
                         if (stop.CompareTo(now) <= 0)
-                            noTT = true;
+                            _bTimeTravel = true;
                     }
                 }
 
-                else if (typeTabControl.SelectedItem == eventTabItem)
+                else if (Equals(typeTabControl.SelectedItem, eventTabItem))
                 {
                     if (string.IsNullOrEmpty(nameTextBox.Text) || string.IsNullOrEmpty(datePicker.Text) || string.IsNullOrEmpty(hourComboBox1.Text) || string.IsNullOrEmpty(minuteComboBox1.Text))
-                        somethingWrong = true;
+                        _bSomethingWrong = true;
 
                     else
                     {
@@ -131,21 +130,17 @@ namespace Animal_Xing_Planner
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
                         if (stop.CompareTo(now) <= 0 && datePicker.SelectedDate <= DateTime.Now)
-                            noTT = true;
+                            _bTimeTravel = true;
                     }
                 }
 
-                if (noTT)
+                if (_bTimeTravel)
                 {
                     Globals.MsgBox.Show(ParentWindow, "You cannot set a notice at the current time or back in time.", "No TT pls", MessageBoxButton.OK, MessageBoxIconType.Warning);
                     return false;
                 }
 
-                else if (somethingWrong)
-                    return false;
-
-                else
-                    return true;
+                return !_bSomethingWrong;
             }
             catch (Exception ex) { Globals.Logger.Warn("Error checking controls in NoticeUC: " + ex.Message); }
             return false;
@@ -155,16 +150,16 @@ namespace Animal_Xing_Planner
         {
             Check();
 
-            if (somethingWrong)
+            if (_bSomethingWrong)
                 Globals.MsgBox.Show(ParentWindow, "You've left one or more fields empty.", "Missing information", MessageBoxButton.OK, MessageBoxIconType.Warning);
 
-            else if (!somethingWrong)
+            else if (!_bSomethingWrong)
             {
                 try
                 {
                     Notice notice = new Notice();
 
-                    if (typeTabControl.SelectedItem == meetingTabItem)
+                    if (Equals(typeTabControl.SelectedItem, meetingTabItem))
                     {
                         notice.Type = NoticeType.Meeting;
                         notice.Name = villagerNameComboBox.Text;
@@ -181,7 +176,7 @@ namespace Animal_Xing_Planner
                         notice.Info = notice.Place;
                     }
 
-                    else if (typeTabControl.SelectedItem == deliveryTabItem)
+                    else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
                     {
                         notice.Type = NoticeType.Delivery;
                         notice.Name = villagerNameComboBox1.Text;
@@ -194,7 +189,7 @@ namespace Animal_Xing_Planner
                         notice.Info = notice.Item;
                     }
 
-                    else if (typeTabControl.SelectedItem == eventTabItem)
+                    else if (Equals(typeTabControl.SelectedItem, eventTabItem))
                     {
                         notice.Type = NoticeType.Event;
                         notice.Name = nameTextBox.Text;
@@ -209,15 +204,13 @@ namespace Animal_Xing_Planner
                     if (notice.StopTime == null)
                         notice.StopTime = string.Empty;
 
-                    if (!noTT)
-                    {
-                        Globals.AddNotice(notice);
+                    if (_bTimeTravel) return;
+                    Globals.AddNotice(notice);
 
-                        if (Globals.MsgBox.Show(ParentWindow, "Notice successfully added!", "Success", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
-                        {
-                            ParentWindow.HideWindow();
-                            ParentWindow.Owner.Activate();
-                        } 
+                    if (Globals.MsgBox.Show(ParentWindow, "Notice successfully added!", "Success", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                    {
+                        ParentWindow.HideWindow();
+                        ParentWindow.Owner.Activate();
                     }
                 }
                 catch (Exception ex) { Globals.Logger.Warn("Error creating new notice: " + ex.Message); }
@@ -238,13 +231,13 @@ namespace Animal_Xing_Planner
 
         private void typeTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (typeTabControl.SelectedItem == meetingTabItem)
+            if (Equals(typeTabControl.SelectedItem, meetingTabItem))
                 villagerNameComboBox.Focus();
 
-            else if (typeTabControl.SelectedItem == deliveryTabItem)
+            else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
                 villagerNameComboBox1.Focus();
 
-            else if (typeTabControl.SelectedItem == eventTabItem)
+            else if (Equals(typeTabControl.SelectedItem, eventTabItem))
                 nameTextBox.Focus();
         }
         #endregion

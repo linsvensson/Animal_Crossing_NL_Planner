@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Media;
 using System.Xml.Serialization;
 
@@ -14,17 +13,17 @@ namespace Animal_Xing_Planner
         public string Birthday { get; set; }
         [XmlIgnore]
         [NonSerialized]
-        private ImageSource icon;
+        private ImageSource _icon;
         [XmlIgnore]
         public ImageSource Icon
         {
             get
             {
-                return icon;
+                return _icon;
             }
             set
             {
-                icon = value;
+                _icon = value;
             }
         }
 
@@ -45,8 +44,9 @@ namespace Animal_Xing_Planner
         public void SetIcon()
         {
             string tempName = Name.ToLower();
-            //if (tempName.Contains())
-            Icon = Globals.GetBitmapImage(tempName, "villagers/", ".gif");
+
+            try { Icon = Globals.GetBitmapImage(tempName, "villagers/", ".gif"); }
+            catch (Exception ex) { Globals.Logger.Error("Unable to set villager icon: " + ex.Message); }
         }
     }
 }

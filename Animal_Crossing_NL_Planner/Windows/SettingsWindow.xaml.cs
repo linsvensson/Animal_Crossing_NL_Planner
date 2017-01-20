@@ -1,20 +1,24 @@
-﻿using Elysium;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows;
+using System.Windows.Input;
+using Animal_Xing_Planner.Properties;
+using Elysium;
+using Microsoft.Win32;
+using Window = Elysium.Controls.Window;
 
 namespace Animal_Xing_Planner
 {
     /// <summary>
     /// Interaction logic for SettingsWindow.xaml
     /// </summary>
-    public partial class SettingsWindow : Elysium.Controls.Window
+    public partial class SettingsWindow
     {
+        private ResourceDictionary _resource = new ResourceDictionary();
+        private readonly string[] _tpcColours = { "Green", "Pink", "Blue", "Red", "Orange" };
+
         public bool IsShowing;
-        private ResourceDictionary resource = new ResourceDictionary();
-        private string[] tpcColours = new string[5] { "Green", "Pink", "Blue", "Red", "Orange" };
 
         public SettingsWindow()
         {
@@ -22,11 +26,11 @@ namespace Animal_Xing_Planner
 
             InitializeComponent();
             DataContext = Globals.Main;
-            tpcComboBox.ItemsSource = tpcColours;
-            ShowCurrentTPCColour();
+            tpcComboBox.ItemsSource = _tpcColours;
+            ShowCurrentTpcColour();
         }
 
-        public void Show(Elysium.Controls.Window owner)
+        public void Show(Window owner)
         {
             if (owner != null || Owner == null)
                 Owner = owner;
@@ -38,14 +42,13 @@ namespace Animal_Xing_Planner
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            if (!Globals.ShutDown)
-            {
-                e.Cancel = true;
-                IsShowing = false;
-                Hide();
+            if (Globals.ShutDown) return;
 
-                Owner.Activate();
-            }
+            e.Cancel = true;
+            IsShowing = false;
+            Hide();
+
+            Owner.Activate();
         }
 
         private void DeleteProfile(Profile profile)
@@ -58,7 +61,7 @@ namespace Animal_Xing_Planner
                 Globals.UserSettings.CurrentProfile = null;
                 Globals.UserSettings.Save();
 
-                Globals.Logger.Info("Deleted profile " + profile.Mayor + " " + profile.Town + " " + profile.FC);
+                Globals.Logger.Info("Deleted profile " + profile.Mayor + " " + profile.Town + " " + profile.Fc);
                 Globals.SetProfile(null);
 
                 Globals.ResetChecklist();
@@ -83,9 +86,9 @@ namespace Animal_Xing_Planner
         private void soundSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if (soundSlider.Value == 0)
-                Globals.bSound = false;
+                Globals.BSound = false;
             else
-                Globals.bSound = true;
+                Globals.BSound = true;
         }
 
         private void blueButton_Click(object sender, RoutedEventArgs e)
@@ -183,16 +186,12 @@ namespace Animal_Xing_Planner
             if (Globals.UserSettings.CurrentProfile == null)
                 return;
 
-            for (int i = 0; i < profileListView.Items.Count; i++)
+            foreach (Profile t in profileListView.Items)
             {
-                Profile tempProfile = profileListView.Items[i] as Profile;
-                if (tempProfile == null)
-                    return;
-                if (tempProfile.Mayor == Globals.UserSettings.CurrentProfile.Mayor)
-                {
-                    profileListView.SelectedItem = profileListView.Items[i];
-                    break;
-                }
+                if (t == null) return;
+                if (t.Mayor != Globals.UserSettings.CurrentProfile.Mayor) continue;
+                profileListView.SelectedItem = t;
+                break;
             }
         }
 
@@ -213,19 +212,13 @@ namespace Animal_Xing_Planner
                 orangeButton.Focus();
         }
 
-        private void ShowCurrentTPCColour()
+        private void ShowCurrentTpcColour()
         {
-            string colour = Properties.Settings.Default.TPC;
+            string colour = Settings.Default.TPC;
 
             for (int i = 0; i < tpcComboBox.Items.Count; i++)
                 if (tpcComboBox.Items[i].Equals(colour))
                     tpcComboBox.SelectedItem = tpcComboBox.Items[i];
-        }
-
-        private void themeTabItem_GotFocus(object sender, RoutedEventArgs e)
-        {
-            //if (!tpcComboBox.IsDropDownOpen)
-            //    HighlightCurrentAccent();
         }
 
         private void themeTabItem_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -243,15 +236,17 @@ namespace Animal_Xing_Planner
                     return;
                 }
 
-                SaveFileDialog dialog = new SaveFileDialog();
-                dialog.FileName = "TPC";
-                dialog.DefaultExt = ".jpg";
+                SaveFileDialog dialog = new SaveFileDialog
+                {
+                    FileName = "TPC",
+                    DefaultExt = ".jpg"
+                };
                 var result = dialog.ShowDialog();
                 if (!result.HasValue)
                     return;
 
                 Globals.SettingsWindow.villagerButton.Visibility = Visibility.Hidden;
-                byte[] screenshot = Globals.GetJpgImage(Globals.Main.TPCGrid);
+                byte[] screenshot = Globals.Main.TPCGrid.GetJpgImage();
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.Create, FileAccess.ReadWrite);
                 BinaryWriter binaryWriter = new BinaryWriter(fileStream);
                 binaryWriter.Write(screenshot);
@@ -268,15 +263,15 @@ namespace Animal_Xing_Planner
 
         private void tpcComboBox_DropDownClosed(object sender, EventArgs e)
         {
-            Globals.SetTPCColour(tpcComboBox.Text);
+            Globals.SetTpcColour(tpcComboBox.Text);
         }
 
         private void defaultSoundButton_Click(object sender, RoutedEventArgs e)
         {
             Globals.Main.SoundPlayer.Stream = Properties.Resources.reminder;
             soundTextBox.Text = "Default";
-            Properties.Settings.Default.CustomSound = string.Empty;
-            Properties.Settings.Default.Save();
+            Settings.Default.CustomSound = string.Empty;
+            Settings.Default.Save();
         }
 
         private void villagerButton_Click(object sender, RoutedEventArgs e)
@@ -286,12 +281,11 @@ namespace Animal_Xing_Planner
             villagerButton.Content = FindResource(villagerButton.Content == FindResource("Visible") ? "Hidden" : "Visible");
         }
 
-        private void soundTextBox_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void soundTextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             try
             {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "wav files (*.wav)|*.wav";
+                OpenFileDialog dialog = new OpenFileDialog {Filter = "wav files (*.wav)|*.wav"};
                 var result = dialog.ShowDialog();
                 if (!result.HasValue)
                     return;

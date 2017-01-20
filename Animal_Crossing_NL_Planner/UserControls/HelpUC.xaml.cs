@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Documents;
 
 namespace Animal_Xing_Planner
@@ -7,11 +6,11 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for AboutUC.xaml
     /// </summary>
-    public partial class HelpUC : UserControl
+    public partial class HelpUc
     {
         public CustomWindow ParentWindow;
 
-        public HelpUC()
+        public HelpUc()
         {
             InitializeComponent();
 
@@ -30,7 +29,7 @@ namespace Animal_Xing_Planner
             para1.Inlines.Add("* 'Event' can be used for pretty much anything. Here, you can also set a date so that you can for example set up a notice for the next Fishing Tourney.\n");
 
             Paragraph para2 = new Paragraph();
-            para2.Inlines.Add("If you don't like the color scheme you can just go in to 'settings' then click the 'theme'-tab and choose colours.");
+            para2.Inlines.Add("If you don't like the color scheme you can just go in to 'settings' then click the 'theme'-tab to choose colours.");
 
             // Add the paragraph to blocks of paragraph
             mcFlowDoc.Blocks.Add(para);

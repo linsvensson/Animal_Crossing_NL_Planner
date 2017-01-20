@@ -18,7 +18,7 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for ProfileUC.xaml
     /// </summary>
-    public partial class ProfileUC : UserControl
+    public partial class ProfileUc
     {
         public ViewModel VillagerViewModel { get; set; }
         public Villager SelectedVillager { get; set; }
@@ -26,7 +26,7 @@ namespace Animal_Xing_Planner
         public CAction Action;
         public CustomWindow ParentWindow;
 
-        public ProfileUC()
+        public ProfileUc()
         {
             InitializeComponent();
 
@@ -55,10 +55,10 @@ namespace Animal_Xing_Planner
                     townTextBox.Text = tempProfile.Town;
                     LoadFruit(tempProfile.Fruit);
 
-                    if (!string.IsNullOrEmpty(tempProfile.FC))
-                        fcTextBox.Text = tempProfile.FC;
-                    if (!string.IsNullOrEmpty(tempProfile.DC))
-                        dcTextBox.Text = tempProfile.DC;
+                    if (!string.IsNullOrEmpty(tempProfile.Fc))
+                        fcTextBox.Text = tempProfile.Fc;
+                    if (!string.IsNullOrEmpty(tempProfile.Dc))
+                        dcTextBox.Text = tempProfile.Dc;
                     messageTextBox.Text = tempProfile.TagLine;
 
                     if (tempProfile.ProfileImagePath != null)
@@ -103,7 +103,7 @@ namespace Animal_Xing_Planner
 
         private string GetSelectedFruit()
         {
-            string fruit = string.Empty;
+            string fruit;
 
             if (fruitComboBox.SelectedItem.Equals(appleCBI))
                 fruit = "apple";
@@ -134,7 +134,7 @@ namespace Animal_Xing_Planner
             // Check if this villager has any notices linked to it
             Profile tempProfile = Globals.SettingsWindow.profileListView.SelectedItem as Profile;
             Villager villager = villagerListView.SelectedItem as Villager;
-            var matches = tempProfile.Notices.FirstOrDefault(item => item.Name == villager.Name);
+            var matches = tempProfile?.Notices.FirstOrDefault(item => villager != null && item.Name == villager.Name);
 
             if (matches != null)
             {
@@ -144,7 +144,7 @@ namespace Animal_Xing_Planner
                     {
                         // Remove the villager from the list and any notices linked to it
                         for (int i = 0; i < tempProfile.Notices.Count; i++)
-                            if (tempProfile.Notices[i].Name.Equals(villager.Name))
+                            if (villager != null && tempProfile.Notices[i].Name.Equals(villager.Name))
                                 Globals.RemoveNotice(tempProfile.Notices[i]);
                         Globals.SaveProfiles();
                         villagerListView.Items.Remove(villagerListView.SelectedItem);
@@ -178,7 +178,7 @@ namespace Animal_Xing_Planner
                     {
                         if (Globals.Main.Profiles.Count != 0)
                         {
-                            if (Globals.Main.Profiles.Find(x => x.FC == fcTextBox.Text) != null)
+                            if (Globals.Main.Profiles.Find(x => x.Fc == fcTextBox.Text) != null)
                             {
                                 Globals.MsgBox.Show(ParentWindow, "There is already a profile with that FC!", "Error", MessageBoxButton.OK, MessageBoxIconType.Error);
                                 return;
@@ -216,7 +216,7 @@ namespace Animal_Xing_Planner
                         int index = Globals.Main.Profiles.FindIndex(x => x == Globals.SettingsWindow.profileListView.SelectedItem as Profile);
                         Profile town = Globals.Main.Profiles[index];
 
-                        if (Globals.Main.Profiles.Find(x => x.FC == fcTextBox.Text) != null)
+                        if (Globals.Main.Profiles.Find(x => x.Fc == fcTextBox.Text) != null)
                         {
                             if (!town.Mayor.Equals(nameTextBox.Text))
                             {
@@ -235,7 +235,7 @@ namespace Animal_Xing_Planner
                         town.Mayor = nameTextBox.Text;
                         town.Town = townTextBox.Text;
                         town.Fruit = GetSelectedFruit();
-                        town.FC = fcTextBox.Text;
+                        town.Fc = fcTextBox.Text;
                         town.TagLine = messageTextBox.Text;
 
                         if (profileImg.Source != null)

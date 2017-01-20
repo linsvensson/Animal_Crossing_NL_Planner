@@ -30,10 +30,10 @@ namespace Animal_Xing_Planner
 
         public static bool NeedUpdate()
         {
-            string URLString = "https://dl.dropboxusercontent.com/u/41918503/updateCheckACNL.xml";
+            string urlString = "https://dl.dropboxusercontent.com/u/41918503/updateCheckACNL.xml";
 
             // build a http web request stream
-            var request = WebRequest.Create(URLString);
+            var request = WebRequest.Create(urlString);
 
             // request the cast and build the stream
             var response = request.GetResponse();
@@ -48,15 +48,11 @@ namespace Animal_Xing_Planner
                     switch (reader.Name)
                     {
                         case "version":
-                            {
-                                Version = reader.ReadString();
-                                break;
-                            }
+                            Version = reader.ReadString();
+                            break;
                         case "download":
-                            {
-                                DownloadLink = reader.ReadString();
-                                break;
-                            }
+                            DownloadLink = reader.ReadString();
+                            break;
                     }
                 }
 
@@ -75,8 +71,7 @@ namespace Animal_Xing_Planner
             try
             {
                 Uri download = new Uri(DownloadLink);
-                Hyperlink link = new Hyperlink();
-                link.NavigateUri = download;
+                Hyperlink link = new Hyperlink {NavigateUri = download};
                 Process.Start(link.NavigateUri.AbsoluteUri);
             }
             catch (Exception ex)

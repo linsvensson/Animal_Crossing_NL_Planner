@@ -14,13 +14,13 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for CustomWindow.xaml
     /// </summary>
-    public partial class CustomWindow : Elysium.Controls.Window
+    public partial class CustomWindow
     {
-        private CContent content;
+        private CContent _content;
 
-        public ProfileUC ProfileUC = new ProfileUC();
-        public NoticeUC NoticeUC = new NoticeUC();
-        public HelpUC HelpUC = new HelpUC();
+        public ProfileUc ProfileUc = new ProfileUc();
+        public NoticeUC NoticeUc = new NoticeUC();
+        public HelpUc HelpUc = new HelpUc();
 
         public bool IsShowing;
 
@@ -36,18 +36,18 @@ namespace Animal_Xing_Planner
 
         public void Show(Elysium.Controls.Window owner, CContent content, CAction action)
         {
-            this.content = content;
+            this._content = content;
 
             if (content == CContent.Profile)
             {
-                Content = ProfileUC;
-                ProfileUC.Initialize(this, action);
+                Content = ProfileUc;
+                ProfileUc.Initialize(this, action);
                 Title = "Profile";
             }
             else
             {
-                Content = NoticeUC;
-                NoticeUC.Initialize(this);
+                Content = NoticeUc;
+                NoticeUc.Initialize(this);
                 Title = "New Notice";
             }
 
@@ -58,13 +58,16 @@ namespace Animal_Xing_Planner
             IsEnabled = true;
 
             try { ShowDialog(); }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         public void ShowHelp(Elysium.Controls.Window owner)
         {
-            Content = HelpUC;
-            HelpUC.Initialize(this);
+            Content = HelpUc;
+            HelpUc.Initialize(this);
             Title = "Help";
 
             if (owner != null || Owner == null)
@@ -73,7 +76,10 @@ namespace Animal_Xing_Planner
             IsShowing = true;
             IsEnabled = true;
             try { ShowDialog(); }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         public void HideWindow()
@@ -86,33 +92,30 @@ namespace Animal_Xing_Planner
 
         private void cWindow_DragOver(object sender, DragEventArgs e)
         {
-            if (content == CContent.Profile)
+            if (_content != CContent.Profile) return;
+
+            e.Handled = true;
+            e.Effects = DragDropEffects.None;
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop, true)) return;
+
+            var filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+            if (filenames != null && filenames.Length == 1 && Globals.IsValidImageExtension(filenames[0]))
             {
-                e.Handled = true;
-                e.Effects = DragDropEffects.None;
-                if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
-                {
-                    var filenames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
-                    if (filenames != null && filenames.Length == 1 && Globals.IsValidImageExtension(filenames[0]))
-                    {
-                        e.Effects = DragDropEffects.Copy;
-                    }
-                }
+                e.Effects = DragDropEffects.Copy;
             }
         }
 
         private void cWindow_Drop(object sender, DragEventArgs e)
         {
-            if (content == CContent.Profile)
-            {
-                string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (_content != CContent.Profile) return;
+            string[] filenames = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                // Assuming you have one file that you care about, pass it off to whatever
-                // handling code you have defined.
-                BitmapImage tmpImage = new BitmapImage((new Uri(filenames[0])));
+            // Assuming you have one file that you care about, pass it off to whatever
+            // handling code you have defined.
+            if (filenames == null) return;
+            BitmapImage tmpImage = new BitmapImage((new Uri(filenames[0])));
 
-                ProfileUC.profileImg.Source = tmpImage;
-            }
+            ProfileUc.profileImg.Source = tmpImage;
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -125,11 +128,9 @@ namespace Animal_Xing_Planner
 
         private void cWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!Globals.ShutDown)
-            {
-                e.Cancel = true;
-                HideWindow();
-            }
+            if (Globals.ShutDown) return;
+            e.Cancel = true;
+            HideWindow();
         }
     }
 }

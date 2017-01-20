@@ -7,10 +7,10 @@ namespace Animal_Xing_Planner
 {
     public class SortAdorner : Adorner
     {
-        private readonly static Geometry _AscGeometry =
+        private static readonly Geometry AscGeometry =
             Geometry.Parse("M 0,0 L 10,0 L 5,5 Z");
 
-        private readonly static Geometry _DescGeometry =
+        private static readonly Geometry DescGeometry =
             Geometry.Parse("M 0,5 L 10,5 L 5,0 Z");
 
         public ListSortDirection Direction { get; private set; }
@@ -33,7 +33,7 @@ namespace Animal_Xing_Planner
 
             drawingContext.DrawGeometry(Brushes.Black, null,
                 Direction == ListSortDirection.Ascending ?
-                  _AscGeometry : _DescGeometry);
+                  AscGeometry : DescGeometry);
 
             drawingContext.Pop();
         }

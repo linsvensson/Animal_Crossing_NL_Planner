@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
+using System.Linq;
 using System.Xml;
 using System.Windows;
 using System.Xml.Schema;
@@ -19,7 +20,6 @@ namespace Animal_Xing_Planner
         /// </summary>
         public static List<Villager> LoadVillagers()
         {
-            List<Villager> nodes = new List<Villager>();
             List<XmlVillager> xmlObjects = new List<XmlVillager>();
 
             XmlSerializer serializer = new XmlSerializer(xmlObjects.GetType());
@@ -28,7 +28,6 @@ namespace Animal_Xing_Planner
                 if (Globals.MsgBox.Show(null, "Could not load villagers.xml, make sure it's in the data folder", "Fatal Error", MessageBoxButton.OK, MessageBoxIconType.Error) == MessageBoxResult.OK)
                 {
                     Environment.Exit(0);
-                    return null;
                 }
             }
 
@@ -41,11 +40,7 @@ namespace Animal_Xing_Planner
             }
             finally { stream.Close(); }
 
-            for (int i = 0; i < xmlObjects.Count; i++)
-            {
-                Villager tempNode = new Villager(xmlObjects[i].Name, xmlObjects[i].Personality, xmlObjects[i].Species, xmlObjects[i].Birthday);
-                nodes.Add(tempNode);
-            }
+            List<Villager> nodes = xmlObjects.Select(t => new Villager(t.Name, t.Personality, t.Species, t.Birthday)).ToList();
 
             Globals.TakeOutGarbage();
 
@@ -57,8 +52,6 @@ namespace Animal_Xing_Planner
         /// </summary>
         public static List<Collectible> LoadCollectibles()
         {
-            List<Collectible> nodes = new List<Collectible>();
-
             // Bugs
             List<XmlBug> xmlBugs = new List<XmlBug>();
             XmlSerializer serializer = new XmlSerializer(xmlBugs.GetType());
@@ -68,7 +61,6 @@ namespace Animal_Xing_Planner
                 if (Globals.MsgBox.Show(null, "Could not load bugs.xml, make sure it's in the data folder", "Fatal Error", MessageBoxButton.OK, MessageBoxIconType.Error) == MessageBoxResult.OK)
                 {
                     Environment.Exit(0);
-                    return null;
                 }
             }
 
@@ -80,12 +72,7 @@ namespace Animal_Xing_Planner
             }
             finally { stream.Close(); }
 
-            for (int i = 0; i < xmlBugs.Count; i++)
-            {
-                XmlUri link = new Uri(xmlBugs[i].Info);
-                Collectible tempNode = new Collectible(xmlBugs[i].Name, xmlBugs[i].Month, xmlBugs[i].Location, xmlBugs[i].Value, "n/a", link, xmlBugs[i].ImageURL, xmlBugs[i].HasGot, "Bug");
-                nodes.Add(tempNode);
-            }
+            List<Collectible> nodes = (from t in xmlBugs let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, "n/a", link, t.ImageURL, t.HasGot, "Bug")).ToList();
 
             // Fish
             List<XmlFish> xmlFish = new List<XmlFish>();
@@ -97,7 +84,6 @@ namespace Animal_Xing_Planner
                 if (Globals.MsgBox.Show(null, "Could not load fish.xml, make sure it's in the data folder", "Fatal Error", MessageBoxButton.OK, MessageBoxIconType.Error) == MessageBoxResult.OK)
                 {
                     Environment.Exit(0);
-                    return null;
                 }
             }
 
@@ -109,12 +95,7 @@ namespace Animal_Xing_Planner
             }
             finally { stream.Close(); }
 
-            for (int i = 0; i < xmlFish.Count; i++)
-            {
-                XmlUri link = new Uri(xmlFish[i].Info);
-                Collectible tempNode = new Collectible(xmlFish[i].Name, xmlFish[i].Month, xmlFish[i].Location, xmlFish[i].Value, xmlFish[i].Shadow, link, xmlFish[i].ImageURL, xmlFish[i].HasGot, "Fish");
-                nodes.Add(tempNode);
-            }
+            nodes.AddRange(from t in xmlFish let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageURL, t.HasGot, "Fish"));
 
             // Seafood
             List<XmlSeafood> xmlSeafood = new List<XmlSeafood>();
@@ -125,7 +106,6 @@ namespace Animal_Xing_Planner
                 if (Globals.MsgBox.Show(null, "Could not load seafood.xml, make sure it's in the data folder", "Fatal Error", MessageBoxButton.OK, MessageBoxIconType.Error) == MessageBoxResult.OK)
                 {
                     Environment.Exit(0);
-                    return null;
                 }
             }
 
@@ -138,12 +118,7 @@ namespace Animal_Xing_Planner
             finally { stream.Close(); }
             stream.Dispose();
 
-            for (int i = 0; i < xmlSeafood.Count; i++)
-            {
-                XmlUri link = new Uri(xmlSeafood[i].Info);
-                Collectible tempNode = new Collectible(xmlSeafood[i].Name, xmlSeafood[i].Month, xmlSeafood[i].Location, xmlSeafood[i].Value, xmlSeafood[i].Shadow, link, xmlSeafood[i].ImageURL, xmlSeafood[i].HasGot, "Seafood");
-                nodes.Add(tempNode);
-            }
+            nodes.AddRange(from t in xmlSeafood let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageURL, t.HasGot, "Seafood"));
 
             Globals.TakeOutGarbage();
 
@@ -179,17 +154,20 @@ namespace Animal_Xing_Planner
             {
                 if (string.IsNullOrEmpty(xmlObjects[i].Fruit))
                     xmlObjects[i].Fruit = "cherry";
-                Profile tempNode = new Profile(xmlObjects[i].Mayor, xmlObjects[i].Town, xmlObjects[i].Fruit, xmlObjects[i].FC, xmlObjects[i].DC, xmlObjects[i].TagLine, xmlObjects[i].Villagers);
-                tempNode.ProfileImagePath = xmlObjects[i].ProfileImagePath;
-                tempNode.Collectibles = xmlObjects[i].Collectibles;
-                tempNode.Notices = xmlObjects[i].Notices;
+                Profile tempNode = new Profile(xmlObjects[i].Mayor, xmlObjects[i].Town, xmlObjects[i].Fruit,
+                    xmlObjects[i].FC, xmlObjects[i].DC, xmlObjects[i].TagLine, xmlObjects[i].Villagers)
+                {
+                    ProfileImagePath = xmlObjects[i].ProfileImagePath,
+                    Collectibles = xmlObjects[i].Collectibles,
+                    Notices = xmlObjects[i].Notices
+                };
                 nodes.Add(tempNode);
             }
 
-            for (int i = 0; i < nodes.Count; i++)
+            foreach (Profile t in nodes)
             {
-                nodes[i].Villagers.ForEach(item => item.SetIcon());
-                nodes[i].Notices.ForEach(item => item.SetIcon());
+                t.Villagers.ForEach(item => item.SetIcon());
+                t.Notices.ForEach(item => item.SetIcon());
             }
 
             return nodes;
@@ -215,7 +193,7 @@ namespace Animal_Xing_Planner
                 if (string.IsNullOrEmpty(profiles[i].Fruit))
                     profiles[i].Fruit = "cherry";
 
-                tempNode.Initialize(profiles[i].Mayor, profiles[i].Town, profiles[i].Fruit, profiles[i].FC, profiles[i].DC, profiles[i].TagLine, profiles[i].Villagers);
+                tempNode.Initialize(profiles[i].Mayor, profiles[i].Town, profiles[i].Fruit, profiles[i].Fc, profiles[i].Dc, profiles[i].TagLine, profiles[i].Villagers);
                 tempNode.ProfileImagePath = profiles[i].ProfileImagePath;
                 tempNode.Notices = profiles[i].Notices;
                 tempNode.Collectibles = profiles[i].Collectibles;
@@ -254,10 +232,6 @@ namespace Animal_Xing_Planner
             public List<Collectible> Collectibles { get; set; }
             public List<Notice> Notices { get; set; }
 
-            public XmlProfile()
-            {
-            }
-
             public void Initialize(string mayor, string town, string fruit, string fc, string dc, string tagline, List<Villager> villagers)
             {
                 Mayor = mayor;
@@ -280,10 +254,6 @@ namespace Animal_Xing_Planner
             public string Species;
             public string Birthday;
 
-            public XmlVillager()
-            {
-            }
-
             public void Initialize(string name, string personality, string species, string birthday)
             {
                 Name = name;
@@ -304,10 +274,6 @@ namespace Animal_Xing_Planner
             public string Value;
             public string Shadow;
 
-            public XmlCollectible()
-            {
-            }
-
             public void Initialize(string name, string month, string location, string value, string shadow, string info, string imgURL, bool hasGot)
             {
                 Name = name;
@@ -324,14 +290,14 @@ namespace Animal_Xing_Planner
         [Serializable]
         public class XmlUri
         {
-            private Uri _Value;
+            private Uri _value;
 
             public XmlUri() { }
-            public XmlUri(Uri source) { _Value = source; }
+            public XmlUri(Uri source) { _value = source; }
 
             public static implicit operator Uri(XmlUri o)
             {
-                return o == null ? null : o._Value;
+                return o?._value;
             }
 
             public static implicit operator XmlUri(Uri o)
@@ -346,31 +312,25 @@ namespace Animal_Xing_Planner
 
             public void ReadXml(XmlReader reader)
             {
-                _Value = new Uri(reader.ReadElementContentAsString());
+                _value = new Uri(reader.ReadElementContentAsString());
             }
 
             public void WriteXml(XmlWriter writer)
             {
-                writer.WriteValue(_Value.ToString());
+                writer.WriteValue(_value.ToString());
             }
         }
 
         public class XmlBug : XmlCollectible
         {
-            public XmlBug()
-            { }
         }
 
         public class XmlFish : XmlCollectible
         {
-            public XmlFish()
-            { }
         }
 
         public class XmlSeafood : XmlCollectible
         {
-            public XmlSeafood()
-            { }
         }
         #endregion
     }

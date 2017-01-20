@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Animal_Xing_Planner
 {
@@ -7,9 +8,6 @@ namespace Animal_Xing_Planner
     {
         public static List<string> Load(string path)
         {
-            List<string> names = new List<string>();
-            string[] parts;
-
             // Load the file
             FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(fs);
@@ -18,12 +16,9 @@ namespace Animal_Xing_Planner
             string line = reader.ReadToEnd();
 
             // split the string to a string array
-            parts = line.Split(',');
+            var parts = line.Split(',');
 
-            for (int i = 0; i < parts.Length; i++)
-                names.Add(parts[i]);
-
-            return names;
+            return parts.ToList();
         }
     }
 }
