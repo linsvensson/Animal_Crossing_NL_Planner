@@ -60,19 +60,19 @@ namespace Animal_Xing_Planner
             switch (_msgIcon)
             {
                 case MessageBoxIconType.None:
-                    iconImage = null;
+                    IconImage = null;
                     break;
                 case MessageBoxIconType.Info:
-                    iconImage.Source = Globals.GetBitmapImage("info", "messagebox/");
+                    IconImage.Source = Globals.GetBitmapImage("info", "messagebox/");
                     break;
                 case MessageBoxIconType.Error:
-                    iconImage.Source = Globals.GetBitmapImage("error", "messagebox/");
+                    IconImage.Source = Globals.GetBitmapImage("error", "messagebox/");
                     break;
                 case MessageBoxIconType.Question:
-                    iconImage.Source = Globals.GetBitmapImage("question", "messagebox/");
+                    IconImage.Source = Globals.GetBitmapImage("question", "messagebox/");
                     break;
                 case MessageBoxIconType.Warning:
-                    iconImage.Source = Globals.GetBitmapImage("warning", "messagebox/");
+                    IconImage.Source = Globals.GetBitmapImage("warning", "messagebox/");
                     break;
                 default:
                     return;
@@ -86,28 +86,28 @@ namespace Animal_Xing_Planner
             switch (_buttons)
             {
                 case MessageBoxButton.OK:
-                    btnOk.Visibility = Visibility.Visible;
-                    btnCancel.Visibility = Visibility.Collapsed;
-                    btnYes.Visibility = Visibility.Collapsed;
-                    btnNo.Visibility = Visibility.Collapsed;
+                    OkBtn.Visibility = Visibility.Visible;
+                    CancelBtn.Visibility = Visibility.Collapsed;
+                    YesBtn.Visibility = Visibility.Collapsed;
+                    NoBtn.Visibility = Visibility.Collapsed;
                     break;
                 case MessageBoxButton.OKCancel:
-                    btnOk.Visibility = Visibility.Visible;
-                    btnCancel.Visibility = Visibility.Visible;
-                    btnYes.Visibility = Visibility.Collapsed;
-                    btnNo.Visibility = Visibility.Collapsed;
+                    OkBtn.Visibility = Visibility.Visible;
+                    CancelBtn.Visibility = Visibility.Visible;
+                    YesBtn.Visibility = Visibility.Collapsed;
+                    NoBtn.Visibility = Visibility.Collapsed;
                     break;
                 case MessageBoxButton.YesNo:
-                    btnOk.Visibility = Visibility.Collapsed;
-                    btnCancel.Visibility = Visibility.Collapsed;
-                    btnYes.Visibility = Visibility.Visible;
-                    btnNo.Visibility = Visibility.Visible;
+                    OkBtn.Visibility = Visibility.Collapsed;
+                    CancelBtn.Visibility = Visibility.Collapsed;
+                    YesBtn.Visibility = Visibility.Visible;
+                    NoBtn.Visibility = Visibility.Visible;
                     break;
                 case MessageBoxButton.YesNoCancel:
-                    btnOk.Visibility = Visibility.Collapsed;
-                    btnCancel.Visibility = Visibility.Visible;
-                    btnYes.Visibility = Visibility.Visible;
-                    btnNo.Visibility = Visibility.Visible;
+                    OkBtn.Visibility = Visibility.Collapsed;
+                    CancelBtn.Visibility = Visibility.Visible;
+                    YesBtn.Visibility = Visibility.Visible;
+                    NoBtn.Visibility = Visibility.Visible;
                     break;
                 default:
                     return;
@@ -169,9 +169,9 @@ namespace Animal_Xing_Planner
                     Owner = owner;
 
                 if (Globals.CurrentAccent != null)
-                    title.Foreground = Globals.CurrentAccent;
-                title.Text = caption;
-                tbMessage.Text = message;
+                    TitleTextBlock.Foreground = Globals.CurrentAccent;
+                TitleTextBlock.Text = caption;
+                MessageTextBlock.Text = message;
                 Buttons = buttons;
                 MsgIcon = icon;
 

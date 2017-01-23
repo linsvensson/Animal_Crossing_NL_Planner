@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:metro="http://schemas.codeplex.com/elysium"
-             xmlns:local="clr-namespace:Animal_Xing_Planner"   
-             xmlns:params="http://schemas.codeplex.com/elysium/params"
 
             mc:Ignorable="d" 
              BorderThickness="0,3,0,3" Height="152" ShowInTaskbar="False"
@@ -22,17 +20,16 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="title" FontSize="18" Margin="90,10,20,45" Grid.RowSpan="2" Width="345" FontFamily="/resources/fonts/#FinkHeavy" Foreground="{DynamicResource Accent}"  />
-
-            <TextBlock Grid.Row="1" x:Name="tbMessage" TextWrapping="Wrap" Margin="95,41,10,0" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="12" Foreground="#FF383838"  />
-
+            <TextBlock x:Name="TitleTextBlock" FontSize="18" Margin="90,10,20,45" Grid.RowSpan="2" Width="345" FontFamily="/resources/fonts/#FinkHeavy" Foreground="{DynamicResource Accent}"  />
+            <TextBlock Grid.Row="1" x:Name="MessageTextBlock" TextWrapping="Wrap" Margin="95,41,10,0" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="12" Foreground="#FF383838"  />
             <StackPanel Grid.Row="2" HorizontalAlignment="Right"  Orientation="Horizontal">
-                <Button Width="70" IsDefault="True" x:Name="btnYes" Margin="10" Content="Yes" Click="btnYes_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
-                <Button Width="70" IsCancel="True" x:Name="btnNo" Margin="10" Content="No" Click="btnNo_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
-                <Button Width="70" IsDefault="True" x:Name="btnOk" Margin="10" Content="ok" Click="btnOk_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
-                <Button Width="70" x:Name="btnCancel" Margin="10" IsCancel="True" Content="Cancel" Click="btnCancel_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
+                <Button Width="70" IsDefault="True" x:Name="YesBtn" Margin="10" Content="Yes" Click="btnYes_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
+                <Button Width="70" IsCancel="True" x:Name="NoBtn" Margin="10" Content="No" Click="btnNo_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
+                <Button Width="70" IsDefault="True" x:Name="OkBtn" Margin="10" Content="ok" Click="btnOk_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
+                <Button Width="70" x:Name="CancelBtn" Margin="10" IsCancel="True" Content="Cancel" Click="btnCancel_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" />
             </StackPanel>
-            <Image x:Name="iconImage" HorizontalAlignment="Left" Height="49" Margin="22,29,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.521,0.354" Grid.RowSpan="2" Stretch="Fill"/>
+            <Image x:Name="IconImage" HorizontalAlignment="Left" Height="49" Margin="22,29,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.521,0.354"
+                   Grid.Row="0" Grid.RowSpan="2" Stretch="Fill"/>
         </Grid>
     </Border>
 

@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using Animal_Xing_Planner.Properties;
 using Elysium;
+using Elysium.Parameters;
 using Microsoft.Win32;
 using Window = Elysium.Controls.Window;
 
@@ -15,9 +16,7 @@ namespace Animal_Xing_Planner
     /// </summary>
     public partial class SettingsWindow
     {
-        private ResourceDictionary _resource = new ResourceDictionary();
         private readonly string[] _tpcColours = { "Green", "Pink", "Blue", "Red", "Orange" };
-
         public bool IsShowing;
 
         public SettingsWindow()
@@ -26,7 +25,7 @@ namespace Animal_Xing_Planner
 
             InitializeComponent();
             DataContext = Globals.Main;
-            tpcComboBox.ItemsSource = _tpcColours;
+            TpcComboBox.ItemsSource = _tpcColours;
             ShowCurrentTpcColour();
         }
 
@@ -36,7 +35,7 @@ namespace Animal_Xing_Planner
                 Owner = owner;
 
             IsShowing = true;
-            settingsTabControl.SelectedIndex = 0;
+            SettingsTabControl.SelectedIndex = 0;
             ShowDialog();
         }
 
@@ -65,7 +64,7 @@ namespace Animal_Xing_Planner
                 Globals.SetProfile(null);
 
                 Globals.ResetChecklist();
-                profileListView.Items.Refresh();
+                ProfileListView.Items.Refresh();
                 Globals.SettingsWindow.HighlightCurrentProfile();
             }
         }
@@ -85,10 +84,7 @@ namespace Animal_Xing_Planner
 
         private void soundSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (soundSlider.Value == 0)
-                Globals.BSound = false;
-            else
-                Globals.BSound = true;
+            Globals.BSound = SoundSlider.Value != 0;
         }
 
         private void blueButton_Click(object sender, RoutedEventArgs e)
@@ -118,7 +114,7 @@ namespace Animal_Xing_Planner
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            if (profileListView.SelectedItem != null)
+            if (ProfileListView.SelectedItem != null)
             {
                 Globals.CWindow.Show(this, CContent.Profile, CAction.Edit);
             }
@@ -129,8 +125,8 @@ namespace Animal_Xing_Planner
 
         private void useButton_Click(object sender, RoutedEventArgs e)
         {
-            if (profileListView.SelectedItem != null)
-                Globals.SetProfile(profileListView.SelectedItem as Profile);
+            if (ProfileListView.SelectedItem != null)
+                Globals.SetProfile(ProfileListView.SelectedItem as Profile);
 
             else
                 Globals.MsgBox.Show(this, "You haven't selected a profile!", "Missing information", MessageBoxButton.OK, MessageBoxIconType.Warning);
@@ -138,14 +134,14 @@ namespace Animal_Xing_Planner
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if (profileListView.SelectedItem != null)
-                DeleteProfile(Globals.SettingsWindow.profileListView.SelectedItem as Profile);
+            if (ProfileListView.SelectedItem != null)
+                DeleteProfile(Globals.SettingsWindow.ProfileListView.SelectedItem as Profile);
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (profileListView.SelectedItem != null)
-                DeleteProfile(Globals.SettingsWindow.profileListView.SelectedItem as Profile);
+            if (ProfileListView.SelectedItem != null)
+                DeleteProfile(Globals.SettingsWindow.ProfileListView.SelectedItem as Profile);
 
             else
                 Globals.MsgBox.Show(this, "You haven't selected a profile!", "Missing information", MessageBoxButton.OK, MessageBoxIconType.Warning);
@@ -154,7 +150,7 @@ namespace Animal_Xing_Planner
 
         private void trayCheckBox_Click(object sender, RoutedEventArgs e)
         {
-            if (trayCheckBox.IsChecked == true)
+            if (TrayCheckBox.IsChecked == true)
             {
                 // Enable "minimize to tray" behavior for main Window
                 MinimizeToTray.Enable(Globals.Main);
@@ -186,11 +182,11 @@ namespace Animal_Xing_Planner
             if (Globals.UserSettings.CurrentProfile == null)
                 return;
 
-            foreach (Profile t in profileListView.Items)
+            foreach (Profile t in ProfileListView.Items)
             {
                 if (t == null) return;
                 if (t.Mayor != Globals.UserSettings.CurrentProfile.Mayor) continue;
-                profileListView.SelectedItem = t;
+                ProfileListView.SelectedItem = t;
                 break;
             }
         }
@@ -201,24 +197,24 @@ namespace Animal_Xing_Planner
                 return;
 
             if (Globals.CurrentAccent.Equals(AccentBrushes.Green))
-                greenButton.Focus();
+                GreenButton.Focus();
             else if (Globals.CurrentAccent.Equals(AccentBrushes.Sky))
-                blueButton.Focus();
+                BlueButton.Focus();
             else if (Globals.CurrentAccent.Equals(AccentBrushes.Pink))
-                pinkButton.Focus();
+                PinkButton.Focus();
             else if (Globals.CurrentAccent.Equals(AccentBrushes.Red))
-                redButton.Focus();
+                RedButton.Focus();
             else
-                orangeButton.Focus();
+                OrangeButton.Focus();
         }
 
         private void ShowCurrentTpcColour()
         {
             string colour = Settings.Default.TPC;
 
-            for (int i = 0; i < tpcComboBox.Items.Count; i++)
-                if (tpcComboBox.Items[i].Equals(colour))
-                    tpcComboBox.SelectedItem = tpcComboBox.Items[i];
+            for (int i = 0; i < TpcComboBox.Items.Count; i++)
+                if (TpcComboBox.Items[i].Equals(colour))
+                    TpcComboBox.SelectedItem = TpcComboBox.Items[i];
         }
 
         private void themeTabItem_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -245,17 +241,22 @@ namespace Animal_Xing_Planner
                 if (!result.HasValue)
                     return;
 
-                Globals.SettingsWindow.villagerButton.Visibility = Visibility.Hidden;
-                byte[] screenshot = Globals.Main.TPCGrid.GetJpgImage();
+                // Select the profile tab and force render it
+                int selectedIndex = Globals.Main.MainTabControl.SelectedIndex;
+                Globals.Main.ProfileTabItem.IsSelected = true;
+                Globals.Main.ProfileTabItem.Refresh();
+
+                byte[] screenshot = Globals.Main.TpcGrid.GetJpgImage();
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.Create, FileAccess.ReadWrite);
                 BinaryWriter binaryWriter = new BinaryWriter(fileStream);
                 binaryWriter.Write(screenshot);
                 binaryWriter.Close();
-                Globals.SettingsWindow.villagerButton.Visibility = Visibility.Visible;
+
+                // Select the last selected tab item
+                Globals.Main.MainTabControl.SelectedIndex = selectedIndex;
             }
             catch (Exception ex)
             {
-                Globals.SettingsWindow.villagerButton.Visibility = Visibility.Visible;
                 Globals.MsgBox.Show(this, "Unable to save TPC, check the log for further info", "Could not save", MessageBoxButton.OK, MessageBoxIconType.Error);
                 Globals.Logger.Warn("Unable to save TPC: " + ex.Message);
             }
@@ -263,13 +264,13 @@ namespace Animal_Xing_Planner
 
         private void tpcComboBox_DropDownClosed(object sender, EventArgs e)
         {
-            Globals.SetTpcColour(tpcComboBox.Text);
+            Globals.SetTpcColour(TpcComboBox.Text);
         }
 
         private void defaultSoundButton_Click(object sender, RoutedEventArgs e)
         {
             Globals.Main.SoundPlayer.Stream = Properties.Resources.reminder;
-            soundTextBox.Text = "Default";
+            SoundTextBox.Text = "Default";
             Settings.Default.CustomSound = string.Empty;
             Settings.Default.Save();
         }
@@ -278,7 +279,7 @@ namespace Animal_Xing_Planner
         {
             Globals.ToggleVillagers();
 
-            villagerButton.Content = FindResource(villagerButton.Content == FindResource("Visible") ? "Hidden" : "Visible");
+            VillagerButton.Content = FindResource(VillagerButton.Content == FindResource("Visible") ? "Hidden" : "Visible");
         }
 
         private void soundTextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)

@@ -82,8 +82,9 @@
             <ImageBrush TileMode="Tile" ImageSource="/ACNL_Planner;component/Resources/bg/bg2.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <TabControl x:Name="settingsTabControl" Height="184" Margin="10,10,10,0" VerticalAlignment="Top" TabStripPlacement="Top" BorderBrush="Black">
-            <TabItem x:Name="generalTabItem" Header="General" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}">
+        <TabControl x:Name="SettingsTabControl" Height="184" Margin="10,10,10,0" VerticalAlignment="Top" TabStripPlacement="Top" BorderBrush="Black">
+            <!--#region General Tab-->
+            <TabItem x:Name="GeneralTabItem" Header="General" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}">
                 <TabItem.Resources>
                     <Style TargetType="TabItem">
                         <Setter Property="Template">
@@ -104,8 +105,8 @@
                 </TabItem.Resources>
 
                 <Grid>
-                    <Button x:Name="defaultSoundButton" Content="Default Sound" HorizontalAlignment="Left" Margin="189,24,0,0" VerticalAlignment="Top" Width="97" Height="28" Click="defaultSoundButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <TextBox x:Name="soundTextBox" HorizontalAlignment="Left" Height="24" Margin="68,26,0,0" TextWrapping="Wrap" Text="Default" VerticalAlignment="Top" Width="118" PreviewMouseDown="soundTextBox_PreviewMouseDown">
+                    <Button x:Name="DefaultSoundBtn" Content="Default Sound" HorizontalAlignment="Left" Margin="189,24,0,0" VerticalAlignment="Top" Width="97" Height="28" Click="defaultSoundButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <TextBox x:Name="SoundTextBox" HorizontalAlignment="Left" Height="24" Margin="68,26,0,0" TextWrapping="Wrap" Text="Default" VerticalAlignment="Top" Width="118" PreviewMouseDown="soundTextBox_PreviewMouseDown">
                         <TextBox.Style>
                             <Style TargetType="TextBox">
                                 <Setter Property="ToolTip">
@@ -116,13 +117,13 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <GroupBox x:Name="soundGroupBox" Header="Sound" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" Width="286" Height="64" />
-                    <Slider x:Name="soundSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Height="26" SmallChange="1" Maximum="1" ValueChanged="soundSlider_ValueChanged" Margin="16,28,0,0" RenderTransformOrigin="0.919,0.97"/>
-                    <Label x:Name="soundLabel" Content="Sound" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="11,0,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
-                    <Button x:Name="saveTPCButton" Content="Save TPC" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="saveTPCButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12">
+                    <GroupBox x:Name="SoundGroupBox" Header="Sound" HorizontalAlignment="Left" Margin="6,3,0,0" VerticalAlignment="Top" Width="286" Height="64" />
+                    <Slider x:Name="SoundSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Height="26" SmallChange="1" Maximum="1" ValueChanged="soundSlider_ValueChanged" Margin="16,28,0,0" RenderTransformOrigin="0.919,0.97"/>
+                    <Label x:Name="SoundLabel" Content="Sound" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="11,0,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
+                    <Button x:Name="SaveTpcButton" Content="Save TPC" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" Width="89" Height="27" Click="saveTPCButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12">
                     
                     </Button>
-                    <Button x:Name="villagerButton" Height="25" MinWidth="25" Margin="58,123,215,1" Click="villagerButton_Click" ToolTip="Toggle villager visibility on TPC" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" SnapsToDevicePixels="True" Width="25" >
+                    <Button x:Name="VillagerButton" Height="25" MinWidth="25" Margin="58,123,215,1" Click="villagerButton_Click" ToolTip="Toggle villager visibility on TPC" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" SnapsToDevicePixels="True" Width="25" >
                         <DynamicResource ResourceKey="Visible"/>
                         <Button.Style>
                             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -143,13 +144,16 @@
                             </Style>
                         </Button.Style>
                     </Button>
-                    <Button x:Name="updateButton" Content="Check for Update" HorizontalAlignment="Left" Margin="167,113,0,0" VerticalAlignment="Top" Width="125" Height="30" Click="updateButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <Label x:Name="saveTPCLabel" Content="*Saves your TPC as jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" FontSize="10" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="16,102,0,0" Height="26" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontStyle="Italic"/>
-                    <CheckBox x:Name="trayCheckBox" Content="" HorizontalAlignment="Left" Margin="272,74,0,0" VerticalAlignment="Top" Height="26" Width="25" Click="trayCheckBox_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="12" Foreground="{DynamicResource Accent}"/>
-                    <Label x:Name="trayLabel" Content="Minimize to tray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="168,75,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
+                    <Button x:Name="UpdateButton" Content="Check for Update" HorizontalAlignment="Left" Margin="167,113,0,0" VerticalAlignment="Top" Width="125" Height="30" Click="updateButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Label x:Name="SaveTpcLabel" Content="*Saves your TPC as jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" FontSize="10" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="16,102,0,0" Height="26" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" FontStyle="Italic"/>
+                    <CheckBox x:Name="TrayCheckBox" Content="" HorizontalAlignment="Left" Margin="272,74,0,0" VerticalAlignment="Top" Height="26" Width="25" Click="trayCheckBox_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="12" Foreground="{DynamicResource Accent}"/>
+                    <Label x:Name="TrayLabel" Content="Minimize to tray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Margin="168,75,0,0" Height="26" Foreground="{DynamicResource Accent}"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="profileTabItem" Header="Profiles" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}" IsVisibleChanged="profileTabItem_IsVisibleChanged">
+            <!--#endregion-->
+
+            <!--#region Profiles Tab-->
+            <TabItem x:Name="ProfileTabItem" Header="Profiles" Margin="0,0,-3,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" Foreground="{x:Null}" IsVisibleChanged="profileTabItem_IsVisibleChanged">
                 <TabItem.Resources>
                     <Style TargetType="TabItem">
                         <Setter Property="Template">
@@ -170,7 +174,7 @@
                 </TabItem.Resources>
 
                 <Grid>
-                    <ListView x:Name="profileListView" ScrollViewer.HorizontalScrollBarVisibility="Auto" ItemsSource="{Binding Profiles}" VirtualizingStackPanel.VirtualizationMode="Recycling" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" Foreground="#FF383838" FontSize="11" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                    <ListView x:Name="ProfileListView" ScrollViewer.HorizontalScrollBarVisibility="Auto" ItemsSource="{Binding Profiles}" VirtualizingStackPanel.VirtualizationMode="Recycling" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" Foreground="#FF383838" FontSize="11" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" HorizontalContentAlignment="Stretch" BorderThickness="0">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="Template">
@@ -209,15 +213,15 @@
                                 </Setter>
                                 <Setter Property="ToolTip">
                                     <Setter.Value>
-                                        <TextBlock x:Name="FCToolTip" Text="{Binding FC}"/>
+                                        <TextBlock x:Name="FCToolTip" Text="{Binding Fc}"/>
                                     </Setter.Value>
                                 </Setter>
                             </Style>
 
                         </ListView.ItemContainerStyle>
                         <ListView.ContextMenu>
-                            <ContextMenu Name="menu" StaysOpen="True">
-                                <MenuItem Name="deleteItem" Header="Remove" Click="deleteMenuItem_Click">
+                            <ContextMenu Name="ProfileMenu" StaysOpen="True">
+                                <MenuItem Name="DeleteMenuItem" Header="Remove" Click="deleteMenuItem_Click">
                                 </MenuItem>
                             </ContextMenu>
                         </ListView.ContextMenu>
@@ -242,13 +246,16 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button x:Name="newButton" Content="New Profile" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="172" Height="27" Click="newButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <Button x:Name="editButton" Content="Edit Profile" HorizontalAlignment="Left" Margin="187,42,0,0" VerticalAlignment="Top" Width="99" Height="26" Click="editButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <Button x:Name="useButton" Content="Use Profile" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="useButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-                    <Button x:Name="deleteButton" Content="Delete Profile" HorizontalAlignment="Left" Margin="187,83,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="deleteButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="NewButton" Content="New Profile" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="172" Height="27" Click="newButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="EditButton" Content="Edit Profile" HorizontalAlignment="Left" Margin="187,42,0,0" VerticalAlignment="Top" Width="99" Height="26" Click="editButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="UseButton" Content="Use Profile" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="useButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
+                    <Button x:Name="DeleteButton" Content="Delete Profile" HorizontalAlignment="Left" Margin="187,83,0,0" VerticalAlignment="Top" Width="99" Height="27" Click="deleteButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="themeTabItem" Header="Theme" FontSize="12" Margin="10,0,-10,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" IsVisibleChanged="themeTabItem_IsVisibleChanged">
+            <!--#endregion-->
+
+            <!--#region Theme Tab-->
+            <TabItem x:Name="ThemeTabItem" Header="Theme" FontSize="12" Margin="10,0,-10,0" FontFamily="/resources/fonts/#FinkHeavy" Background="{x:Null}" IsVisibleChanged="themeTabItem_IsVisibleChanged">
                 <TabItem.Resources>
                     <Style TargetType="TabItem">
                         <Setter Property="Template">
@@ -268,8 +275,8 @@
                     </Style>
                 </TabItem.Resources>
                 <Grid>
-                    <Label x:Name="accentLabel" Content="Accent:" HorizontalAlignment="Left" Margin="7,14,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
-                    <Button x:Name="greenButton" Content="" HorizontalAlignment="Left" Margin="7,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF008000" BorderBrush="{x:Null}" Click="greenButton_Click">
+                    <Label x:Name="AccentLabel" Content="Accent:" HorizontalAlignment="Left" Margin="7,14,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
+                    <Button x:Name="GreenButton" Content="" HorizontalAlignment="Left" Margin="7,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF008000" BorderBrush="{x:Null}" Click="greenButton_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="BorderThickness" Value="5.0"/>
@@ -303,8 +310,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-
-                    <Button x:Name="blueButton" Content="" HorizontalAlignment="Left" Margin="70,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF1BA1E2" BorderBrush="{x:Null}" Click="blueButton_Click">
+                    <Button x:Name="BlueButton" Content="" HorizontalAlignment="Left" Margin="70,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FF1BA1E2" BorderBrush="{x:Null}" Click="blueButton_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="BorderThickness" Value="3.0"/>
@@ -338,8 +344,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-
-                    <Button x:Name="pinkButton" Content="" HorizontalAlignment="Left" Margin="131,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFE671B8" BorderBrush="{x:Null}" Click="pinkButton_Click">
+                    <Button x:Name="PinkButton" Content="" HorizontalAlignment="Left" Margin="131,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFE671B8" BorderBrush="{x:Null}" Click="pinkButton_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="BorderThickness" Value="3.0"/>
@@ -373,8 +378,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-
-                    <Button x:Name="orangeButton" Content="" HorizontalAlignment="Left" Margin="192,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFF09609" BorderBrush="{x:Null}" Click="orangeButton_Click">
+                    <Button x:Name="OrangeButton" Content="" HorizontalAlignment="Left" Margin="192,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFF09609" BorderBrush="{x:Null}" Click="orangeButton_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="BorderThickness" Value="3.0"/>
@@ -408,8 +412,7 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-
-                    <Button x:Name="redButton" Content="" HorizontalAlignment="Left" Margin="252,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFFF0000" BorderBrush="{x:Null}" Click="redButton_Click">
+                    <Button x:Name="RedButton" Content="" HorizontalAlignment="Left" Margin="252,43,0,0" VerticalAlignment="Top" Width="42" Height="34" Background="#FFFF0000" BorderBrush="{x:Null}" Click="redButton_Click">
                         <Button.Resources>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="BorderThickness" Value="3.0"/>
@@ -443,13 +446,13 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Label x:Name="TPCColourLabel" Content="TPC Colour:" HorizontalAlignment="Left" Margin="7,107,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
-                    <ComboBox x:Name="tpcComboBox" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Width="105" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}" SelectedIndex="1" DropDownClosed="tpcComboBox_DropDownClosed"/>
+                    <Label x:Name="TpcColourLabel" Content="TPC Colour:" HorizontalAlignment="Left" Margin="7,107,0,0" VerticalAlignment="Top" Width="90" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}"/>
+                    <ComboBox x:Name="TpcComboBox" HorizontalAlignment="Left" Margin="85,105,0,0" VerticalAlignment="Top" Width="105" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="{DynamicResource Accent}" SelectedIndex="1" DropDownClosed="tpcComboBox_DropDownClosed"/>
                 </Grid>
             </TabItem>
+            <!--#endregion-->
         </TabControl>
-        <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="13,206,0,0" VerticalAlignment="Top" Width="118" Height="32" Click="backButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
-
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="13,206,0,0" VerticalAlignment="Top" Width="118" Height="32" Click="backButton_Click" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontWeight="Bold" FontSize="12"/>
     </Grid>
 
 </metro:Window>

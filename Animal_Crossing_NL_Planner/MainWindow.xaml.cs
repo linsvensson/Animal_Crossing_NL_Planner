@@ -21,7 +21,7 @@ namespace Animal_Xing_Planner
     {
         #region Variables
         private SortAdorner _curAdorner;
-        readonly System.Windows.Forms.Timer _fDeltaTime = new System.Windows.Forms.Timer();
+        private readonly System.Windows.Forms.Timer _fDeltaTime = new System.Windows.Forms.Timer();
 
         public bool BDoneLoading;
         public SoundPlayer SoundPlayer;
@@ -55,11 +55,11 @@ namespace Animal_Xing_Planner
             // Villager TPC setup
             Controls = new Dictionary<string, FrameworkElement>();
             for (int i = 0; i < 10; i++)
-                Controls.Add("v" + i + "Image", FindName("v" + i + "Image") as Image);
+                Controls.Add("V" + i + "Image", FindName("V" + i + "Image") as Image);
 
             if (!Properties.Settings.Default.VillagerToggle)
                 for (int j = 0; j < Main.Controls.Count; j++)
-                    Main.Controls["v" + j + "Image"].Visibility = Visibility.Hidden;
+                    Main.Controls["V" + j + "Image"].Visibility = Visibility.Hidden;
 
             // Every 10 seconds
             _fDeltaTime.Interval = (1000 * 10);
@@ -68,20 +68,20 @@ namespace Animal_Xing_Planner
 
             // Get username
             if (!string.IsNullOrEmpty(UserPrincipal.Current.DisplayName))
-                userNameLabel.Content = "Hello " + UserPrincipal.Current.DisplayName;
+                UserNameLabel.Content = "Hello " + UserPrincipal.Current.DisplayName;
             else
-                userNameLabel.Content = "Hello " + Environment.UserName;
+                UserNameLabel.Content = "Hello " + Environment.UserName;
 
             // Date for clock
             string day = DateTime.Now.DayOfWeek.ToString();
             char[] dayArr = day.ToCharArray();
-            dateTextLabel.Content = DateTime.Now.ToString("dd / MM");
-            dayTextLabel.Content = dayArr[0] + dayArr[1].ToString();
+            DateTextLabel.Content = DateTime.Now.ToString("dd / MM");
+            DayTextLabel.Content = dayArr[0] + dayArr[1].ToString();
 
             // Timer for clock
             new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
-                timeTextLabel.Content = DateTime.Now.ToString("HH:mm");
+                TimeTextLabel.Content = DateTime.Now.ToString("HH:mm");
             }, Dispatcher);
 
             UpdateManager.CheckforUpdate();
@@ -90,7 +90,7 @@ namespace Animal_Xing_Planner
             Collectibles = new List<Collectible>();
             Collectibles = XmlHandler.LoadCollectibles();
             var dpd = DependencyPropertyDescriptor.FromProperty(ItemsControl.ItemsSourceProperty, typeof(DataGrid));
-            dpd?.AddValueChanged(checklistDataGrid, ChecklistItemSourceChanged);
+            dpd?.AddValueChanged(ChecklistDataGrid, ChecklistItemSourceChanged);
             Globals.LoadChecklist();
 
             // We're done loading, set the current profile
@@ -98,14 +98,16 @@ namespace Animal_Xing_Planner
             if (Globals.UserSettings.CurrentProfile != null)
                 Globals.SetProfile(Globals.UserSettings.CurrentProfile);
 
+            Globals.BirthdayCheck();
+
             Globals.TakeOutGarbage();
         }
 
         private void ChecklistItemSourceChanged(object sender, EventArgs e)
         {
-            if (Main.checklistDataGrid.ItemsSource == null) return;
+            if (Main.ChecklistDataGrid.ItemsSource == null) return;
 
-            ICollectionView collection = CollectionViewSource.GetDefaultView(Main.checklistDataGrid.ItemsSource);
+            ICollectionView collection = CollectionViewSource.GetDefaultView(Main.ChecklistDataGrid.ItemsSource);
             if (collection.GroupDescriptions.Count == 0)
                 collection.GroupDescriptions.Add(new PropertyGroupDescription("Type"));
         }
@@ -113,8 +115,8 @@ namespace Animal_Xing_Planner
         private void Main_MouseDown(object sender, MouseButtonEventArgs e)
         {
             // If noticeListView loses focus, reset its selected item
-            if (noticeListView.SelectedItem != null)
-                noticeListView.SelectedItem = null;
+            if (NoticeListView.SelectedItem != null)
+                NoticeListView.SelectedItem = null;
         }
 
         private void Main_DragEnter(object sender, DragEventArgs e)
@@ -126,7 +128,7 @@ namespace Animal_Xing_Planner
 
         private void Main_Closing(object sender, CancelEventArgs e)
         {
-            //Globals.Logger.Init("Shutting down...");
+            //Globals.Logger.Error("Shutting down...");
             Globals.ShutDown = true;
             Globals.SaveProfiles();          
             Globals.UnsubscribeNotices();
@@ -172,14 +174,46 @@ namespace Animal_Xing_Planner
         #region Update
         public void Update(object sender, EventArgs e)
         {
-            if (noticeListView.Items.Count == 0) return;
+            if (NoticeListView.Items.Count == 0) return;
 
-            foreach (Notice t in noticeListView.Items)
-                t.Update();
+            for (int i = 0; i < NoticeListView.Items.Count; i++)
+            {
+                Notice notice = NoticeListView.Items[i] as Notice;
+                notice?.Update();
+            }
         }
         #endregion
 
         #region Control Events
+        private void DG_Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Collectible item = ChecklistDataGrid.SelectedItem as Collectible;
+                Hyperlink link = e.OriginalSource as Hyperlink;
+                if (link == null) return;
+
+                if (item != null) link.NavigateUri = item.Info;
+                Process.Start(link.NavigateUri.AbsoluteUri);
+            }
+
+            catch (Exception ex)
+            {
+                Globals.MsgBox.Show(this, "Could not open link, are you connected to the internet?", "Error", MessageBoxButton.OK, MessageBoxIconType.Error);
+                Globals.Logger.Warn("Could not open hyperlink: " + ex.Message);
+            }
+        }
+
+        private void DG_CheckBox_Check(object sender, RoutedEventArgs e)
+        {
+            Globals.AddCollectible();
+        }
+
+        private void DG_CheckBox_Uncheck(object sender, RoutedEventArgs e)
+        {
+            Globals.RemoveCollectible();
+        }
+
         private void newprofileButton_Click(object sender, RoutedEventArgs e)
         {
             try { Globals.CWindow.Show(); }
@@ -203,7 +237,7 @@ namespace Animal_Xing_Planner
             try
             {
                 if (Globals.UserSettings.CurrentProfile != null)
-                    Globals.CWindow.Show(this, CContent.Reminder, CAction.None);
+                    Globals.CWindow.Show(this, CContent.Notice, CAction.None);
                 else
                     Globals.MsgBox.Show(this, "No profile set, create one in settings", "Info", MessageBoxButton.OK, MessageBoxIconType.Info);
             }
@@ -303,7 +337,7 @@ namespace Animal_Xing_Planner
             if (CurSortCol != null)
             {
                 AdornerLayer.GetAdornerLayer(CurSortCol).Remove(_curAdorner);
-                noticeListView.Items.SortDescriptions.Clear();
+                NoticeListView.Items.SortDescriptions.Clear();
             }
 
             ListSortDirection newDir = ListSortDirection.Ascending;
@@ -313,7 +347,7 @@ namespace Animal_Xing_Planner
             CurSortCol = column;
             _curAdorner = new SortAdorner(CurSortCol, newDir);
             AdornerLayer.GetAdornerLayer(CurSortCol).Add(_curAdorner);
-            noticeListView.Items.SortDescriptions.Add(new SortDescription(field, newDir));
+            NoticeListView.Items.SortDescriptions.Add(new SortDescription(field, newDir));
         }
 
         public void notice_Updated(object sender, NoticeEventArgs events)
@@ -338,20 +372,20 @@ namespace Animal_Xing_Planner
             switch (notice.Type)
             {
                 case NoticeType.Event:
-                    if (Globals.MsgBox.Show(this, notice.Description, notice.Type.ToString() + " - " + notice.Name, MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                    if (Globals.MsgBox.Show(this, notice.Description, notice.Type + " - " + notice.Name, MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
                         if (Globals.BSound)
                             SoundPlayer.Stop();
                     break;
                 case NoticeType.Delivery:
                     if (!string.IsNullOrEmpty(notice.StopTime))
                     {
-                        if (Globals.MsgBox.Show(this, "You've got a delivery of " + notice.Item + " to " + notice.Name + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                        if (Globals.MsgBox.Show(this, "You've got a delivery of a(n) " + notice.Item + " to " + notice.Name + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
                             if (Globals.BSound)
                                 SoundPlayer.Stop();
                     }
 
                     else
-                    if (Globals.MsgBox.Show(this, "You've got a delivery of " + notice.Item + " to " + notice.Name + " for " + timeString + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
+                    if (Globals.MsgBox.Show(this, "You've got a delivery of a(n) " + notice.Item + " to " + notice.Name + " for " + timeString + "!", "", MessageBoxButton.OK, MessageBoxIconType.Info) == MessageBoxResult.OK)
                         if (Globals.BSound)
                             SoundPlayer.Stop();
                     break;
@@ -369,40 +403,23 @@ namespace Animal_Xing_Planner
 
         private void DeleteNotice()
         {
-            if (noticeListView.Items.Count == 0) return;
+            if (NoticeListView.Items.Count == 0) return;
 
             if (Globals.MsgBox.Show(this, "Are you sure you want to delete this notice?", "Confirmation", MessageBoxButton.YesNo, MessageBoxIconType.Info) == MessageBoxResult.Yes)
-                if (noticeListView.SelectedItem != null)
-                    Globals.RemoveNotice(noticeListView.SelectedItem as Notice);
+                if (NoticeListView.SelectedItem != null)
+                    Globals.RemoveNotice(NoticeListView.SelectedItem as Notice);
         }
 
-        private void DG_Hyperlink_Click(object sender, RoutedEventArgs e)
+        public void ResizeGridViewColumn()
         {
-            try
+            GridView view = NoticeListView.View as GridView;
+            if (view == null) return;
+            if (double.IsNaN(view.Columns[1].Width))
             {
-                Collectible item = checklistDataGrid.SelectedItem as Collectible;
-                Hyperlink link = e.OriginalSource as Hyperlink;
-                if (link == null) return;
-
-                if (item != null) link.NavigateUri = item.Info;
-                Process.Start(link.NavigateUri.AbsoluteUri);
+                view.Columns[1].Width = view.Columns[1].ActualWidth;
             }
 
-            catch (Exception ex)
-            {
-                Globals.MsgBox.Show(this, "Could not open link, are you connected to the internet?", "Error", MessageBoxButton.OK, MessageBoxIconType.Error);
-                Globals.Logger.Warn("Could not open hyperlink: " + ex.Message);
-            }
-        }
-
-        private void DG_CheckBox_Check(object sender, RoutedEventArgs e)
-        {
-            Globals.AddCollectible();
-        }
-
-        private void DG_CheckBox_Uncheck(object sender, RoutedEventArgs e)
-        {
-            Globals.RemoveCollectible();
+            view.Columns[1].Width = double.NaN;
         }
         #endregion
 

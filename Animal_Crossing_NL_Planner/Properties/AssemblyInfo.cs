@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Animal Crossing: NL Planner")]
-[assembly: AssemblyDescription("Planner program for Animal Crossing New Leaf")]
+[assembly: AssemblyDescription("Planner program for Animal Crossing: New Leaf")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("none")]
 [assembly: AssemblyProduct("Animal Crossing: NL Planner")]

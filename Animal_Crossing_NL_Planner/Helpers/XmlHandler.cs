@@ -72,7 +72,7 @@ namespace Animal_Xing_Planner
             }
             finally { stream.Close(); }
 
-            List<Collectible> nodes = (from t in xmlBugs let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, "n/a", link, t.ImageURL, t.HasGot, "Bug")).ToList();
+            List<Collectible> nodes = (from t in xmlBugs let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, "n/a", link, t.ImageUrl, t.HasGot, "Bug")).ToList();
 
             // Fish
             List<XmlFish> xmlFish = new List<XmlFish>();
@@ -95,7 +95,7 @@ namespace Animal_Xing_Planner
             }
             finally { stream.Close(); }
 
-            nodes.AddRange(from t in xmlFish let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageURL, t.HasGot, "Fish"));
+            nodes.AddRange(from t in xmlFish let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageUrl, t.HasGot, "Fish"));
 
             // Seafood
             List<XmlSeafood> xmlSeafood = new List<XmlSeafood>();
@@ -118,7 +118,7 @@ namespace Animal_Xing_Planner
             finally { stream.Close(); }
             stream.Dispose();
 
-            nodes.AddRange(from t in xmlSeafood let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageURL, t.HasGot, "Seafood"));
+            nodes.AddRange(from t in xmlSeafood let link = new Uri(t.Info) select new Collectible(t.Name, t.Month, t.Location, t.Value, t.Shadow, link, t.ImageUrl, t.HasGot, "Seafood"));
 
             Globals.TakeOutGarbage();
 
@@ -155,7 +155,7 @@ namespace Animal_Xing_Planner
                 if (string.IsNullOrEmpty(xmlObjects[i].Fruit))
                     xmlObjects[i].Fruit = "cherry";
                 Profile tempNode = new Profile(xmlObjects[i].Mayor, xmlObjects[i].Town, xmlObjects[i].Fruit,
-                    xmlObjects[i].FC, xmlObjects[i].DC, xmlObjects[i].TagLine, xmlObjects[i].Villagers)
+                    xmlObjects[i].Fc, xmlObjects[i].Dc, xmlObjects[i].TagLine, xmlObjects[i].Villagers)
                 {
                     ProfileImagePath = xmlObjects[i].ProfileImagePath,
                     Collectibles = xmlObjects[i].Collectibles,
@@ -167,7 +167,7 @@ namespace Animal_Xing_Planner
             foreach (Profile t in nodes)
             {
                 t.Villagers.ForEach(item => item.SetIcon());
-                t.Notices.ForEach(item => item.SetIcon());
+                t.Notices.ForEach(item => item.SetIcons());
             }
 
             return nodes;
@@ -224,8 +224,8 @@ namespace Animal_Xing_Planner
             public string Mayor { get; set; }
             public string Town { get; set; }
             public string Fruit { get; set; }
-            public string FC { get; set; }
-            public string DC { get; set; }
+            public string Fc { get; set; }
+            public string Dc { get; set; }
             public string TagLine { get; set; }
             public string ProfileImagePath { get; set; }
             public List<Villager> Villagers { get; set; }
@@ -237,8 +237,8 @@ namespace Animal_Xing_Planner
                 Mayor = mayor;
                 Town = town;
                 Fruit = fruit;
-                FC = fc;
-                DC = dc;
+                Fc = fc;
+                Dc = dc;
                 TagLine = tagline;
                 Villagers = villagers;
 
@@ -269,7 +269,7 @@ namespace Animal_Xing_Planner
             public string Name;
             public string Month;
             public string Info;
-            public string ImageURL;
+            public string ImageUrl;
             public string Location;
             public string Value;
             public string Shadow;
@@ -281,7 +281,7 @@ namespace Animal_Xing_Planner
                 Location = location;
                 Info = info;
                 Shadow = shadow;
-                ImageURL = imgURL;
+                ImageUrl = imgURL;
                 Value = value;
                 HasGot = hasGot;
             }

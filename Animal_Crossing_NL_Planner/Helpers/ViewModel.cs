@@ -12,9 +12,9 @@ namespace Animal_Xing_Planner
     /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
-        private readonly ProfileUc _owner;
+        private readonly ProfileUC _owner;
 
-        public ViewModel(ProfileUc owner)
+        public ViewModel(ProfileUC owner)
         {
             _owner = owner;
 
@@ -92,7 +92,7 @@ namespace Animal_Xing_Planner
                 }
 
                 Sort(Names);
-                _owner.nameComboBox.IsEnabled = true;
+                _owner.NameComboBox.IsEnabled = true;
                 OnPropertyChanged("Species");
             }
         }
@@ -122,9 +122,9 @@ namespace Animal_Xing_Planner
 
                 Sort(Species);
 
-                _owner.speciesComboBox.IsEnabled = true;
-                _owner.nameComboBox.IsEnabled = false;
-                _owner.nameComboBox.Text = string.Empty;
+                _owner.SpeciesComboBox.IsEnabled = true;
+                _owner.NameComboBox.IsEnabled = false;
+                _owner.NameComboBox.Text = string.Empty;
                 SelectedName = string.Empty;
 
                 OnPropertyChanged("Personality");
@@ -139,15 +139,15 @@ namespace Animal_Xing_Planner
             if (_owner == null)
                 return;
 
-            _owner.typeComboBox.Text = string.Empty;
+            _owner.TypeComboBox.Text = string.Empty;
             SelectedPersonality = string.Empty;
 
-            _owner.speciesComboBox.IsEnabled = false;
-            _owner.speciesComboBox.Text = string.Empty;
+            _owner.SpeciesComboBox.IsEnabled = false;
+            _owner.SpeciesComboBox.Text = string.Empty;
             SelectedSpecies = string.Empty;
 
-            _owner.nameComboBox.IsEnabled = false;
-            _owner.nameComboBox.Text = string.Empty;
+            _owner.NameComboBox.IsEnabled = false;
+            _owner.NameComboBox.Text = string.Empty;
             SelectedName = string.Empty;
         }
 

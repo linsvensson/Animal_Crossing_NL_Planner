@@ -95,10 +95,10 @@ C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\D
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Crossing_NL_Planner.csproj.GenerateResource.Cache
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.exe
 C:\Users\Lin\Desktop\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.pdb
-C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\bin\Debug\ACNL_Planner.exe.config
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\bin\Debug\ACNL_Planner.exe
-C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\bin\Debug\ACNL_Planner.pdb
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\bin\Debug\ACNL_Planner.exe.config
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\UserControls\HelpUC.baml
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Windows\SettingsWindow.baml
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\App.baml
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\UserControls\HelpUC.g.cs
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\UserControls\ProfileUC.g.cs
@@ -117,9 +117,10 @@ C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Plan
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Windows\CustomWindow.baml
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\MainWindow.baml
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Windows\MessageBox.baml
-C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Windows\SettingsWindow.baml
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.g.resources
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Xing_Planner.Properties.Resources.resources
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Crossing_NL_Planner.csproj.GenerateResource.Cache
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.exe
 C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\ACNL_Planner.pdb
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\bin\Debug\ACNL_Planner.pdb
+C:\Users\Lin\Documents\GitHub\Animal_Crossing_NL_Planner\Animal_Crossing_NL_Planner\obj\Debug\Animal_Crossing_NL_Planner.csprojResolveAssemblyReference.cache

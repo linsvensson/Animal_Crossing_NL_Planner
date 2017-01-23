@@ -29,17 +29,32 @@ namespace Animal_Xing_Planner
         #region Members;
         [XmlIgnore]
         [NonSerialized]
-        private System.Windows.Media.ImageSource icon;
+        private System.Windows.Media.ImageSource _icon;
         [XmlIgnore]
         public System.Windows.Media.ImageSource Icon
         {
             get
             {
-                return icon;
+                return _icon;
             }
             set
             {
-                icon = value;
+                _icon = value;
+            }
+        }
+        [XmlIgnore]
+        [NonSerialized]
+        private System.Windows.Media.ImageSource _villagercon;
+        [XmlIgnore]
+        public System.Windows.Media.ImageSource VillagerIcon
+        {
+            get
+            {
+                return _villagercon;
+            }
+            set
+            {
+                _villagercon = value;
             }
         }
         public string Name { get; set; }
@@ -73,7 +88,7 @@ namespace Animal_Xing_Planner
             try
             {
                 if (string.IsNullOrEmpty(StopTime)) return;
-                if (Globals.Main.noticeListView.Items.Count == 0) return;
+                if (Globals.Main.NoticeListView.Items.Count == 0) return;
 
                 string timeNow = DateTime.Now.ToString("HH:mm:00");
                 TimeSpan stop = TimeSpan.Parse(StopTime);
@@ -97,31 +112,34 @@ namespace Animal_Xing_Planner
         }
 
         /// <summary>
-        /// Sets the right icon depending on NoticeType
+        /// Sets the right icon depending on NoticeType and Villager
         /// </summary>
-        public void SetIcon()
+        public void SetIcons()
         {
             try
             {
+                string tempName = Name.ToLower();
+
                 switch (Type)
                 {
                     case NoticeType.Delivery:
                         Icon = Globals.GetBitmapImage("present", "notice/");
+                        VillagerIcon = Globals.GetBitmapImage(tempName, "villagers/", ".gif");
                         break;
                     case NoticeType.Event:
                         Icon = Globals.GetBitmapImage("cracker", "notice/");
                         break;
                     case NoticeType.Birthday:
                         Icon = Globals.GetBitmapImage("cake", "notice/");
+                        VillagerIcon = Globals.GetBitmapImage(tempName, "villagers/", ".gif");
                         break;
                     case NoticeType.Meeting:
-                        break;
-                    default:
                         Icon = Globals.GetBitmapImage("coffee", "notice/");
+                        VillagerIcon = Globals.GetBitmapImage(tempName, "villagers/", ".gif");
                         break;
                 }
             }
-            catch (Exception ex) { Globals.Logger.Warn("Could not set notice icon: " + ex.Message); }
+            catch (Exception ex) { Globals.Logger.Warn("Could not set notice icon(s): " + ex.Message); }
         }
 
         public void NoticeUpdate(object sender, NoticeEventArgs events)

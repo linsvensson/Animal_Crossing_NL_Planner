@@ -8,7 +8,7 @@ namespace Animal_Xing_Planner
     public enum CContent
     {
         Profile,
-        Reminder,
+        Notice,
     };
 
     /// <summary>
@@ -18,9 +18,9 @@ namespace Animal_Xing_Planner
     {
         private CContent _content;
 
-        public ProfileUc ProfileUc = new ProfileUc();
+        public ProfileUC ProfileUc = new ProfileUC();
         public NoticeUC NoticeUc = new NoticeUC();
-        public HelpUc HelpUc = new HelpUc();
+        public HelpUC HelpUc = new HelpUC();
 
         public bool IsShowing;
 
@@ -115,7 +115,7 @@ namespace Animal_Xing_Planner
             if (filenames == null) return;
             BitmapImage tmpImage = new BitmapImage((new Uri(filenames[0])));
 
-            ProfileUc.profileImg.Source = tmpImage;
+            ProfileUc.ProfileImage.Source = tmpImage;
         }
 
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)

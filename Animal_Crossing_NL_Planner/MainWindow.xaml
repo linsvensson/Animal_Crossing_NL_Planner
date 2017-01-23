@@ -3,14 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         xmlns:metro="http://schemas.codeplex.com/elysium"
-        xmlns:metroc="http://schemas.codeplex.com/elysium/controls"
-        xmlns:params="http://schemas.codeplex.com/elysium/params"
         xmlns:local="clr-namespace:Animal_Xing_Planner"             
         Title="Animal Crossing: NL Planner" Width="520" Height="405.975" ResizeMode="CanMinimize" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Closing="Main_Closing" Loaded="Main_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SizeToContent="WidthAndHeight" metro:Window.IsMainWindow="True" WindowStyle="SingleBorderWindow" HasDropShadow="False"  Icon="Resources/acicon.ico" WindowStartupLocation="CenterScreen" MaxWidth="520" MouseDown="Main_MouseDown">
 
     <!--#region Resources-->
     <metro:Window.Resources>
-        
         <Style TargetType="{x:Type Hyperlink}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -19,9 +16,8 @@
             </Style.Triggers>
             <Setter Property="Foreground" Value="#FF07034B" />
             <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
-
         </Style>
-        
+
         <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
             <Setter Property="FontFamily" Value="/resources/fonts/#SecondaRoundW00-Heavy" />
             <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -169,6 +165,10 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
         </Style>
 
         <local:TextConverter x:Key="TextConverter"/>
+
+        <!--<Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>-->
     </metro:Window.Resources>
     <!--#endregion-->
 
@@ -177,17 +177,18 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
             <ImageBrush ImageSource="Resources/bg/bg.png" TileMode="Tile"/>
         </Grid.Background>
 
-        <Label x:Name="userNameLabel" Margin="10,10,138,340" FontSize="16" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Background="{x:Null}" Foreground="{DynamicResource Accent}"/>
-        <TabControl Margin="22,39,26,10" Width="422" Height="329">
-            <TabItem Header="Home" FontFamily="/resources/fonts/#FinkHeavy" Foreground="{x:Null}" Margin="-5,-1,5,1" >
+        <Label x:Name="UserNameLabel" Margin="10,10,138,340" FontSize="16" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Background="{x:Null}" Foreground="{DynamicResource Accent}"/>
+        <TabControl x:Name="MainTabControl" Margin="22,39,26,10" Width="422" Height="329">
+            <!--#region Home Tab-->
+            <TabItem x:Name="HomeTabItem" Header="Home" FontFamily="/resources/fonts/#FinkHeavy" Foreground="{x:Null}" Margin="-5,-1,5,1" >
                 <Grid>
                     <Border BorderBrush="{DynamicResource Accent}" BorderThickness="4" HorizontalAlignment="Left" Height="276" Margin="25,1,0,0" VerticalAlignment="Top" Width="372" Background="White"/>
                     <Border BorderBrush="{DynamicResource Accent}" BorderThickness="1.5" HorizontalAlignment="Left" Height="264" Margin="31,7,0,0" VerticalAlignment="Top" Width="360"/>
                     <Border BorderBrush="#FFFFD30C" BorderThickness="1.5" HorizontalAlignment="Left" Height="2" Margin="45,40,0,0" VerticalAlignment="Top" Width="333"/>
-                    <Image x:Name="noticeImage" Source="Resources/bg/board.png" Margin="192,13,136,245" Stretch="Fill" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                    <Label x:Name="headerLabel" Content="Notice Board" HorizontalAlignment="Left" Margin="65,13,0,0" VerticalAlignment="Top" Width="94" FontSize="14" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" Height="30"/>
+                    <Image x:Name="NoticeImage" Source="Resources/bg/board.png" Margin="192,13,145,245" Stretch="Fill" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                    <Label x:Name="HeaderLabel" Content="Notice Board" HorizontalAlignment="Left" Margin="65,13,0,0" VerticalAlignment="Top" Width="94" FontSize="14" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" Height="30"/>
 
-                    <ListView x:Name="noticeListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" BorderBrush="{x:Null}" FontSize="11" Margin="36,50,38,50" ScrollViewer.CanContentScroll="True" Focusable="False" Foreground="#FF383838" BorderThickness="0" Width="348" Height="185">
+                    <ListView x:Name="NoticeListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingStackPanel.VirtualizationMode="Recycling" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" BorderBrush="{x:Null}" FontSize="11" Margin="36,50,38,50" ScrollViewer.CanContentScroll="True" Focusable="False" Foreground="#FF383838" BorderThickness="0" Width="348" Height="185">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="Template">
@@ -219,7 +220,6 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                                                     <Setter Property="BorderBrush" Value="Transparent" />
                                                     <Setter TargetName="UpperHighlight" Property="Visibility" Value="Visible" />
                                                 </Trigger>
-
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
                                     </Setter.Value>
@@ -227,8 +227,8 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                             </Style>
                         </ListView.ItemContainerStyle>
                         <ListView.ContextMenu>
-                            <ContextMenu Name="menu" StaysOpen="True">
-                                <MenuItem Name="deleteItem" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" Header="Remove" Click="deleteItem_Click">
+                            <ContextMenu Name="NoticeMenu" StaysOpen="True">
+                                <MenuItem Name="DeleteMenuItem" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" Header="Remove" Click="deleteItem_Click">
                                 </MenuItem>
                             </ContextMenu>
                         </ListView.ContextMenu>
@@ -245,14 +245,16 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                                     </GridViewColumn.CellTemplate>
                                     <GridViewColumnHeader Click="SortClick" Tag="Type" Content="TYPE" Width="Auto" Background="White" FontSize="11" Foreground="{DynamicResource Accent}" Margin="-4,0,0,8"/>
                                 </GridViewColumn>
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Name}">
-                                    <GridViewColumnHeader Click="SortClick" Tag="Name" Content="NAME" FontSize="11" Foreground="{DynamicResource Accent}"/>
+                                <GridViewColumn Width="Auto">
                                     <GridViewColumn.CellTemplate >
-                                        <DataTemplate>
-                                            <TextBlock ToolTip="{Binding Path=Name}" TextAlignment="Left" Margin="-4,0,0,0" Foreground="#FFB23333" >
-                                            </TextBlock>
+                                        <DataTemplate >
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
+                                                <Image Source="{Binding Path=VillagerIcon}" Width="16" Height="16" HorizontalAlignment="Center"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
+                                    <GridViewColumnHeader Click="SortClick" Tag="Name" Content="NAME" FontSize="11" Foreground="{DynamicResource Accent}"/>
                                 </GridViewColumn>
                                 <GridViewColumn Width="90" DisplayMemberBinding="{Binding Info}">
                                     <GridViewColumnHeader Click="SortClick" Tag="Info" Content="INFO" Width="Auto" FontSize="11" Foreground="{DynamicResource Accent}"/>
@@ -264,7 +266,7 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                         </ListView.View>
                     </ListView>
 
-                    <Button x:Name="addButton" Content="" HorizontalAlignment="Left" Margin="348,240,0,0" VerticalAlignment="Top" Width="34" Height="31" BorderBrush="{x:Null}" Click="addButton_Click" MinWidth="15">
+                    <Button x:Name="AddButton" Content="" HorizontalAlignment="Left" Margin="350,240,0,0" VerticalAlignment="Top" Width="34" Height="31" BorderBrush="{x:Null}" Click="addButton_Click" MinWidth="15">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border x:Name="bdr_main" Margin="0,0,4,4" BorderThickness="0" BorderBrush="Black">
@@ -294,7 +296,7 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                         </Button.Template>
                     </Button>
 
-                    <Button x:Name="removeButton" Content="" HorizontalAlignment="Left" Margin="36,240,0,0" VerticalAlignment="Top" Height="30" BorderBrush="{x:Null}" Click="removeButton_Click" RenderTransformOrigin="0.5,0.5" Width="34" MinWidth="15" Background="{x:Null}">
+                    <Button x:Name="RemoveButton" Content="" HorizontalAlignment="Left" Margin="36,240,0,0" VerticalAlignment="Top" Height="30" BorderBrush="{x:Null}" Click="removeButton_Click" RenderTransformOrigin="0.5,0.5" Width="34" MinWidth="15" Background="{x:Null}">
                         <Button.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform ScaleX="-1"/>
@@ -331,45 +333,49 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
                 </Grid>
             </TabItem>
-            <TabItem x:Name="profileTabItem" Header="Profile" FontFamily="/resources/fonts/#FinkHeavy" HorizontalAlignment="Right" Width="87">
-                <Grid Name="TPCGrid" Height="285" RenderSize="446, 285">
-                    <Image x:Name="tpcImage" HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="346" Source="Resources/tpc/tpc.png" Stretch="Fill" Margin="35,8,0,0" OpacityMask="Black"/>
-                    <Label x:Name="mayorLabel" Content="" HorizontalAlignment="Left" Margin="166,113,0,0" VerticalAlignment="Top" Width="190" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFF37001" Height="33"/>
-                    <Label x:Name="messageLabel" Content="No profile set, create one in settings!" HorizontalAlignment="Left" Margin="71,15,0,0" VerticalAlignment="Top" Width="290" Height="30" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF616161" FontWeight="Bold"/>
-                    <Label x:Name="townLabel" Content="" Margin="166,79,97,0" VerticalAlignment="Top" FontSize="18" Height="34" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFC35F19"/>
-                    <Label x:Name="fcLabel" Content="" HorizontalAlignment="Left" Margin="201,153,0,0" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
-                    <Label x:Name="fcHeaderLabel" Content="FC" HorizontalAlignment="Left" Margin="162,153,0,0" VerticalAlignment="Top" Width="34" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
-                    <Label x:Name="dcLabel" Content="" HorizontalAlignment="Left" Margin="201,191,0,0" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
-                    <Label x:Name="dcHeaderLabel" Content="DC" HorizontalAlignment="Left" Margin="161,191,0,0" VerticalAlignment="Top" Width="34" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
-                    <Image x:Name="profileImage" HorizontalAlignment="Left" Height="112" Margin="58,71,0,0" VerticalAlignment="Top" Width="74" AllowDrop="True" Stretch="Fill"/>
-                    <Image x:Name="fruitImage" HorizontalAlignment="Left" Height="28" Margin="340,58,0,0" VerticalAlignment="Top" Width="26" AllowDrop="True" Stretch="UniformToFill" Opacity="0.9"/>
+            <!--#endregion-->
 
-                    <Image x:Name="v0Image" HorizontalAlignment="Left" Height="32" Margin="49,233,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="UniformToFill" Opacity="0.9"/>
-                    <Image x:Name="v1Image" HorizontalAlignment="Left" Height="32" Margin="77,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="UniformToFill" Opacity="0.9"/>
-                    <Image x:Name="v2Image" HorizontalAlignment="Left" Height="32" Margin="105,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v3Image" HorizontalAlignment="Left" Height="32" Margin="133,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v4Image" HorizontalAlignment="Left" Height="32" Margin="161,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v5Image" HorizontalAlignment="Left" Height="32" Margin="189,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v6Image" HorizontalAlignment="Left" Height="32" Margin="217,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v7Image" HorizontalAlignment="Left" Height="32" Margin="245,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v8Image" HorizontalAlignment="Left" Height="32" Margin="273,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
-                    <Image x:Name="v9Image" HorizontalAlignment="Left" Height="32" Margin="301,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+            <!--#region Profile Tab-->
+            <TabItem x:Name="ProfileTabItem" Header="Profile" FontFamily="/resources/fonts/#FinkHeavy" HorizontalAlignment="Right" Width="87">
+                <Grid Name="TpcGrid" Height="285" RenderSize="446, 285">
+                    <Image x:Name="TpcImage" HorizontalAlignment="Left" Height="255" VerticalAlignment="Top" Width="346" Source="Resources/tpc/tpc.png" Stretch="Fill" Margin="35,8,0,0" OpacityMask="Black"/>
+                    <Label x:Name="MayorLabel" Content="" HorizontalAlignment="Left" Margin="166,113,0,0" VerticalAlignment="Top" Width="190" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFF37001" Height="33"/>
+                    <Label x:Name="MessageLabel" Content="No profile set, create one in settings!" HorizontalAlignment="Left" Margin="71,15,0,0" VerticalAlignment="Top" Width="290" Height="30" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF616161" FontWeight="Bold"/>
+                    <Label x:Name="TownLabel" Content="" Margin="166,79,97,0" VerticalAlignment="Top" FontSize="18" Height="34" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFC35F19"/>
+                    <Label x:Name="FcLabel" Content="" HorizontalAlignment="Left" Margin="201,153,0,0" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
+                    <Label x:Name="FcHeaderLabel" Content="FC" HorizontalAlignment="Left" Margin="162,153,0,0" VerticalAlignment="Top" Width="34" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
+                    <Label x:Name="DcLabel" Content="" HorizontalAlignment="Left" Margin="201,191,0,0" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
+                    <Label x:Name="DcHeaderLabel" Content="DC" HorizontalAlignment="Left" Margin="161,191,0,0" VerticalAlignment="Top" Width="34" FontSize="18" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FFBE60CD"/>
+                    <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="112" Margin="58,71,0,0" VerticalAlignment="Top" Width="74" AllowDrop="True" Stretch="Fill"/>
+                    <Image x:Name="FruitImage" HorizontalAlignment="Left" Height="30" Margin="344,58,0,0" VerticalAlignment="Top" Width="22" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+
+                    <Image x:Name="V0Image" HorizontalAlignment="Left" Height="32" Margin="49,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="UniformToFill" Opacity="0.9"/>
+                    <Image x:Name="V1Image" HorizontalAlignment="Left" Height="32" Margin="77,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="UniformToFill" Opacity="0.9"/>
+                    <Image x:Name="V2Image" HorizontalAlignment="Left" Height="32" Margin="105,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V3Image" HorizontalAlignment="Left" Height="32" Margin="133,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V4Image" HorizontalAlignment="Left" Height="32" Margin="161,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V5Image" HorizontalAlignment="Left" Height="32" Margin="189,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V6Image" HorizontalAlignment="Left" Height="32" Margin="217,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V7Image" HorizontalAlignment="Left" Height="32" Margin="245,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V8Image" HorizontalAlignment="Left" Height="32" Margin="273,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
+                    <Image x:Name="V9Image" HorizontalAlignment="Left" Height="32" Margin="301,234,0,0" VerticalAlignment="Top" Width="32" AllowDrop="True" Stretch="Fill" Opacity="0.9"/>
                 </Grid>
             </TabItem>
+            <!--#endregion-->
 
-            <TabItem x:Name="checklistTabItem" Header="Checklist" FontFamily="/resources/fonts/#FinkHeavy" HorizontalAlignment="Right" Width="98" Margin="-6,0,6,0">
+            <!--#region Checklist Tab-->
+            <TabItem x:Name="ChecklistTabItem" Header="Checklist" FontFamily="/resources/fonts/#FinkHeavy" HorizontalAlignment="Right" Width="98" Margin="-6,0,6,0">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="Resources/bg/bugfish.png" Opacity="0.6" Stretch="UniformToFill" TileMode="Tile"/>
                     </Grid.Background>
-                    <DataGrid Name="checklistDataGrid" CanUserAddRows="False" Margin="9,16,7,10" BorderBrush="{DynamicResource Accent}" CanUserResizeRows="False" CanUserReorderColumns="False" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" RenderTransformOrigin="0.5,0.5" GridLinesVisibility="None" Background="{x:Null}" MaxWidth="500" MaxHeight="500" EnableColumnVirtualization="True" EnableRowVirtualization="True" AutoGenerateColumns="False" CanUserSortColumns="False" Height="259" CanUserResizeColumns="False" ItemsSource="{Binding Collectibles}" BorderThickness="1" Foreground="#FF383838" Width="406" AreRowDetailsFrozen="True" SelectionMode="Single" RowDetailsVisibilityMode="Collapsed">
+                    <DataGrid Name="ChecklistDataGrid" CanUserAddRows="False" Margin="9,16,7,10" BorderBrush="{DynamicResource Accent}" CanUserResizeRows="False" CanUserReorderColumns="False" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" RenderTransformOrigin="0.5,0.5" GridLinesVisibility="None" Background="{x:Null}" MaxWidth="500" MaxHeight="500" EnableColumnVirtualization="True" EnableRowVirtualization="True" AutoGenerateColumns="False" CanUserSortColumns="False" Height="259" CanUserResizeColumns="False" ItemsSource="{Binding Collectibles}" BorderThickness="1" Foreground="#FF383838" Width="406" AreRowDetailsFrozen="True" SelectionMode="Single" RowDetailsVisibilityMode="Collapsed">
                         <DataGrid.RowDetailsTemplate>
                             <DataTemplate>
                                 <DockPanel Background="{DynamicResource CurrentAccentOpacity}">
-                                    <Image DockPanel.Dock="Left" Source="{Binding ImageURL}" Height="64" Width="64" Margin="10" />
+                                    <Image DockPanel.Dock="Left" Source="{Binding ImageUrl}" Height="64" Width="64" Margin="10" />
                                     <Grid Margin="0,10">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
@@ -408,7 +414,6 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Expander x:Name="itemExp" IsExpanded="False" Background="Transparent" VerticalAlignment="Center" Foreground="White" Expanded="itemExp_Expanded" Collapsed="itemExp_Collapsed"/>
-                                        <!--<Button x:Name="btnExpandCollapse" Content="+" Click="btnExpandCollapse_Click" Width="10" Height="32"></Button>-->
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -424,9 +429,8 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                             <DataGridCheckBoxColumn Binding="{Binding Path=Checked}" Header="CAUGHT" IsReadOnly="False" Width="60">
                                 <DataGridCheckBoxColumn.ElementStyle>
                                     <Style TargetType="CheckBox">
-                                        <EventSetter Event="CheckBox.Checked" Handler="DG_CheckBox_Check" />
-                                        <EventSetter Event="CheckBox.Unchecked" Handler="DG_CheckBox_Uncheck" />
-                                        <Setter Property="Margin" Value="5" />
+                                        <EventSetter Event="Checked" Handler="DG_CheckBox_Check" />
+                                        <EventSetter Event="Unchecked" Handler="DG_CheckBox_Uncheck" />
                                         <Setter Property="VerticalAlignment" Value="Center" />
                                     </Style>
                                 </DataGridCheckBoxColumn.ElementStyle>
@@ -452,10 +456,11 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                     </DataGrid>
                 </Grid>
             </TabItem>
+            <!--#endregion-->
         </TabControl>
-        <Image Margin="367,9,-2,311" Source="Resources/bg/time.png" Opacity="0.75" Width="97" Height="58"/>
-        <Label x:Name="timeTextLabel" Content="11:44" Margin="0,33,24,310" FontSize="21" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" HorizontalAlignment="Right" Width="85" Foreground="#FF008BDA" HorizontalContentAlignment="Center"/>
-        <Label x:Name="dateTextLabel" HorizontalAlignment="Right" Margin="0,11,60,0" VerticalAlignment="Top" Width="54" FontSize="13" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" Height="25" Content="78 / 77">
+        <Image x:Name="TimeImage" Margin="367,9,-2,311" Source="Resources/bg/time.png" Opacity="0.75" Width="97" Height="58"/>
+        <Label x:Name="TimeTextLabel" Content="11:44" Margin="0,33,24,310" FontSize="21" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" HorizontalAlignment="Right" Width="85" Foreground="#FF008BDA" HorizontalContentAlignment="Center"/>
+        <Label x:Name="DateTextLabel" HorizontalAlignment="Right" Margin="0,11,60,0" VerticalAlignment="Top" Width="54" FontSize="13" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" Height="25" Content="78 / 77">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -465,7 +470,7 @@ ConverterParameter={x:Static DataGridHeadersVisibility.Row},
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="dayTextLabel" HorizontalAlignment="Right" Margin="0,8,27,0" VerticalAlignment="Top" Width="32" FontSize="13" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" Height="25" Content="Su"/>
+        <Label x:Name="DayTextLabel" HorizontalAlignment="Right" Margin="0,8,27,0" VerticalAlignment="Top" Width="32" FontSize="13" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" Height="25" Content="Su"/>
     </Grid>
 
     <metro:Window.TitleBar>

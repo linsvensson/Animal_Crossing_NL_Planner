@@ -10,10 +10,10 @@ namespace Animal_Xing_Planner
     /// </summary>
     public partial class NoticeUC
     {
-        public CustomWindow ParentWindow;
         private readonly List<string> _names = new List<string>();
         private bool _bSomethingWrong;
-        private bool _bTimeTravel = false;
+        private bool _bTimeTravel;
+        public CustomWindow ParentWindow;
 
         public NoticeUC()
         {
@@ -25,15 +25,15 @@ namespace Animal_Xing_Planner
             {
                 if (i < 10)
                 {
-                    hourComboBox.Items.Add("0" + i);
-                    hourComboBox1.Items.Add("0" + i);
-                    hourComboBox2.Items.Add("0" + i);
+                    MHourComboBox.Items.Add("0" + i);
+                    EHourComboBox.Items.Add("0" + i);
+                    DHourComboBox.Items.Add("0" + i);
                 }
                 else
                 {
-                    hourComboBox.Items.Add(i);
-                    hourComboBox1.Items.Add(i);
-                    hourComboBox2.Items.Add(i);
+                    MHourComboBox.Items.Add(i);
+                    EHourComboBox.Items.Add(i);
+                    DHourComboBox.Items.Add(i);
                 }
             }
 
@@ -41,15 +41,15 @@ namespace Animal_Xing_Planner
             {
                 if (i < 10)
                 {
-                    minuteComboBox.Items.Add("0" + i);
-                    minuteComboBox1.Items.Add("0" + i);
-                    minuteComboBox2.Items.Add("0" + i);
+                    MMinuteComboBox.Items.Add("0" + i);
+                    EMinuteComboBox.Items.Add("0" + i);
+                    DMinuteComboBox.Items.Add("0" + i);
                 }
                 else
                 {
-                    minuteComboBox.Items.Add(i);
-                    minuteComboBox1.Items.Add(i);
-                    minuteComboBox2.Items.Add(i);
+                    MMinuteComboBox.Items.Add(i);
+                    EMinuteComboBox.Items.Add(i);
+                    DMinuteComboBox.Items.Add(i);
                 }
             }
         }
@@ -59,8 +59,8 @@ namespace Animal_Xing_Planner
             ParentWindow = parent;
 
             Globals.ClearControls(this);
-            villagerNameComboBox.Items.Clear();
-            villagerNameComboBox1.Items.Clear();
+            MVillagerNameComboBox.Items.Clear();
+            DVillagerNameComboBox.Items.Clear();
 
             for (int i = 0; i < Globals.UserSettings.CurrentProfile.Villagers.Count; i++)
                 _names.Add(Globals.UserSettings.CurrentProfile.Villagers[i].Name);
@@ -68,12 +68,12 @@ namespace Animal_Xing_Planner
             _names.Sort();
             for (int i = 0; i < _names.Count; i++)
             {
-                villagerNameComboBox.Items.Add(_names[i]);
-                villagerNameComboBox1.Items.Add(_names[i]);
+                MVillagerNameComboBox.Items.Add(_names[i]);
+                DVillagerNameComboBox.Items.Add(_names[i]);
             }
             _names.Clear();
 
-            typeTabControl.SelectedIndex = 0;
+            TypeTabControl.SelectedIndex = 0;
         }
 
         private bool Check()
@@ -87,31 +87,31 @@ namespace Animal_Xing_Planner
                 string timeNow = DateTime.Now.ToString("HH:mm:ss");
                 TimeSpan now = TimeSpan.Parse(timeNow);
 
-                if (Equals(typeTabControl.SelectedItem, meetingTabItem))
+                if (Equals(TypeTabControl.SelectedItem, MeetingTabItem))
                 {
-                    if (string.IsNullOrEmpty(villagerNameComboBox.Text) || string.IsNullOrEmpty(hourComboBox.Text) || string.IsNullOrEmpty(minuteComboBox.Text))
+                    if (string.IsNullOrEmpty(MVillagerNameComboBox.Text) || string.IsNullOrEmpty(MHourComboBox.Text) || string.IsNullOrEmpty(MMinuteComboBox.Text))
                         _bSomethingWrong = true;
                     else
                     {
-                        setTime = hourComboBox.Text + ":" + minuteComboBox.Text + ":00";
+                        setTime = MHourComboBox.Text + ":" + MMinuteComboBox.Text + ":00";
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
                         if (stop.CompareTo(now) <= 0)
                             _bTimeTravel = true;
                     }
 
-                    if (homeRadioButton.IsChecked == false && awayRadioButton.IsChecked == false)
+                    if (HomeRadioButton.IsChecked == false && AwayRadioButton.IsChecked == false)
                         _bSomethingWrong = true;
                 }
 
-                else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
+                else if (Equals(TypeTabControl.SelectedItem, DeliveryTabItem))
                 {
-                    if (string.IsNullOrEmpty(villagerNameComboBox1.Text) || string.IsNullOrEmpty(itemTextBox.Text))
+                    if (string.IsNullOrEmpty(DVillagerNameComboBox.Text) || string.IsNullOrEmpty(ItemTextBox.Text))
                         _bSomethingWrong = true;
 
-                    if (!string.IsNullOrEmpty(hourComboBox2.Text) && !string.IsNullOrEmpty(minuteComboBox2.Text))
+                    if (!string.IsNullOrEmpty(DHourComboBox.Text) && !string.IsNullOrEmpty(DMinuteComboBox.Text))
                     {
-                        setTime = hourComboBox2.Text + ":" + minuteComboBox2.Text + ":00";
+                        setTime = DHourComboBox.Text + ":" + DMinuteComboBox.Text + ":00";
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
                         if (stop.CompareTo(now) <= 0)
@@ -119,17 +119,17 @@ namespace Animal_Xing_Planner
                     }
                 }
 
-                else if (Equals(typeTabControl.SelectedItem, eventTabItem))
+                else if (Equals(TypeTabControl.SelectedItem, EventTabItem))
                 {
-                    if (string.IsNullOrEmpty(nameTextBox.Text) || string.IsNullOrEmpty(datePicker.Text) || string.IsNullOrEmpty(hourComboBox1.Text) || string.IsNullOrEmpty(minuteComboBox1.Text))
+                    if (string.IsNullOrEmpty(NameTextBox.Text) || string.IsNullOrEmpty(DatePicker.Text) || string.IsNullOrEmpty(EHourComboBox.Text) || string.IsNullOrEmpty(EMinuteComboBox.Text))
                         _bSomethingWrong = true;
 
                     else
                     {
-                        setTime = hourComboBox1.Text + ":" + minuteComboBox1.Text + ":00";
+                        setTime = EHourComboBox.Text + ":" + EMinuteComboBox.Text + ":00";
                         TimeSpan stop = TimeSpan.Parse(setTime);
 
-                        if (stop.CompareTo(now) <= 0 && datePicker.SelectedDate <= DateTime.Now)
+                        if (stop.CompareTo(now) <= 0 && DatePicker.SelectedDate <= DateTime.Now)
                             _bTimeTravel = true;
                     }
                 }
@@ -159,44 +159,44 @@ namespace Animal_Xing_Planner
                 {
                     Notice notice = new Notice();
 
-                    if (Equals(typeTabControl.SelectedItem, meetingTabItem))
+                    if (Equals(TypeTabControl.SelectedItem, MeetingTabItem))
                     {
                         notice.Type = NoticeType.Meeting;
-                        notice.Name = villagerNameComboBox.Text;
+                        notice.Name = MVillagerNameComboBox.Text;
                         notice.Date = DateTime.Now.ToShortDateString();
 
-                        if (!string.IsNullOrEmpty(hourComboBox.Text) && !string.IsNullOrEmpty(minuteComboBox.Text))
-                            notice.StopTime = hourComboBox.Text + ":" + minuteComboBox.Text + ":00";
+                        if (!string.IsNullOrEmpty(MHourComboBox.Text) && !string.IsNullOrEmpty(MMinuteComboBox.Text))
+                            notice.StopTime = MHourComboBox.Text + ":" + MMinuteComboBox.Text + ":00";
 
-                        if (homeRadioButton.IsChecked == true)
-                            notice.Place = homeRadioButton.Content.ToString();
-                        else if (awayRadioButton.IsChecked == true)
-                            notice.Place = awayRadioButton.Content.ToString();
+                        if (HomeRadioButton.IsChecked == true)
+                            notice.Place = HomeRadioButton.Content.ToString();
+                        else if (AwayRadioButton.IsChecked == true)
+                            notice.Place = AwayRadioButton.Content.ToString();
 
                         notice.Info = notice.Place;
                     }
 
-                    else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
+                    else if (Equals(TypeTabControl.SelectedItem, DeliveryTabItem))
                     {
                         notice.Type = NoticeType.Delivery;
-                        notice.Name = villagerNameComboBox1.Text;
-                        notice.Item = itemTextBox.Text;
+                        notice.Name = DVillagerNameComboBox.Text;
+                        notice.Item = ItemTextBox.Text;
                         notice.Date = DateTime.Now.ToShortDateString();
 
-                        if (!string.IsNullOrEmpty(hourComboBox2.Text) && !string.IsNullOrEmpty(minuteComboBox2.Text))
-                            notice.StopTime = hourComboBox2.Text + ":" + minuteComboBox2.Text + ":00";
+                        if (!string.IsNullOrEmpty(DHourComboBox.Text) && !string.IsNullOrEmpty(DMinuteComboBox.Text))
+                            notice.StopTime = DHourComboBox.Text + ":" + DMinuteComboBox.Text + ":00";
 
                         notice.Info = notice.Item;
                     }
 
-                    else if (Equals(typeTabControl.SelectedItem, eventTabItem))
+                    else if (Equals(TypeTabControl.SelectedItem, EventTabItem))
                     {
                         notice.Type = NoticeType.Event;
-                        notice.Name = nameTextBox.Text;
-                        notice.Description = descriptionTextBox.Text;
-                        notice.Date = datePicker.Text;
-                        if (!string.IsNullOrEmpty(hourComboBox1.Text) && !string.IsNullOrEmpty(minuteComboBox1.Text))
-                            notice.StopTime = hourComboBox1.Text + ":" + minuteComboBox1.Text + ":00";
+                        notice.Name = NameTextBox.Text;
+                        notice.Description = DescriptionTextBox.Text;
+                        notice.Date = DatePicker.Text;
+                        if (!string.IsNullOrEmpty(EHourComboBox.Text) && !string.IsNullOrEmpty(EMinuteComboBox.Text))
+                            notice.StopTime = EHourComboBox.Text + ":" + EMinuteComboBox.Text + ":00";
 
                         notice.Info = notice.Date;
                     }
@@ -231,14 +231,14 @@ namespace Animal_Xing_Planner
 
         private void typeTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Equals(typeTabControl.SelectedItem, meetingTabItem))
-                villagerNameComboBox.Focus();
+            if (Equals(TypeTabControl.SelectedItem, MeetingTabItem))
+                MVillagerNameComboBox.Focus();
 
-            else if (Equals(typeTabControl.SelectedItem, deliveryTabItem))
-                villagerNameComboBox1.Focus();
+            else if (Equals(TypeTabControl.SelectedItem, DeliveryTabItem))
+                DVillagerNameComboBox.Focus();
 
-            else if (Equals(typeTabControl.SelectedItem, eventTabItem))
-                nameTextBox.Focus();
+            else if (Equals(TypeTabControl.SelectedItem, EventTabItem))
+                NameTextBox.Focus();
         }
         #endregion
     }

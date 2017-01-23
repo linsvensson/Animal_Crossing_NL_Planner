@@ -6,11 +6,11 @@ namespace Animal_Xing_Planner
     /// <summary>
     /// Interaction logic for AboutUC.xaml
     /// </summary>
-    public partial class HelpUc
+    public partial class HelpUC
     {
         public CustomWindow ParentWindow;
 
-        public HelpUc()
+        public HelpUC()
         {
             InitializeComponent();
 
@@ -37,7 +37,7 @@ namespace Animal_Xing_Planner
             mcFlowDoc.Blocks.Add(para2);
 
             // Set contents
-            richTextBox.Document = mcFlowDoc;
+            RichTextBox.Document = mcFlowDoc;
         }
 
         public void Initialize(CustomWindow parent)

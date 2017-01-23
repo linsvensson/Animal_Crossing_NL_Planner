@@ -3,9 +3,7 @@
   <XmlProfile>
     <Mayor>Lin</Mayor>
     <Town>Mist</Town>
-    <Fruit>apple</Fruit>
-    <FC>2208-5444-2127</FC>
-    <DC>0000-0000-0000</DC>
+    <Fruit>orange</Fruit>
     <TagLine>(=^-^=)/</TagLine>
     <ProfileImagePath>file:///C:/Users/Lin/Desktop/visibleBtn.png</ProfileImagePath>
     <Villagers>
@@ -79,12 +77,26 @@
       </Collectible>
       <Collectible>
         <Checked>true</Checked>
+        <Name>Ant</Name>
+        <Month>All</Month>
+        <Location>Rotten food</Location>
+        <Value>80</Value>
+        <Info />
+        <ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/1/12/Ant_HHD_Icon.png/revision/latest?cb=20161105192047</ImageUrl>
+        <Type>Bug</Type>
+        <Shadow>n/a</Shadow>
+        <Text>More Info</Text>
+      </Collectible>
+      <Collectible>
+        <Checked>true</Checked>
         <Name>Abalone</Name>
         <Month>All</Month>
         <Location>All</Location>
         <Value>400</Value>
         <Info />
+        <ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/e4/Abalone_HHD_Icon.png/revision/latest?cb=20161105191652</ImageUrl>
         <Type>Seafood</Type>
+        <Shadow>Medium</Shadow>
         <Text>More Info</Text>
       </Collectible>
       <Collectible>
@@ -94,6 +106,7 @@
         <Location>On Flowers</Location>
         <Value>3000</Value>
         <Info />
+        <ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/9/9a/Agrias_Butterfly_HHD_Icon.png/revision/latest?cb=20161105191722</ImageUrl>
         <Type>Bug</Type>
         <Shadow>n/a</Shadow>
         <Text>More Info</Text>
@@ -119,6 +132,16 @@
         <StopTime>12:00:00</StopTime>
         <Type>Event</Type>
         <Info>2017-02-14</Info>
+      </Notice>
+      <Notice>
+        <Name>Ruby</Name>
+        <Place />
+        <Description />
+        <Date>2017-01-22</Date>
+        <Item>Furniture</Item>
+        <StopTime />
+        <Type>Delivery</Type>
+        <Info>Furniture</Info>
       </Notice>
     </Notices>
   </XmlProfile>
