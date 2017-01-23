@@ -100,6 +100,11 @@ namespace Animal_Xing_Planner
 
             Globals.BirthdayCheck();
 
+            // Select the profile tab and force render it, then go back to the home tab (needed for TPC saving)
+            ProfileTabItem.IsSelected = true;
+            ProfileTabItem.Refresh();
+            HomeTabItem.IsSelected = true;
+
             Globals.TakeOutGarbage();
         }
 

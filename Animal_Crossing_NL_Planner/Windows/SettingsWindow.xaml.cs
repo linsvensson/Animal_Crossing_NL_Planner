@@ -241,19 +241,11 @@ namespace Animal_Xing_Planner
                 if (!result.HasValue)
                     return;
 
-                // Select the profile tab and force render it
-                int selectedIndex = Globals.Main.MainTabControl.SelectedIndex;
-                Globals.Main.ProfileTabItem.IsSelected = true;
-                Globals.Main.ProfileTabItem.Refresh();
-
                 byte[] screenshot = Globals.Main.TpcGrid.GetJpgImage();
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.Create, FileAccess.ReadWrite);
                 BinaryWriter binaryWriter = new BinaryWriter(fileStream);
                 binaryWriter.Write(screenshot);
                 binaryWriter.Close();
-
-                // Select the last selected tab item
-                Globals.Main.MainTabControl.SelectedIndex = selectedIndex;
             }
             catch (Exception ex)
             {

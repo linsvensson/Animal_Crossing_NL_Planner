@@ -3,7 +3,7 @@
   <XmlSeafood>
     <Name>Abalone</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Abalone</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/e4/Abalone_HHD_Icon.png/revision/latest?cb=20161105191652</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/e4/Abalone_HHD_Icon.png/revision/latest?cb=20161105191652</ImageUrl>
     <Month>All</Month>
 	<Time>4pm-9am</Time>
 	<Location>All</Location>
@@ -13,7 +13,7 @@
   <XmlSeafood>
     <Name>Acorn Barnacle</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Acorn_barnacle</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/4/41/Acorn_Barnacle_HHD_Icon.png/revision/latest?cb=20161105191707</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/4/41/Acorn_Barnacle_HHD_Icon.png/revision/latest?cb=20161105191707</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -23,7 +23,7 @@
   <XmlSeafood>
     <Name>Chambered Nautilus</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Chambered_nautilus</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5f/Chambered_Nautilus_HHD_Icon.png/revision/latest?cb=20161105194337</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5f/Chambered_Nautilus_HHD_Icon.png/revision/latest?cb=20161105194337</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -33,7 +33,7 @@
   <XmlSeafood>
     <Name>Clam</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Clam</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/9/9b/Clam_HHD_Icon.png/revision/latest?cb=20161105194354</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/9/9b/Clam_HHD_Icon.png/revision/latest?cb=20161105194354</ImageUrl>
     <Month>Sep-Apr</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -43,7 +43,7 @@
   <XmlSeafood>
     <Name>Ear Shell</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Ear_shell</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/b/b1/Ear_Shell_HHD_Icon.png/revision/latest?cb=20161105194847</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/b/b1/Ear_Shell_HHD_Icon.png/revision/latest?cb=20161105194847</ImageUrl>
     <Month>All</Month>
 	<Time>4pm-9am</Time>
 	<Location>All</Location>
@@ -53,7 +53,7 @@
   <XmlSeafood>
     <Name>Flatworm</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Flatworm</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/ea/Flatworm_HHD_Icon.png/revision/latest?cb=20161105195346</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/ea/Flatworm_HHD_Icon.png/revision/latest?cb=20161105195346</ImageUrl>
     <Month>Jun-Aug</Month>
 	<Time>4pm-9am</Time>
 	<Location>All</Location>
@@ -63,7 +63,7 @@
   <XmlSeafood>
     <Name>Giant Isopod</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Giant_isopod</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/b3/Giant_Isopod_HHD_Icon.png/revision/latest?cb=20161105195625</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/b3/Giant_Isopod_HHD_Icon.png/revision/latest?cb=20161105195625</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>Island</Location>
@@ -73,7 +73,7 @@
   <XmlSeafood>
     <Name>Horsehair Crab</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Horsehair_crab</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/63/Horsehair_Crab_HHD_Icon.png/revision/latest?cb=20161105200829</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/63/Horsehair_Crab_HHD_Icon.png/revision/latest?cb=20161105200829</ImageUrl>
     <Month>Nov-Apr</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -83,7 +83,7 @@
   <XmlSeafood>
     <Name>Horseshoe Crab</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Horseshoe_crab</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/3/37/Horseshoe_Crab_HHD_Icon.png/revision/latest?cb=20161105200831</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/3/37/Horseshoe_Crab_HHD_Icon.png/revision/latest?cb=20161105200831</ImageUrl>
     <Month>Jul-Sep</Month>
 	<Time>9pm-4am</Time>
 	<Location>Town</Location>
@@ -93,7 +93,7 @@
   <XmlSeafood>
     <Name>Lobster</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Lobster</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/0/09/Lobster_HHD_Icon.png/revision/latest?cb=20161105201529</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/0/09/Lobster_HHD_Icon.png/revision/latest?cb=20161105201529</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -103,7 +103,7 @@
   <XmlSeafood>
     <Name>Mantis Shrimp</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Mantis_shrimp</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/33/Mantis_Shrimp_HHD_Icon.png/revision/latest?cb=20161105201802</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/33/Mantis_Shrimp_HHD_Icon.png/revision/latest?cb=20161105201802</ImageUrl>
     <Month>All</Month>
 	<Time>4pm-9am</Time>
 	<Location>All</Location>
@@ -113,7 +113,7 @@
   <XmlSeafood>
     <Name>Octopus</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Octopus</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/3/35/Octopus_HHD_Icon.png/revision/latest?cb=20161105202711</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/3/35/Octopus_HHD_Icon.png/revision/latest?cb=20161105202711</ImageUrl>
     <Month>Mar-Jul / Sep-Jan</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -123,7 +123,7 @@
   <XmlSeafood>
     <Name>Oyster</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Oyster</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/a8/Oyster_HHD_Icon.png/revision/latest?cb=20161105202826</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/a8/Oyster_HHD_Icon.png/revision/latest?cb=20161105202826</ImageUrl>
     <Month>Sep-Feb</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -133,7 +133,7 @@
   <XmlSeafood>
     <Name>Pearl Oyster</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Pearl_oyster</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/35/Pearl_Oyster_HHD_Icon.png/revision/latest?cb=20161105203017</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/35/Pearl_Oyster_HHD_Icon.png/revision/latest?cb=20161105203017</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -143,7 +143,7 @@
   <XmlSeafood>
     <Name>Red King Crab</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Red_king_crab</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/1/10/Red_King_Crab_HHD_Icon.png/revision/latest?cb=20161105203638</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/1/10/Red_King_Crab_HHD_Icon.png/revision/latest?cb=20161105203638</ImageUrl>
     <Month>Nov-Mar</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -153,7 +153,7 @@
   <XmlSeafood>
     <Name>Sea Anemone</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_anemone</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/b/b1/Sea_Anemone_HHD_Icon.png/revision/latest?cb=20161105204218</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/b/b1/Sea_Anemone_HHD_Icon.png/revision/latest?cb=20161105204218</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -163,7 +163,7 @@
   <XmlSeafood>
     <Name>Sea Cucumber</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_cucumber</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/01/Sea_Cucumber_HHD_Icon.png/revision/latest?cb=20161105204227</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/01/Sea_Cucumber_HHD_Icon.png/revision/latest?cb=20161105204227</ImageUrl>
     <Month>Nov-Apr</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -173,7 +173,7 @@
   <XmlSeafood>
     <Name>Sea Grapes</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_grapes</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/3d/Sea_Grapes_HHD_Icon.png/revision/latest?cb=20161105204232</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/3d/Sea_Grapes_HHD_Icon.png/revision/latest?cb=20161105204232</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -183,7 +183,7 @@
   <XmlSeafood>
     <Name>Sea Slug</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_slug</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/98/Sea_Slug_HHD_Icon.png/revision/latest?cb=20161105204238</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/98/Sea_Slug_HHD_Icon.png/revision/latest?cb=20161105204238</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -193,7 +193,7 @@
   <XmlSeafood>
     <Name>Sea Star</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_star</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d3/Sea_Star_HHD_Icon.png/revision/latest?cb=20161105204241</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d3/Sea_Star_HHD_Icon.png/revision/latest?cb=20161105204241</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Shadow>Small</Shadow>
@@ -203,7 +203,7 @@
   <XmlSeafood>
     <Name>Sea Urchin</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_urchin</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/2/21/Sea_Urchin_HHD_Icon.png/revision/latest?cb=20161105204243</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/2/21/Sea_Urchin_HHD_Icon.png/revision/latest?cb=20161105204243</ImageUrl>
     <Month>Apr-Sep</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -213,7 +213,7 @@
   <XmlSeafood>
     <Name>Seaweed</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Seaweed</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d9/Seaweed_HHD_Icon.png/revision/latest?cb=20161105204252</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d9/Seaweed_HHD_Icon.png/revision/latest?cb=20161105204252</ImageUrl>
     <Month>Nov-Jul</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -223,7 +223,7 @@
   <XmlSeafood>
     <Name>Scallop</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Scallop</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/51/Scallop_HHD_Icon.png/revision/latest?cb=20161105204130</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/51/Scallop_HHD_Icon.png/revision/latest?cb=20161105204130</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>All</Location>
@@ -233,7 +233,7 @@
   <XmlSeafood>
     <Name>Snow Crab</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Snow_crab</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/bf/Snow_Crab_HHD_Icon.png/revision/latest?cb=20161105204620</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/b/bf/Snow_Crab_HHD_Icon.png/revision/latest?cb=20161105204620</ImageUrl>
     <Month>Nov-Apr</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -243,7 +243,7 @@
   <XmlSeafood>
     <Name>Spider Crab</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Spider_crab</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/b/b6/Spider_Crab_HHD_Icon.png/revision/latest?cb=20161105204756</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/b/b6/Spider_Crab_HHD_Icon.png/revision/latest?cb=20161105204756</ImageUrl>
     <Month>Mar-Apr</Month>
 	<Time>All Day</Time>
 	<Location>Town</Location>
@@ -253,7 +253,7 @@
   <XmlSeafood>
     <Name>Spiny Lobster</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Spiny_lobster</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/4/4a/Spiny_Lobster_HHD_Icon.png/revision/latest?cb=20161105204811</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/4/4a/Spiny_Lobster_HHD_Icon.png/revision/latest?cb=20161105204811</ImageUrl>
     <Month>Sep-Dec</Month>
 	<Time>9pm-4am</Time>
 	<Location>Town</Location>
@@ -263,7 +263,7 @@
   <XmlSeafood>
     <Name>Spotted Garden Eel</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Spotted_garden_eel</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/c/c5/Spotted_Garden_Eel_HHD_Icon.png/revision/latest?cb=20161105204849</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/c/c5/Spotted_Garden_Eel_HHD_Icon.png/revision/latest?cb=20161105204849</ImageUrl>
     <Month>All</Month>
 	<Time>All Day</Time>
 	<Location>Island</Location>
@@ -273,7 +273,7 @@
   <XmlSeafood>
     <Name>Sweet Shrimp</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Sweet_shrimp</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9d/Sweet_Shrimp_HHD_Icon.png/revision/latest?cb=20161105205101</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9d/Sweet_Shrimp_HHD_Icon.png/revision/latest?cb=20161105205101</ImageUrl>
     <Month>Sep-Feb</Month>
 	<Time>4pm-9am</Time>
 	<Location>Town</Location>
@@ -283,7 +283,7 @@
   <XmlSeafood>
     <Name>Tiger Prawn</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Tiger_prawn</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9c/Tiger_Prawn_HHD_Icon.png/revision/latest?cb=20161105205250</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/9/9c/Tiger_Prawn_HHD_Icon.png/revision/latest?cb=20161105205250</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Time>4pm-9am</Time>
 	<Location>All</Location>
@@ -293,7 +293,7 @@
   <XmlSeafood>
     <Name>Turban Shell</Name>
 	<Info>http://animalcrossing.wikia.com/wiki/Turban_shell</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/7/7b/Turban_Shell_HHD_Icon.png/revision/latest?cb=20161105205359</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/7/7b/Turban_Shell_HHD_Icon.png/revision/latest?cb=20161105205359</ImageUrl>
     <Month>Aug-May</Month>
 	<Time>4pm-9am</Time>
 	<Location>Town</Location>

@@ -5,7 +5,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Angelfish</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/40/Angelfish_HHD_Icon.png/revision/latest?cb=20161105192032</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/40/Angelfish_HHD_Icon.png/revision/latest?cb=20161105192032</ImageUrl>
     <Month>May-Oct</Month>
 	<Shadow>Small</Shadow>
 	<Value>3000</Value>
@@ -15,7 +15,7 @@
 	<Location>River</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Arapaima</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/7/79/Arapaima_HHD_Icon.png/revision/latest?cb=20161105192118</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/7/79/Arapaima_HHD_Icon.png/revision/latest?cb=20161105192118</ImageUrl>
     <Month>Jul-Sep</Month>
 	<Shadow>Huge</Shadow>
 	<Value>10000</Value>
@@ -25,7 +25,7 @@
 	<Location>River</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Arowana</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/be/Arowana_HHD_Icon.png/revision/latest?cb=20161105192205</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/be/Arowana_HHD_Icon.png/revision/latest?cb=20161105192205</ImageUrl>
     <Month>Jun-Sep 15th</Month>
 	<Shadow>Large</Shadow>
 	<Value>10000</Value>
@@ -35,7 +35,7 @@
 	<Location>River</Location>
 	<SpawnChance>16</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Barbel_Steed</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/e/ee/Barbel_Steed_HHD_Icon.png/revision/latest?cb=20161105193448</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/e/ee/Barbel_Steed_HHD_Icon.png/revision/latest?cb=20161105193448</ImageUrl>
     <Month>All</Month>
 	<Shadow>Medium</Shadow>
 	<Value>200</Value>
@@ -45,7 +45,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Barred_Knifejaw</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/52/Barred_Knifejaw_HHD_Icon.png/revision/latest?cb=20161105193452</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/52/Barred_Knifejaw_HHD_Icon.png/revision/latest?cb=20161105193452</ImageUrl>
     <Month>Mar-Nov</Month>
 	<Shadow>Medium</Shadow>
 	<Value>5000</Value>
@@ -55,7 +55,7 @@
 	<Location>River</Location>
 	<SpawnChance>18</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Bitterling</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/4/4a/Bitterling_HHD_Icon.png/revision/latest?cb=20161105193556</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/4/4a/Bitterling_HHD_Icon.png/revision/latest?cb=20161105193556</ImageUrl>
     <Month>Nov-Feb</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>900</Value>
@@ -65,7 +65,7 @@
 	<Location>River</Location>
 	<SpawnChance>16</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Black_Bass</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/5/52/Black_Bass_HHD_Icon.png/revision/latest?cb=20161105193601</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/5/52/Black_Bass_HHD_Icon.png/revision/latest?cb=20161105193601</ImageUrl>
     <Month>All</Month>
 	<Shadow>Large</Shadow>
 	<Value>300</Value>
@@ -75,7 +75,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Blowfish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/63/Blowfish_HHD_Icon.png/revision/latest?cb=20161105193618</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/63/Blowfish_HHD_Icon.png/revision/latest?cb=20161105193618</ImageUrl>
     <Month>Nov-Feb</Month>
 	<Shadow>Medium</Shadow>
 	<Value>125</Value>
@@ -85,7 +85,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Blue_Marlin</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/4/42/Blue_Marlin_HHD_Icon.png/revision/latest?cb=20161105193638</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/4/42/Blue_Marlin_HHD_Icon.png/revision/latest?cb=20161105193638</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge</Shadow>
 	<Value>10000</Value>
@@ -95,7 +95,7 @@
 	<Location>River</Location>
 	<SpawnChance>10</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Bluegill</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/35/Bluegill_HHD_Icon.png/revision/latest?cb=20161105193653</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/35/Bluegill_HHD_Icon.png/revision/latest?cb=20161105193653</ImageUrl>
     <Month>All</Month>
 	<Shadow>Small</Shadow>
 	<Value>120</Value>
@@ -105,7 +105,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Butterflyfish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/08/Butterflyfish_HHD_Icon.png/revision/latest?cb=20161105193824</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/08/Butterflyfish_HHD_Icon.png/revision/latest?cb=20161105193824</ImageUrl>
     <Month>Apr-Sep</Month>
 	<Shadow>Small</Shadow>
 	<Value>1000</Value>
@@ -115,7 +115,7 @@
 	<Location>River</Location>
 	<SpawnChance>15</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Carp</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/ec/Carp_HHD_Icon.png/revision/latest?cb=20161105194314</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/e/ec/Carp_HHD_Icon.png/revision/latest?cb=20161105194314</ImageUrl>
     <Month>All</Month>
 	<Shadow>Large</Shadow>
 	<Value>300</Value>
@@ -125,7 +125,7 @@
 	<Location>Large Pond/River</Location>
 	<SpawnChance>16</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Catfish</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/4/41/Catfish_HHD_Icon.png/revision/latest?cb=20161105194321</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/4/41/Catfish_HHD_Icon.png/revision/latest?cb=20161105194321</ImageUrl>
     <Month>May-Oct</Month>
 	<Shadow>Large</Shadow>
 	<Value>800</Value>
@@ -135,7 +135,7 @@
 	<Location>Near Waterfall</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Char</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/2/2c/Char_HHD_Icon.png/revision/latest?cb=20161105194339</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/2/2c/Char_HHD_Icon.png/revision/latest?cb=20161105194339</ImageUrl>
     <Month>Mar-Jun / Sep-Nov</Month>
 	<Shadow>Medium</Shadow>
 	<Value>3800</Value>
@@ -145,7 +145,7 @@
 	<Location>River</Location>
 	<SpawnChance>11</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Cherry_Salmon</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/05/Cherry_Salmon_HHD_Icon.png/revision/latest?cb=20161105194343</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/0/05/Cherry_Salmon_HHD_Icon.png/revision/latest?cb=20161105194343</ImageUrl>
     <Month>Mar-Jun / Sep-Nov</Month>
 	<Shadow>Medium</Shadow>
 	<Value>100</Value>
@@ -155,7 +155,7 @@
 	<Location>River</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Mitten_Crab</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/59/Mitten_Crab_HHD_Icon.png/revision/latest?cb=20161105202117</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/59/Mitten_Crab_HHD_Icon.png/revision/latest?cb=20161105202117</ImageUrl>
     <Month>Sep 15th-Nov</Month>
 	<Shadow>Small</Shadow>
 	<Value>2000</Value>
@@ -165,7 +165,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Clownfish</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/98/Clownfish_HHD_Icon.png/revision/latest?cb=20161105194432</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/98/Clownfish_HHD_Icon.png/revision/latest?cb=20161105194432</ImageUrl>
     <Month>Apr-Sep</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>650</Value>
@@ -175,7 +175,7 @@
 	<Location>Pond</Location>
 	<SpawnChance>13</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Crawfish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e2/Crawfish_HHD_Icon.png/revision/latest?cb=20161105194621</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e2/Crawfish_HHD_Icon.png/revision/latest?cb=20161105194621</ImageUrl>
     <Month>Apr-Sep 15th</Month>
 	<Shadow>Small</Shadow>
 	<Value>200</Value>
@@ -185,7 +185,7 @@
 	<Location>Ocean during rain/snow</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Coelacanth</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/7/78/Coelacanth_HHD_Icon.png/revision/latest?cb=20161105194437</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/7/78/Coelacanth_HHD_Icon.png/revision/latest?cb=20161105194437</ImageUrl>
     <Month>All</Month>
 	<Shadow>Huge</Shadow>
 	<Value>15000</Value>
@@ -195,7 +195,7 @@
 	<Location>River</Location>
 	<SpawnChance>22</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Crucian_Carp</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e8/Crucian_Carp_HHD_Icon.png/revision/latest?cb=20161105194656</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e8/Crucian_Carp_HHD_Icon.png/revision/latest?cb=20161105194656</ImageUrl>
     <Month>All</Month>
 	<Shadow>Small</Shadow>
 	<Value>120</Value>
@@ -205,7 +205,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>14</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Dab</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/2/26/Dab_HHD_Icon.png/revision/latest?cb=20161105194714</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/2/26/Dab_HHD_Icon.png/revision/latest?cb=20161105194714</ImageUrl>
     <Month>Oct-Apr</Month>
 	<Shadow>Medium</Shadow>
 	<Value>300</Value>
@@ -215,7 +215,7 @@
 	<Location>River</Location>
 	<SpawnChance>16</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Dace</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/8/8c/Dace_HHD_Icon.png/revision/latest?cb=20161105194718</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/8/8c/Dace_HHD_Icon.png/revision/latest?cb=20161105194718</ImageUrl>
     <Month>All</Month>
 	<Shadow>Medium</Shadow>
 	<Value>200</Value>
@@ -225,7 +225,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Dorado</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/f/ff/Dorado_HHD_Icon.png/revision/latest?cb=20161105194823</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/f/ff/Dorado_HHD_Icon.png/revision/latest?cb=20161105194823</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>15000</Value>
@@ -235,7 +235,7 @@
 	<Location>River</Location>
 	<SpawnChance>12</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Eel</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/03/Eel_HHD_Icon.png/revision/latest?cb=20161105194855</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/03/Eel_HHD_Icon.png/revision/latest?cb=20161105194855</ImageUrl>
     <Month>Jun-Sep 15th</Month>
 	<Shadow>Thin</Shadow>
 	<Value>2000</Value>
@@ -245,7 +245,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Football_Fish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/67/Football_Fish_HHD_Icon.png/revision/latest?cb=20161105195415</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/6/67/Football_Fish_HHD_Icon.png/revision/latest?cb=20161105195415</ImageUrl>
     <Month>Nov-Mar</Month>
 	<Shadow>Large</Shadow>
 	<Value>2500</Value>
@@ -255,7 +255,7 @@
 	<Location>River</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Freshwater_Goby</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/1/19/Freshwater_Goby_HHD_Icon.png/revision/latest?cb=20161105195428</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/1/19/Freshwater_Goby_HHD_Icon.png/revision/latest?cb=20161105195428</ImageUrl>
     <Month>All</Month>
 	<Shadow>Small</Shadow>
 	<Value>300</Value>
@@ -265,7 +265,7 @@
 	<Location>Pond</Location>
 	<SpawnChance>10</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Frog</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/8/8f/Frog_HHD_Icon.png/revision/latest?cb=20161105195429</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/8/8f/Frog_HHD_Icon.png/revision/latest?cb=20161105195429</ImageUrl>
     <Month>May-Aug</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>120</Value>
@@ -275,7 +275,7 @@
 	<Location>Large Pond</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Gar</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/5/54/Gar_HHD_Icon.png/revision/latest?cb=20161105195557</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/5/54/Gar_HHD_Icon.png/revision/latest?cb=20161105195557</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge</Shadow>
 	<Value>6000</Value>
@@ -285,7 +285,7 @@
 	<Location>Island Ocean</Location>
 	<SpawnChance>3</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Giant_Trevally</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/8/8e/Giant_Trevally_HHD_Icon.png/revision/latest?cb=20161105195630</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/8/8e/Giant_Trevally_HHD_Icon.png/revision/latest?cb=20161105195630</ImageUrl>
     <Month>All</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>4500</Value>
@@ -295,7 +295,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Giant_Snakehead</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/4f/Giant_Snakehead_HHD_Icon.png/revision/latest?cb=20161105195626</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/4/4f/Giant_Snakehead_HHD_Icon.png/revision/latest?cb=20161105195626</ImageUrl>
     <Month>Jun-Aug</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>5500</Value>
@@ -305,7 +305,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Goldfish</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5d/Goldfish_HHD_Icon.png/revision/latest?cb=20161105195723</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5d/Goldfish_HHD_Icon.png/revision/latest?cb=20161105195723</ImageUrl>
     <Month>All</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>1300</Value>
@@ -315,7 +315,7 @@
 	<Location>River</Location>
 	<SpawnChance>3</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Guppy</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/34/Guppy_HHD_Icon.png/revision/latest?cb=20161105200652</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/34/Guppy_HHD_Icon.png/revision/latest?cb=20161105200652</ImageUrl>
     <Month>Apr-Nov</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>1300</Value>
@@ -325,7 +325,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Hammerhead_Shark</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/f/fb/Hammerhead_Shark_HHD_Icon.png/revision/latest?cb=20161105200656</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/f/fb/Hammerhead_Shark_HHD_Icon.png/revision/latest?cb=20161105200656</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge with fin</Shadow>
 	<Value>8000</Value>
@@ -335,7 +335,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>30</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Horse_Mackerel</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/1d/Horse_Mackerel_HHD_Icon.png/revision/latest?cb=20161105200827</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/1d/Horse_Mackerel_HHD_Icon.png/revision/latest?cb=20161105200827</ImageUrl>
     <Month>All</Month>
 	<Shadow>Small</Shadow>
 	<Value>150</Value>
@@ -345,7 +345,7 @@
 	<Location>Pond</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Killifish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/3f/Killifish_HHD_Icon.png/revision/latest?cb=20161105201157</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/3/3f/Killifish_HHD_Icon.png/revision/latest?cb=20161105201157</ImageUrl>
     <Month>Apr-Aug</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>300</Value>
@@ -355,7 +355,7 @@
 	<Location>Near River Mouth</Location>
 	<SpawnChance>6</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/King_Salmon</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/92/King_Salmon_HHD_Icon.png/revision/latest?cb=20161105201206</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/9/92/King_Salmon_HHD_Icon.png/revision/latest?cb=20161105201206</ImageUrl>
     <Month>Sep</Month>
 	<Shadow>Huge</Shadow>
 	<Value>1800</Value>
@@ -365,7 +365,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Koi</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/a6/Koi_HHD_Icon.png/revision/latest?cb=20161105201225</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/a6/Koi_HHD_Icon.png/revision/latest?cb=20161105201225</ImageUrl>
     <Month>All</Month>
 	<Shadow>Large</Shadow>
 	<Value>4000</Value>
@@ -375,7 +375,7 @@
 	<Location>River</Location>
 	<SpawnChance>21</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Loach</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/2/2b/Loach_HHD_Icon.png/revision/latest?cb=20161105201526</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/2/2b/Loach_HHD_Icon.png/revision/latest?cb=20161105201526</ImageUrl>
     <Month>Mar-May</Month>
 	<Shadow>Small</Shadow>
 	<Value>300</Value>
@@ -385,7 +385,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Moray_Eel</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/7/78/Moray_Eel_HHD_Icon.png/revision/latest?cb=20161105202356</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/7/78/Moray_Eel_HHD_Icon.png/revision/latest?cb=20161105202356</ImageUrl>
     <Month>Aug-Oct</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>2000</Value>
@@ -395,7 +395,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Napoleonfish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d0/Napoleonfish_HHD_Icon.png/revision/latest?cb=20161105202558</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/d/d0/Napoleonfish_HHD_Icon.png/revision/latest?cb=20161105202558</ImageUrl>
     <Month>Jun-Aug</Month>
 	<Shadow>Huge</Shadow>
 	<Value>10000</Value>
@@ -405,7 +405,7 @@
 	<Location>River</Location>
 	<SpawnChance>3</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Neon_Tetra</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/3/37/Neon_Tetra_HHD_Icon.png/revision/latest?cb=20161105202609</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/3/37/Neon_Tetra_HHD_Icon.png/revision/latest?cb=20161105202609</ImageUrl>
     <Month>Apr-Nov</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>500</Value>
@@ -415,7 +415,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Nibble_Fish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e2/Nibble_Fish_HHD_Icon.png/revision/latest?cb=20161105202635</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e2/Nibble_Fish_HHD_Icon.png/revision/latest?cb=20161105202635</ImageUrl>
     <Month>May-Sep</Month>
 	<Shadow>Small</Shadow>
 	<Value>1500</Value>
@@ -425,7 +425,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>3</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Oarfish</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/f/f5/Oarfish_HHD_Icon.png/revision/latest?cb=20161105202700</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/f/f5/Oarfish_HHD_Icon.png/revision/latest?cb=20161105202700</ImageUrl>
     <Month>Dec-May</Month>
 	<Shadow>Huge</Shadow>
 	<Value>9000</Value>
@@ -435,7 +435,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Olive_Flounder</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/2/24/Olive_Flounder_HHD_Icon.png/revision/latest?cb=20161105202745</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/2/24/Olive_Flounder_HHD_Icon.png/revision/latest?cb=20161105202745</ImageUrl>
     <Month>All</Month>
 	<Shadow>Large</Shadow>
 	<Value>800</Value>
@@ -445,7 +445,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Ocean_Sunfish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/be/Ocean_Sunfish_HHD_Icon.png/revision/latest?cb=20161105202704</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/be/Ocean_Sunfish_HHD_Icon.png/revision/latest?cb=20161105202704</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge with fin</Shadow>
 	<Value>4000</Value>
@@ -455,7 +455,7 @@
 	<Location>River</Location>
 	<SpawnChance>10</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Pale_Chub</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/c0/Pale_Chub_HHD_Icon.png/revision/latest?cb=20161105202841</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/c0/Pale_Chub_HHD_Icon.png/revision/latest?cb=20161105202841</ImageUrl>
     <Month>All</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>200</Value>
@@ -465,7 +465,7 @@
 	<Location>River</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Pike</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/ab/Pike_HHD_Icon.png/revision/latest?cb=20161105203053</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/ab/Pike_HHD_Icon.png/revision/latest?cb=20161105203053</ImageUrl>
     <Month>Sep-Dec</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>1800</Value>
@@ -475,7 +475,7 @@
 	<Location>River</Location>
 	<SpawnChance>3</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Piranha</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/54/Piranha_HHD_Icon.png/revision/latest?cb=20161105203149</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/54/Piranha_HHD_Icon.png/revision/latest?cb=20161105203149</ImageUrl>
     <Month>Jun-Sep 15th</Month>
 	<Shadow>Small</Shadow>
 	<Value>2500</Value>
@@ -485,7 +485,7 @@
 	<Location>River</Location>
 	<SpawnChance>39</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Pond_Smelt</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/cf/Pond_Smelt_HHD_Icon.png/revision/latest?cb=20161105203259</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/cf/Pond_Smelt_HHD_Icon.png/revision/latest?cb=20161105203259</ImageUrl>
     <Month>Dec-Feb</Month>
 	<Shadow>Small</Shadow>
 	<Value>300</Value>
@@ -495,7 +495,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Popeyed_Goldfish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/3c/Popeyed_Goldfish_HHD_Icon.png/revision/latest?cb=20161105203311</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/3c/Popeyed_Goldfish_HHD_Icon.png/revision/latest?cb=20161105203311</ImageUrl>
     <Month>All</Month>
 	<Shadow>Small</Shadow>
 	<Value>1300</Value>
@@ -505,7 +505,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>12</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Puffer_Fish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e0/Puffer_Fish_HHD_Icon.png/revision/latest?cb=20161105203430</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/e/e0/Puffer_Fish_HHD_Icon.png/revision/latest?cb=20161105203430</ImageUrl>
     <Month>Aug-Sep</Month>
 	<Shadow>Medium</Shadow>
 	<Value>240</Value>
@@ -515,7 +515,7 @@
 	<Location>River</Location>
 	<SpawnChance>11</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Rainbow_Trout</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e9/Rainbow_Trout_HHD_Icon.png/revision/latest?cb=20161105203521</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e9/Rainbow_Trout_HHD_Icon.png/revision/latest?cb=20161105203521</ImageUrl>
     <Month>March-Jun / Sep-Nov</Month>
 	<Shadow>Large</Shadow>
 	<Value>800</Value>
@@ -525,7 +525,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Ray</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/b9/Ray_HHD_Icon.png/revision/latest?cb=20161105203617</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/b9/Ray_HHD_Icon.png/revision/latest?cb=20161105203617</ImageUrl>
     <Month>Jun-Nov</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>3000</Value>
@@ -535,7 +535,7 @@
 	<Location>Island Ocean</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Ribbon_Eel</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/c/c6/Ribbon_Eel_HHD_Icon.png/revision/latest?cb=20161105203807</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/c/c6/Ribbon_Eel_HHD_Icon.png/revision/latest?cb=20161105203807</ImageUrl>
     <Month>All</Month>
 	<Shadow>Thin</Shadow>
 	<Value>600</Value>
@@ -545,7 +545,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Red_Snapper</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/1/12/Red_Snapper_HHD_Icon.png/revision/latest?cb=20161105203650</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/1/12/Red_Snapper_HHD_Icon.png/revision/latest?cb=20161105203650</ImageUrl>
     <Month>All</Month>
 	<Shadow>Medium</Shadow>
 	<Value>3000</Value>
@@ -555,7 +555,7 @@
 	<Location>River</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Saddled_Bichir</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/b7/Saddled_Bichir_HHD_Icon.png/revision/latest?cb=20161105204041</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/b/b7/Saddled_Bichir_HHD_Icon.png/revision/latest?cb=20161105204041</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Large</Shadow>
 	<Value>4000</Value>
@@ -565,7 +565,7 @@
 	<Location>New River Mouth</Location>
 	<SpawnChance>40</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Salmon</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/7/77/Salmon_HHD_Icon.png/revision/latest?cb=20161105204055</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/7/77/Salmon_HHD_Icon.png/revision/latest?cb=20161105204055</ImageUrl>
     <Month>Sep</Month>
 	<Shadow>Large</Shadow>
 	<Value>700</Value>
@@ -575,7 +575,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Saw_Shark</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/09/Saw_Shark_HHD_Icon.png/revision/latest?cb=20161105204119</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/0/09/Saw_Shark_HHD_Icon.png/revision/latest?cb=20161105204119</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge with fin</Shadow>
 	<Value>12000</Value>
@@ -585,7 +585,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>25</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_Bass</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/c2/Sea_Bass_HHD_Icon.png/revision/latest?cb=20161105204221</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/c/c2/Sea_Bass_HHD_Icon.png/revision/latest?cb=20161105204221</ImageUrl>
     <Month>All</Month>
 	<Shadow>Very Large</Shadow>
 	<Value>200</Value>
@@ -595,7 +595,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>12</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Sea_Butterfly</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d6/Sea_Butterfly_HHD_Icon.png/revision/latest?cb=20161105204224</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/d/d6/Sea_Butterfly_HHD_Icon.png/revision/latest?cb=20161105204224</ImageUrl>
     <Month>Dec-Feb</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>1000</Value>
@@ -605,7 +605,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Shark</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5b/Shark_HHD_Icon.png/revision/latest?cb=20161105204315</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/5/5b/Shark_HHD_Icon.png/revision/latest?cb=20161105204315</ImageUrl>
     <Month>Jun-Sep</Month>
 	<Shadow>Huge with fin</Shadow>
 	<Value>15000</Value>
@@ -615,7 +615,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>9</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Seahorse</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/aa/Sea_Horse_HHD_Icon.png/revision/latest?cb=20161105204235</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/aa/Sea_Horse_HHD_Icon.png/revision/latest?cb=20161105204235</ImageUrl>
     <Month>Apr-Nov</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>1100</Value>
@@ -625,7 +625,7 @@
 	<Location>River</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Soft_Shelled_Turtle</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/a1/Soft-Shelled_Turtle_HHD_Icon.png/revision/latest?cb=20161105204721</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/a/a1/Soft-Shelled_Turtle_HHD_Icon.png/revision/latest?cb=20161105204721</ImageUrl>
     <Month>Aug-Sep</Month>
 	<Shadow>Medium</Shadow>
 	<Value>3750</Value>
@@ -635,7 +635,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>14</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Squid</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/a3/Squid_HHD_Icon.png/revision/latest?cb=20161105204858</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/a/a3/Squid_HHD_Icon.png/revision/latest?cb=20161105204858</ImageUrl>
     <Month>Dec-Jul</Month>
 	<Shadow>Medium</Shadow>
 	<Value>400</Value>
@@ -645,7 +645,7 @@
 	<Location>River</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Stringfish</Info>
-	<ImageURL>http://vignette3.wikia.nocookie.net/animalcrossing/images/5/53/Stringfish_HHD_Icon.png/revision/latest?cb=20161105204949</ImageURL>
+	<ImageUrl>http://vignette3.wikia.nocookie.net/animalcrossing/images/5/53/Stringfish_HHD_Icon.png/revision/latest?cb=20161105204949</ImageUrl>
     <Month>Dec-Feb</Month>
 	<Shadow>Huge</Shadow>
 	<Value>15000</Value>
@@ -655,7 +655,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>2</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Surgeonfish</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/8/83/Surgeonfish_HHD_Icon.png/revision/latest?cb=20161105205054</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/8/83/Surgeonfish_HHD_Icon.png/revision/latest?cb=20161105205054</ImageUrl>
     <Month>Apr-Sep</Month>
 	<Shadow>Small</Shadow>
 	<Value>1000</Value>
@@ -665,7 +665,7 @@
 	<Location>River</Location>
 	<SpawnChance>16</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Sweetfish</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/5a/Sweetfish_HHD_Icon.png/revision/latest?cb=20161105205104</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/5/5a/Sweetfish_HHD_Icon.png/revision/latest?cb=20161105205104</ImageUrl>
     <Month>Jul-Sep 15th</Month>
 	<Shadow>Medium</Shadow>
 	<Value>900</Value>
@@ -675,7 +675,7 @@
 	<Location>Pond</Location>
 	<SpawnChance>5</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Tadpole</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e7/Tadpole_HHD_Icon.png/revision/latest?cb=20161105205146</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/e/e7/Tadpole_HHD_Icon.png/revision/latest?cb=20161105205146</ImageUrl>
     <Month>Mar-Jul</Month>
 	<Shadow>Tiny</Shadow>
 	<Value>100</Value>
@@ -685,7 +685,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>4</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Tuna</Info>
-	<ImageURL>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/17/Tuna_HHD_Icon.png/revision/latest?cb=20161105205357</ImageURL>
+	<ImageUrl>http://vignette2.wikia.nocookie.net/animalcrossing/images/1/17/Tuna_HHD_Icon.png/revision/latest?cb=20161105205357</ImageUrl>
     <Month>Nov-Mar</Month>
 	<Shadow>Huge</Shadow>
 	<Value>7000</Value>
@@ -695,7 +695,7 @@
 	<Location>Island Ocean</Location>
 	<SpawnChance>1</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Whale_Shark</Info>
-	<ImageURL>http://vignette4.wikia.nocookie.net/animalcrossing/images/1/17/Whale_Shark_HHD_Icon.png/revision/latest?cb=20161105205615</ImageURL>
+	<ImageUrl>http://vignette4.wikia.nocookie.net/animalcrossing/images/1/17/Whale_Shark_HHD_Icon.png/revision/latest?cb=20161105205615</ImageUrl>
     <Month>All</Month>
 	<Shadow>Huge with fin</Shadow>
 	<Value>13000</Value>
@@ -705,7 +705,7 @@
 	<Location>River</Location>
 	<SpawnChance>8</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Yellow_Perch</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/f/f0/Yellow_Perch_HHD_Icon.png/revision/latest?cb=20161105205721</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/f/f0/Yellow_Perch_HHD_Icon.png/revision/latest?cb=20161105205721</ImageUrl>
     <Month>Oct-Mar</Month>
 	<Shadow>Medium</Shadow>
 	<Value>240</Value>
@@ -715,7 +715,7 @@
 	<Location>Ocean</Location>
 	<SpawnChance>12</SpawnChance>
 	<Info>http://animalcrossing.wikia.com/wiki/Zebra_Turkeyfish</Info>
-	<ImageURL>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/3d/Zebra_Turkeyfish_HHD_Icon.png/revision/latest?cb=20161105205734</ImageURL>
+	<ImageUrl>http://vignette1.wikia.nocookie.net/animalcrossing/images/3/3d/Zebra_Turkeyfish_HHD_Icon.png/revision/latest?cb=20161105205734</ImageUrl>
     <Month>Apr-Nov</Month>
 	<Shadow>Medium</Shadow>
 	<Value>400</Value>

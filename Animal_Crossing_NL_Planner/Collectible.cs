@@ -7,11 +7,11 @@ namespace Animal_Xing_Planner
     [Serializable]
     public class Collectible
     {
-        private bool isChecked;
+        private bool _isChecked;
         public bool Checked
         {
-            get { return isChecked; }
-            set { isChecked = value; OnPropertyChanged("Checked"); }
+            get { return _isChecked; }
+            set { _isChecked = value; OnPropertyChanged("Checked"); }
         }
         public string Name { get; set; }
         public string Month { get; set; }

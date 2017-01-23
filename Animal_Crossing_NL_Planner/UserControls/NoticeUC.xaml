@@ -20,6 +20,9 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="TabItem">
                                     <StackPanel Orientation="Horizontal">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="#FFF15941" Opacity="0.1"/>
+                                        </StackPanel.Background>
                                         <Image Source="/ACNL_Planner;component/Resources/notice/coffee.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <Label x:Name="root" FontSize="13.67" Height="31" Foreground="Gray">
                                             <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" />
@@ -35,7 +38,10 @@
                         </Setter>
                     </Style>
                 </TabItem.Resources>
-                <Grid>
+                <Grid Margin="-8,0,-7,0">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#FFF15941" Opacity="0.1"/>
+                    </Grid.Background>
                     <Label x:Name="MVillagerNameLabel" Content="Villager Name:" HorizontalAlignment="Left" Foreground="{DynamicResource Accent}" Margin="17,34,0,0" VerticalAlignment="Top" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
                     <ComboBox x:Name="MVillagerNameComboBox" HorizontalAlignment="Left" Margin="109,33,0,0" VerticalAlignment="Top" Width="120" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="11" Foreground="#FF383838" TabIndex="0"/>
                     <Label x:Name="MTimeLabel" Content="Time:" HorizontalAlignment="Left" Margin="27,75,0,0" Foreground="{DynamicResource Accent}" VerticalAlignment="Top" Width="59" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
@@ -56,6 +62,9 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="TabItem">
                                     <StackPanel Orientation="Horizontal">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="#FF55A0DE" Opacity="0.1"/>
+                                        </StackPanel.Background>
                                         <Image Source="/ACNL_Planner;component/Resources/notice/present.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <Label x:Name="root" FontSize="13.67" Height="31" Foreground="Gray">
                                             <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" />
@@ -71,7 +80,10 @@
                         </Setter>
                     </Style>
                 </TabItem.Resources>
-                <Grid>
+                <Grid Margin="-8,0,-7,0">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#FF55A0DE" Opacity="0.1"/>
+                    </Grid.Background>
                     <Label x:Name="DVillagerNameLabel" Content="Villager Name:" HorizontalAlignment="Left" Foreground="{DynamicResource Accent}" Margin="17,34,0,0" VerticalAlignment="Top" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
                     <ComboBox x:Name="DVillagerNameComboBox" HorizontalAlignment="Left" Margin="109,33,0,0" VerticalAlignment="Top" Width="120" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" FontSize="11" Foreground="#FF383838" TabIndex="5"/>
                     <Label x:Name="ItemLabel" Content="Item:" HorizontalAlignment="Left" Margin="57,75,0,0" Foreground="{DynamicResource Accent}" VerticalAlignment="Top" Width="40" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
@@ -93,6 +105,9 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="TabItem">
                                     <StackPanel Orientation="Horizontal">
+                                        <StackPanel.Background>
+                                            <SolidColorBrush Color="#FF09BD09" Opacity="0.1"/>
+                                        </StackPanel.Background>
                                         <Image Source="/ACNL_Planner;component/Resources/notice/cracker.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <Label x:Name="root" FontSize="13.67" Height="31" Foreground="Gray">
                                             <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" />
@@ -108,7 +123,10 @@
                         </Setter>
                     </Style>
                 </TabItem.Resources>
-                <Grid>
+                <Grid Margin="-8,0,-7,0">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#FF09BD09" Opacity="0.1"/>
+                    </Grid.Background>
                     <Label x:Name="DateLabel" Content="Date:" HorizontalAlignment="Left" Foreground="{DynamicResource Accent}" Margin="37,43,0,0" VerticalAlignment="Top" Width="41" FontSize="12" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy"/>
                     <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" x:Name="DatePicker" HorizontalAlignment="Left" Margin="83,44,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" Width="141" DisplayDate="{x:Static sys:DateTime.Now}" FontFamily="/resources/fonts/#SecondaRoundW00-Heavy" Foreground="#FF383838" TabIndex="10">
                         <DatePicker.Resources>
